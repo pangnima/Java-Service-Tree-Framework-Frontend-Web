@@ -305,33 +305,30 @@
           <!-- User Account: style can be found in dropdown.less -->
           <li class="dropdown user user-menu">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-              <img src="dist/img/user2-160x160.jpg" class="user-image" alt="User Image">
-              <span class="hidden-xs">Alexander Pierce</span>
+              <i class="fa fa-user-plus"></i>
+              <span class="hidden-xs">Login</span>
             </a>
             <ul class="dropdown-menu">
-              <!-- User image -->
               <li class="user-header">
-                <img src="dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
-
-                <p>
-                  Alexander Pierce - Web Developer
-                  <small>Member since Nov. 2012</small>
-                </p>
-              </li>
-              <!-- Menu Body -->
-              <li class="user-body">
-                <div class="row">
-                  <div class="col-xs-4 text-center">
-                    <a href="#">Followers</a>
-                  </div>
-                  <div class="col-xs-4 text-center">
-                    <a href="#">Sales</a>
-                  </div>
-                  <div class="col-xs-4 text-center">
-                    <a href="#">Friends</a>
-                  </div>
+                <div class="social-auth-links text-center">
+                  <a href="#" class="btn btn-block btn-social btn-facebook btn-flat"><i class="fa fa-facebook"></i> Sign in using Facebook</a>
+                  <a href="#" class="btn btn-block btn-social btn-google btn-flat"><i class="fa fa-google-plus"></i> Sign in using Google+</a>
                 </div>
-                <!-- /.row -->
+              </li>
+              <!-- User image -->
+              <li class="user-body">
+                <div class="login-box-body">
+                  <form action="../../index2.html" method="post">
+                    <div class="form-group has-feedback">
+                      <input type="email" class="form-control" placeholder="Email">
+                      <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
+                    </div>
+                    <div class="has-feedback">
+                      <input type="password" class="form-control" placeholder="Password">
+                      <span class="glyphicon glyphicon-lock form-control-feedback"></span>
+                    </div>
+                  </form>
+                </div>
               </li>
               <!-- Menu Footer-->
               <li class="user-footer">
@@ -339,7 +336,7 @@
                   <a href="#" class="btn btn-default btn-flat">Profile</a>
                 </div>
                 <div class="pull-right">
-                  <a href="#" class="btn btn-default btn-flat">Sign out</a>
+                  <a href="#" class="btn btn-default btn-flat">Sign In</a>
                 </div>
               </li>
             </ul>

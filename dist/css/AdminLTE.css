@@ -1101,8 +1101,8 @@ a:focus {
   border-bottom-left-radius: 4px;
 }
 .navbar-nav > .user-menu > .dropdown-menu > li.user-header {
-  height: 175px;
-  padding: 10px;
+  height: 110px;
+  padding: 15px;
   text-align: center;
 }
 .navbar-nav > .user-menu > .dropdown-menu > li.user-header > img {
@@ -1240,6 +1240,7 @@ a:focus {
   position: absolute;
   right: 0;
   left: auto;
+  border-top: 1px solid #eee;
 }
 @media (max-width: 991px) {
   .navbar-custom-menu > .navbar-nav {
@@ -3259,7 +3260,9 @@ table.text-center th {
 .login-box-body,
 .register-box-body {
   background: #fff;
-  padding: 20px;
+  /*
+  * padding: 20px;
+  */
   border-top: 0;
   color: #666;
 }
@@ -3274,7 +3277,9 @@ table.text-center th {
   padding: 0 20px 20px 20px;
 }
 .social-auth-links {
-  margin: 10px 0;
+  /*
+  * margin: 0 0 0 10px ;
+  */
 }
 /*
  * Page: 400 and 500 error pages
