@@ -500,6 +500,7 @@
 }
 .skin-black-light .main-header .navbar > .sidebar-toggle {
   color: #333;
+  border-left: 1px solid #eee;
   /*
   * border-right: 1px solid #eee;
   */
