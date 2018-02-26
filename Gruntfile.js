@@ -4,6 +4,11 @@ module.exports = function (grunt) {
   'use strict';
 
   grunt.initConfig({
+    connect:{
+      server: {
+        options: {port:9000}
+      },
+    },
     watch: {
       // If any .less file changes in directory "build/less/" run the "less"-task.
       files: ["build/less/*.less", "build/less/skins/*.less", "dist/js/app.js"],
@@ -175,6 +180,10 @@ module.exports = function (grunt) {
   grunt.loadNpmTasks('grunt-contrib-csslint');
   // Lint Bootstrap
   grunt.loadNpmTasks('grunt-bootlint');
+
+  grunt.loadNpmTasks('grunt-contrib-connect');
+
+  grunt.registerTask('server', ['connect:server:keepalive']);
 
   // Linting task
   grunt.registerTask('lint', ['jshint', 'csslint', 'bootlint']);
