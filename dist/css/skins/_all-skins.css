@@ -1779,3 +1779,13 @@
     border-left: 1px solid #d2d6de;
   }
 }
+
+.btn-block-custom {
+  margin-top: 10px;
+  display: block;
+  width: 100%;
+}
+
+.form-group-custom {
+  margin-bottom: 10px;
+}
