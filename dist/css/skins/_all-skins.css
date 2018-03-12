@@ -1789,3 +1789,18 @@
 .form-group-custom {
   margin-bottom: 10px;
 }
+
+.item-A {
+  background-color: #e5603b;
+  color: #fff;
+}
+
+.item-B {
+  background-color: #eac85e;
+  color: #fff;
+}
+
+.item-C  {
+  background-color: #46c377;
+  color:#fff;
+}
