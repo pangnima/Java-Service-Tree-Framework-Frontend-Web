@@ -1515,7 +1515,7 @@ a:focus {
   z-index: 10;
   background: rgba(0, 0, 0, 0.1);
   text-decoration: none;
-  margin-top: 4px;
+  margin-top: 6px;
 }
 .small-box > .small-box-footer:hover {
   color: #fff;
@@ -2115,12 +2115,13 @@ a:focus {
 }
 .info-box-text {
   text-transform: uppercase;
+  font-size: 12px;
 }
 .info-box-more {
   display: block;
 }
 .progress-description {
-  margin-top: 8px;
+  margin-top: 12px;
   font-size: 15px;
 }
 /*
