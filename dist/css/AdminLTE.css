@@ -1782,9 +1782,10 @@ a:focus {
 .box-header > .ion,
 .box-header .box-title {
   display: inline-block;
-  font-size: 18px;
+  font-size: 13px;
   margin: 0;
   line-height: 1;
+  font-weight: bold;
 }
 .box-header > .fa,
 .box-header > .glyphicon,
