@@ -1515,6 +1515,7 @@ a:focus {
   z-index: 10;
   background: rgba(0, 0, 0, 0.1);
   text-decoration: none;
+  margin-top: 4px;
 }
 .small-box > .small-box-footer:hover {
   color: #fff;
@@ -2119,7 +2120,8 @@ a:focus {
   display: block;
 }
 .progress-description {
-  margin: 0;
+  margin-top: 8px;
+  font-size: 15px;
 }
 /*
  * Component: Timeline
