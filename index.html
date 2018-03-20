@@ -93,10 +93,10 @@
     <!-- Logo -->
     <a href="#" class="logo">
       <span class="logo-mini">
-        <img src="dist/img/rivalwar/custom/iconLogo.png" alt="로고">
+        <img src="dist/img/rivalwar/iconLogo.png" alt="로고">
       </span>
       <span class="logo-lg">
-        <img src="dist/img/rivalwar/custom/rivalWarLogo.png" alt="로고">
+        <img src="dist/img/rivalwar/rivalWarLogo.png" alt="로고">
       </span>
     </a>
 
@@ -559,8 +559,14 @@
         <small class="arialfontapply">당신의 의견은 어떠신가요?</small>
       </h1>
       <ol class="breadcrumb">
-        <li><a href="#"><i class="fa fa-share-alt-square"></i> 공유하기</a></li>
-
+        <li>
+          <a href="#" data-toggle="sns_share" data-service="naver" data-title="네이버 SNS공유" class="shareBtn"><img src="/dist/img/rivalwar/shareContents/shareNaver.png"></a>
+          <a href="#" data-toggle="sns_share" data-service="twitter" data-title="트위터 SNS공유" class="shareBtn"><img src="/dist/img/rivalwar/shareContents/shareTwitter.png"></a>
+          <a href="#" data-toggle="sns_share" data-service="facebook" data-title="페이스북 SNS공유" class="shareBtn"><img src="/dist/img/rivalwar/shareContents/shareFacebook.png"></a>
+          <a href="#" data-toggle="sns_share" data-service="google" data-title="구글 SNS공유" class="shareBtn"><img src="/dist/img/rivalwar/shareContents/shareGoogle.png"></a>
+          <a href="#" data-toggle="sns_share" data-service="kakao" data-title="카카오톡 SNS공유" class="shareBtn"><img src="/dist/img/rivalwar/shareContents/shareKakao.png"></a>
+          <a href="#" data-toggle="sns_share" data-service="kakaostory" data-title="카카오스토리 SNS공유" class="shareBtn"><img src="/dist/img/rivalwar/shareContents/shareStory.png"></a>
+        </li>
       </ol>
     </section>
 
@@ -596,7 +602,7 @@
               <!-- Small boxes (Stat box) -->
               <div class="row">
                 <!-- S: green chart -->
-                <div class="col-lg-4 col-xs-6">
+                <div class="col-lg-4">
                   <div class="info-box item-C small-box bg-aqua">
                     <span class="info-box-icon"><i class="fa fa-thumbs-o-up"></i></span>
                     <div class="info-box-content">
@@ -612,7 +618,7 @@
                 <!-- E: green chart -->
 
                 <!-- S: yellow chart -->
-                <div class="col-lg-4 col-xs-6">
+                <div class="col-lg-4">
                   <div class="info-box item-B small-box bg-yellow">
                     <span class="info-box-icon"><i class="fa fa-minus"></i></span>
                     <div class="info-box-content">
@@ -628,7 +634,7 @@
                 <!-- E: yellow chart -->
 
                 <!-- S: red chart -->
-                <div class="col-lg-4 col-xs-6">
+                <div class="col-lg-4">
                   <div class="info-box small-box item-A bg-red">
                     <span class="info-box-icon"><i class="fa fa-thumbs-o-down"></i></span>
                     <div class="info-box-content">
@@ -1376,6 +1382,7 @@
 <script src="dist/js/rivalWar/aggregateResult.js"></script>
 <script src="dist/js/rivalWar/compareInfo.js"></script>
 <script src="dist/js/rivalWar/compareSpec.js"></script>
+<script src="dist/js/rivalWar/shareContents.js"></script>
 
 <!-- ANALYTICS START -->
 <!-- https://www.google.com/analytics/settings/home?scid=18527803 web log Analyzer  -->

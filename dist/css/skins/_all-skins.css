@@ -1804,3 +1804,10 @@
   background-color: #46c377;
   color:#fff;
 }
+
+.shareBtn > img {
+  float: left;
+  width: 27px;
+  height: 27px;
+  margin-left: 3px;
+}
