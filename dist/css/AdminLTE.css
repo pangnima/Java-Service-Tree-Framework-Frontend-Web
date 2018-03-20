@@ -334,7 +334,7 @@ a:focus {
   padding: 12px 15px 0 15px;
 }
 .content-header > h1 {
-  margin: 0;
+  margin: 6px 0 0 0;
   font-size: 20px;
   font-weight: bold;
 }
@@ -350,7 +350,7 @@ a:focus {
   margin-top: 0;
   margin-bottom: 0;
   font-size: 12px;
-  padding: 7px 5px;
+  padding: 5px 5px 2px 0;
   position: absolute;
   top: 10px;
   right: 10px;
