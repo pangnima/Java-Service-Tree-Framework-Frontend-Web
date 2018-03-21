@@ -1811,3 +1811,9 @@
   height: 27px;
   margin-left: 3px;
 }
+
+.customTime {
+  color: #999;
+  padding: 10px;
+  font-size: 12px;
+}
