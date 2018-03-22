@@ -350,9 +350,9 @@ a:focus {
   margin-top: 0;
   margin-bottom: 0;
   font-size: 12px;
-  padding: 5px 5px 2px 0;
+  padding: 7px 5px;
   position: absolute;
-  top: 10px;
+  top: 15px;
   right: 10px;
   border-radius: 2px;
 }
@@ -360,7 +360,7 @@ a:focus {
   color: #444;
   text-decoration: none;
   display: inline-block;
-  margin-top: 7px;
+  margin-top: 0;
 }
 .content-header > .breadcrumb > li > a > .fa,
 .content-header > .breadcrumb > li > a > .glyphicon,
@@ -954,6 +954,7 @@ a:focus {
 .dropdown-menu {
   box-shadow: none;
   border-color: #eee;
+  font-size: 12px;
 }
 .dropdown-menu > li > a {
   color: #777;
