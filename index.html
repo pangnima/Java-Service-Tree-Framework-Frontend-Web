@@ -571,20 +571,9 @@
           <div class="box">
             <div class="box-header with-border">
               <h3 class="box-title"><i class="fa fa-bar-chart"></i> 누적 집계 결과 </h3>
+              <span class="customTime"><i class="fa fa-clock-o"></i> 2018-03-13 12:05</span>
               <div class="box-tools pull-right">
-                <span class="customTime"><i class="fa fa-clock-o"></i> 2018-03-13 12:05</span>
-                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
-                </button>
-                <div class="btn-group">
-                  <button type="button" class="btn btn-box-tool dropdown-toggle" data-toggle="dropdown">
-                    <i class="fa fa-wrench"></i></button>
-                  <ul class="dropdown-menu" role="menu">
-                    <li><a href="#">더 자세한 결과보기</a></li>
-                    <li class="divider"></li>
-                    <li><a href="#">Versus Score 계산식</a></li>
-                  </ul>
-                </div>
-                <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+                <button type="button" class="btn btn-default btn-xs"><i class="fa fa-share"></i> 더 자세한 결과보기</button>
               </div>
             </div>
             <!-- /.box-header -->
@@ -639,8 +628,30 @@
                   </div>
                 </div>
                 <!-- E: red chart -->
+
               </div>
               <!-- /.row -->
+              <!-- S: versus scroe chart -->
+              <div class="compare-grap">
+                <div class="left">
+                  <span class="point" id="topScore"></span>
+                  <div class="item-C"></div>
+                  <span class="text"><span>Top50 <em class="reduce-text">Versus Score</em></span></span>
+                </div>
+                <span class="grap-logo"><img src="dist/img/rivalwar/custom/img-grap-logo01.png" alt="logo"></span>
+                <div class="center">
+                  <span class="point" id="midScore"></span>
+                  <div class="item-B"></div>
+                  <span class="text">Top50 <em class="reduce-text">Versus Score</em></span>
+                </div>
+                <span class="grap-logo"><img src="dist/img/rivalwar/custom/img-grap-logo02.png" alt="logo"></span>
+                <div class="right">
+                  <span class="point" id="botScore"></span>
+                  <div class="item-A"></div>
+                  <span class="text">Top50 <em class="reduce-text">Versus Score</em></span>
+                </div>
+              </div>
+              <!-- E: versus scroe chart -->
             </div>
             <!-- ./box-body -->
             <div class="box-footer">

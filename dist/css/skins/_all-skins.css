@@ -1815,6 +1815,99 @@
 
 .customTime {
   color: #999;
-  padding: 10px;
+  padding: 5px;
   font-size: 12px;
+}
+
+
+.compare-grap {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  padding-bottom: 12px;
+  left: 4px;
+}
+
+.compare-grap .left {
+  float: left;
+  width: 33%;
+}
+.compare-grap .center {
+  float: left;
+  width: 33%;
+}
+.compare-grap .right {
+  float: left;
+  width: 33%;
+}
+
+.compare-grap .item-A,
+.compare-grap .item-B,
+.compare-grap .item-C {
+  clear: both;
+  margin-top: 5px;
+  height: 10px;
+  width: 100%;
+}
+
+.compare-grap-box .text {
+  margin-bottom: 3px;
+  font-size: 12px;
+  float: left;
+}
+
+.compare-grap-box .point {
+  margin-bottom: 3px;
+  font-size: 12px;
+  float: left;
+}
+
+.compare-grap-box .center .point,
+.compare-grap-box .center .text {
+  margin-left: 15px;
+}
+
+.compare-grap-box .grap-logo {
+  position: absolute;
+  bottom: 22px;
+  margin-left: -16px;
+}
+
+.grap-logo img{
+  width: 28px;
+}
+.grap-logo{
+  position: absolute;
+  bottom: 22px;
+  margin-left: -16px;
+}
+.item-A {
+  background-color: #e5603b;
+  color: #fff;
+}
+
+.item-B {
+  background-color: #eac85e;
+  color: #fff;
+}
+
+.item-C  {
+  background-color: #72afd2;
+  color:#fff;
+}
+
+.compare-grap-box .compare-text {
+  font-size: 12px;
+  color: #888;
+  line-height: 1.4;
+}
+
+.compare-grap-box .right {}
+
+.compare-grap-box .right .text {
+  float: right;
+}
+
+.compare-grap-box .right .point {
+  float: right;
 }

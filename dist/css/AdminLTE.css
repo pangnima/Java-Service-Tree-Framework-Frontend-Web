@@ -1797,7 +1797,7 @@ a:focus {
 .box-header > .box-tools {
   position: absolute;
   right: 10px;
-  top: 5px;
+  top: 8px;
 }
 .box-header > .box-tools [data-toggle="tooltip"] {
   position: relative;
@@ -2126,6 +2126,7 @@ a:focus {
 .progress-description {
   margin-top: 12px;
   font-size: 15px;
+  font-weight: bold;
 }
 /*
  * Component: Timeline
