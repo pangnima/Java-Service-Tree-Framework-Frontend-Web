@@ -1911,3 +1911,50 @@
 .compare-grap-box .right .point {
   float: right;
 }
+
+button.info-box-icon {
+  width: auto;
+  margin-right: 5px;
+  padding: 0 7px;
+  font-size: 16px;
+  line-height: 24px;
+  color: #fff;
+  border-radius: 3px;
+  border: 1px solid;
+}
+.info-box-icon.type-up {
+  background-color: #21c9e4;
+  border-color: #10acc5;
+}
+.info-box-icon.type-down {
+  background-color: #f0543b;
+  border-color: #ec4028;
+}
+.info-box-icon.type-reply{
+  color: #666;
+  background-color: transparent;
+  border-color: #e7e7e7;
+}
+.info-box-icon.chat-type{
+  width: auto;
+  height: 22px;
+  margin-right: 5px;
+  padding: 0 7px;
+  font-size: 12px;
+  line-height: 20px;
+  color: #000;
+  border-radius: 3px;
+}
+.info-box-icon.chat-count-type{
+  width: auto;
+  height: 22px;
+  margin-right: 5px;
+  padding: 0 7px;
+  font-size: 12px;
+  line-height: 20px;
+  color: #fff;
+  border-radius: 3px;
+}
+.chat .item > .message-add-on {
+  margin-left: 55px;
+}
