@@ -17,12 +17,22 @@ $(function () {
 
   // 로그인 트랜잭션
   var loginResult = getUrlParameter('loginResult');
-  if (loginResult) {
-    //alert("login complete");
-    $("#account").addClass("dropdown-toggle");
-    $("#account").attr("data-toggle", "dropdown");
+  console.log(loginResult);
+  if (loginResult == "success") {
+    console.log("login complete");
   } else {
-    //alert("not login");
-    $("#account").attr("href", "/login.html");
+    console.log("not login");
+
+    $('.btn-facebook').click(function(e) {
+      console.log("facebook login");
+      e.preventDefault();
+      var f = document.createElement("form");
+      f.setAttribute('method',"post");
+      f.setAttribute('action',"/auth/facebook?scope=email");
+      f.setAttribute('id',"facebookSocialloginForm");
+      document.getElementsByTagName('body')[0].appendChild(f);
+      $('#facebookSocialloginForm').submit();
+    });
+
   }
 });
