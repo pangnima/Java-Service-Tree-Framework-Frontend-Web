@@ -30,6 +30,11 @@ $(function () {
       f.setAttribute('method',"post");
       f.setAttribute('action',"/auth/facebook?scope=email");
       f.setAttribute('id',"facebookSocialloginForm");
+
+      $.getJSON("/api/jsTreeServiceFramework/security/csrf.do", function (json) {
+        f.setAttribute('input[name=_csrf]:hidden',json._csrf_token);
+      });
+
       document.getElementsByTagName('body')[0].appendChild(f);
       $('#facebookSocialloginForm').submit();
     });
