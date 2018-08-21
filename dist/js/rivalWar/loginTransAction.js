@@ -26,18 +26,30 @@ $(function () {
     $('.btn-facebook').click(function(e) {
       console.log("facebook login");
       e.preventDefault();
-      var f = document.createElement("form");
-      f.setAttribute('method',"post");
-      f.setAttribute('action',"/auth/facebook?scope=email");
-      f.setAttribute('id',"facebookSocialloginForm");
 
       $.getJSON("/api/jsTreeServiceFramework/security/csrf.do", function (json) {
-        f.setAttribute('input[name=_csrf]:hidden',json._csrf_token);
+        if (json != null) {
+          loginProcessExcute(json._csrf_token);
+        }
       });
 
-      document.getElementsByTagName('body')[0].appendChild(f);
-      $('#facebookSocialloginForm').submit();
     });
 
+  }
+
+  function loginProcessExcute(csrf_token){
+    var f = document.createElement("form");
+    f.setAttribute('method',"post");
+    f.setAttribute('action',"/auth/facebook?scope=email");
+    f.setAttribute('id',"facebookSocialloginForm");
+
+    e=document.createElement('INPUT');
+    e.type='TEXT';
+    e.name='_csrf';
+    e.value=csrf_token;
+    f.appendChild(e);
+
+    document.getElementsByTagName('body')[0].appendChild(f);
+    $('#facebookSocialloginForm').submit();
   }
 });
