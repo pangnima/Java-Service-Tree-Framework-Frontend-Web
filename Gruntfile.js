@@ -4,6 +4,14 @@ module.exports = function (grunt) { // jshint ignore:line
 
   grunt.initConfig({
     pkg   : grunt.file.readJSON('package.json'),
+    connect:{
+      server: {
+        options: {
+          port:9000,
+          keepalive: false,
+        }
+      },
+    },
     watch : {
       less : {
         // Compiles less files upon saving
@@ -305,6 +313,9 @@ module.exports = function (grunt) { // jshint ignore:line
   grunt.registerTask('js', ['concat', 'uglify']);
   // CSS Task
   grunt.registerTask('css', ['less:development', 'less:production', 'replace']);
+
+  grunt.loadNpmTasks('grunt-contrib-connect');
+  grunt.registerTask('server', ['connect:server:keepalive']);
 
   // The default task (running 'grunt' in console) is 'watch'
   grunt.registerTask('default', ['watch']);
