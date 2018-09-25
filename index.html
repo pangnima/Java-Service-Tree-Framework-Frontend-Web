@@ -366,7 +366,7 @@
 
     <!-- Main content -->
     <section class="content">
-
+      <iframe src="http://www.313.co.kr/jira" width="800" height="600" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
     </section>
     <!-- /.content -->
   </div>
@@ -610,5 +610,15 @@
 <script src="dist/js/adminlte.min.js"></script>
 <!-- AdminLTE for demo purposes -->
 <script src="dist/js/demo.js"></script>
+
+<script src="dist/js/fitframe/fitframe.js"></script>
+
+
+<script>
+  // 1. Existing DOM Elements
+  $('.content').fitFrame({
+    mode: 'resize'
+  });
+</script>
 </body>
 </html>
