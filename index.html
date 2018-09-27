@@ -342,10 +342,6 @@
             <li><a href="#" data="https://hub.docker.com/u/313devgrp/" class="addressClick"><i class="fa fa-circle-o"></i> DockerHub</a></li>
           </ul>
         </li>
-        <li class="header">LABELS</li>
-        <li><a href="#"><i class="fa fa-circle-o text-red"></i> <span>Important</span></a></li>
-        <li><a href="#"><i class="fa fa-circle-o text-yellow"></i> <span>Warning</span></a></li>
-        <li><a href="#"><i class="fa fa-circle-o text-aqua"></i> <span>Information</span></a></li>
       </ul>
     </section>
     <!-- /.sidebar -->
@@ -356,12 +352,12 @@
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
-        Dashboard
-        <small>Control panel</small>
+        Development Tools
+        <small>Online Project Document System</small>
       </h1>
       <ol class="breadcrumb">
         <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-        <li class="active">Dashboard</li>
+        <li class="active">confluence</li>
       </ol>
     </section>
 
@@ -626,6 +622,9 @@
   $(".addressClick").click(function () {
     var addressValue = $(this).attr("data");
     $('.fitframe').attr('src', addressValue);
+
+    $(this).parent().siblings().removeClass("active")
+    $(this).parent().addClass("active");
   });
 </script>
 </body>
