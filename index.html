@@ -13,7 +13,7 @@
   <!-- Ionicons -->
   <link rel="stylesheet" href="bower_components/Ionicons/css/ionicons.min.css">
   <!-- Theme style -->
-  <link rel="stylesheet" href="dist/css/AdminLTE.min.css">
+  <link rel="stylesheet" href="dist/css/AdminLTE.css">
   <!-- AdminLTE Skins. Choose a skin from the css/skins
        folder instead of downloading all of them to reduce the load. -->
   <link rel="stylesheet" href="dist/css/skins/_all-skins.min.css">
@@ -332,13 +332,14 @@
             </span>
           </a>
           <ul class="treeview-menu">
-            <li class="active"><a href="index.html"><i class="fa fa-circle-o"></i> Confluence</a></li>
-            <li><a href="index.html"><i class="fa fa-circle-o"></i> Jira</a></li>
-            <li><a href="index2.html"><i class="fa fa-circle-o"></i> Github</a></li>
-              <li><a href="index2.html"><i class="fa fa-circle-o"></i> Fisheye&Cruciable</a></li>
-              <li><a href="index2.html"><i class="fa fa-circle-o"></i> Bamboo</a></li>
-              <li><a href="index2.html"><i class="fa fa-circle-o"></i> Sonar</a></li>
-              <li><a href="index2.html"><i class="fa fa-circle-o"></i> Nexus</a></li>
+            <li class="active"><a href="#" data="http://www.313.co.kr/confluence" class="addressClick"><i class="fa fa-circle-o"></i> Confluence</a></li>
+            <li><a href="#" data="http://www.313.co.kr/jira" class="addressClick"><i class="fa fa-circle-o"></i> Jira</a></li>
+            <li><a href="#" data="https://github.com/jstree" class="addressClick"><i class="fa fa-circle-o"></i> Github</a></li>
+            <li><a href="#" data="http://www.313.co.kr/fecru" class="addressClick"><i class="fa fa-circle-o"></i> Fisheye&Cruciable</a></li>
+            <li><a href="#" data="http://www.313.co.kr/bamboo" class="addressClick"><i class="fa fa-circle-o"></i> Bamboo</a></li>
+            <li><a href="#" data="http://www.313.co.kr/sonar" class="addressClick"><i class="fa fa-circle-o"></i> Sonar</a></li>
+            <li><a href="#" data="http://www.313.co.kr/nexus" class="addressClick"><i class="fa fa-circle-o"></i> Nexus</a></li>
+            <li><a href="#" data="https://hub.docker.com/u/313devgrp/" class="addressClick"><i class="fa fa-circle-o"></i> DockerHub</a></li>
           </ul>
         </li>
         <li class="header">LABELS</li>
@@ -365,7 +366,7 @@
     </section>
 
     <!-- Main content -->
-    <section class="content">
+    <section class="iframeContent">
       <iframe src="http://www.313.co.kr/jira" width="800" height="600" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
     </section>
     <!-- /.content -->
@@ -616,8 +617,15 @@
 
 <script>
   // 1. Existing DOM Elements
-  $('.content').fitFrame({
-    mode: 'resize'
+  $('.iframeContent').fitFrame({
+    mode: 'resize',
+
+  });
+
+  // 4. Destroy / Reinit
+  $(".addressClick").click(function () {
+    var addressValue = $(this).attr("data");
+    $('.fitframe').attr('src', addressValue);
   });
 </script>
 </body>
