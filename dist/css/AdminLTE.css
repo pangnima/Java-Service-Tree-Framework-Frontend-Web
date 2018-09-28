@@ -371,7 +371,7 @@ a:focus {
   font-size: 20px;
 }
 .content-header > h1 > small {
-  font-size: 15px;
+  font-size: 13px;
   display: inline-block;
   padding-left: 4px;
   font-weight: 300;
@@ -1792,7 +1792,7 @@ the class .animated-dropdown-menu to the .dropdown-menu ul (or ol)*/
 .box-header > .ion,
 .box-header .box-title {
   display: inline-block;
-  font-size: 18px;
+  font-size: 15px;
   margin: 0;
   line-height: 1;
 }
@@ -2215,7 +2215,7 @@ the class .animated-dropdown-menu to the .dropdown-menu ul (or ol)*/
   top: 0;
 }
 .timeline > .time-label > span {
-  font-weight: 600;
+  font-weight: 400;
   padding: 5px;
   display: inline-block;
   background-color: #fff;
