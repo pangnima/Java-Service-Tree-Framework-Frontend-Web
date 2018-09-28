@@ -1,14 +1,14 @@
 /*!
-        *   AdminLTE v2.4.5
-        *   Author: Almsaeed Studio
-        *	 Website: Almsaeed Studio <https://adminlte.io>
-        *   License: Open source - MIT
-        *           Please visit http://opensource.org/licenses/MIT for more information
-        */
+*   AdminLTE v2.4.5
+*   Author: Almsaeed Studio
+*	 Website: Almsaeed Studio <https://adminlte.io>
+*   License: Open source - MIT
+*           Please visit http://opensource.org/licenses/MIT for more information
+*/
 /*
-        * Core: General Layout Style
-        * -------------------------
-        */
+* Core: General Layout Style
+* -------------------------
+*/
 /* nanum-gothic-regular - latin_korean */
 @font-face {
   font-family: 'Nanum Gothic';
@@ -101,8 +101,8 @@ body {
   background-color: #f9fafc;
 }
 /*
-        * Content Wrapper - contains the main content
-        */
+* Content Wrapper - contains the main content
+*/
 .content-wrapper,
 .main-footer {
   -webkit-transition: -webkit-transform 0.3s ease-in-out, margin 0.3s ease-in-out;
@@ -234,9 +234,9 @@ a:focus {
   margin-top: 5px;
 }
 /*
-        * Component: Main Header
-        * ----------------------
-        */
+* Component: Main Header
+* ----------------------
+*/
 .main-header {
   position: relative;
   max-height: 100px;
@@ -457,9 +457,9 @@ a:focus {
   }
 }
 /*
-        * Component: Sidebar
-        * ------------------
-        */
+* Component: Sidebar
+* ------------------
+*/
 .main-sidebar {
   position: absolute;
   top: 0;
@@ -605,8 +605,8 @@ a:focus {
   display: block;
 }
 /*
-        * Component: Sidebar Mini
-        */
+* Component: Sidebar Mini
+*/
 @media (min-width: 768px) {
   .sidebar-mini.sidebar-collapse .content-wrapper,
   .sidebar-mini.sidebar-collapse .right-side,
@@ -723,8 +723,8 @@ a:focus {
   margin-top: -7px;
 }
 /*
-        * Component: Control sidebar. By default, this is the right sidebar.
-        */
+* Component: Control sidebar. By default, this is the right sidebar.
+*/
 .control-sidebar-bg {
   position: fixed;
   z-index: 1000;
@@ -952,9 +952,9 @@ a:focus {
   color: #5e5e5e;
 }
 /*
-        * Component: Dropdown menus
-        * -------------------------
-        */
+* Component: Dropdown menus
+* -------------------------
+*/
 /*Dropdowns in general*/
 .dropdown-menu {
   box-shadow: none;
@@ -1207,7 +1207,7 @@ a:focus {
   }
 }
 /* Add fade animation to dropdown menus by appending
-        the class .animated-dropdown-menu to the .dropdown-menu ul (or ol)*/
+the class .animated-dropdown-menu to the .dropdown-menu ul (or ol)*/
 .open:not(.dropup) > .animated-dropdown-menu {
   backface-visibility: visible !important;
   -webkit-animation: flipInX 0.7s both;
@@ -1281,9 +1281,9 @@ a:focus {
   }
 }
 /*
-        * Component: Form
-        * ---------------
-        */
+* Component: Form
+* ---------------
+*/
 .form-control {
   border-radius: 0;
   box-shadow: none;
@@ -1366,9 +1366,9 @@ a:focus {
   line-height: 30px;
 }
 /*
-        * Component: Progress Bar
-        * -----------------------
-        */
+* Component: Progress Bar
+* -----------------------
+*/
 .progress,
 .progress > .progress-bar {
   -webkit-box-shadow: none;
@@ -1497,9 +1497,9 @@ a:focus {
   background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
 }
 /*
-        * Component: Small Box
-        * --------------------
-        */
+* Component: Small Box
+* --------------------
+*/
 .small-box {
   border-radius: 2px;
   position: relative;
@@ -1575,9 +1575,9 @@ a:focus {
   }
 }
 /*
-        * Component: Box
-        * --------------
-        */
+* Component: Box
+* --------------
+*/
 .box {
   position: relative;
   border-radius: 3px;
@@ -2056,9 +2056,9 @@ a:focus {
   color: #444;
 }
 /*
-        * Component: Info Box
-        * -------------------
-        */
+* Component: Info Box
+* -------------------
+*/
 .info-box {
   display: block;
   min-height: 90px;
@@ -2127,9 +2127,9 @@ a:focus {
   margin: 0;
 }
 /*
-        * Component: Timeline
-        * -------------------
-        */
+* Component: Timeline
+* -------------------
+*/
 .timeline {
   position: relative;
   margin: 0 0 30px 0;
@@ -2225,9 +2225,9 @@ a:focus {
   border-bottom-color: #ddd;
 }
 /*
-        * Component: Button
-        * -----------------
-        */
+* Component: Button
+* -----------------
+*/
 .btn {
   border-radius: 3px;
   -webkit-box-shadow: none;
@@ -2383,9 +2383,9 @@ a:focus {
   font-weight: 400;
 }
 /*
-        * Component: Callout
-        * ------------------
-        */
+* Component: Callout
+* ------------------
+*/
 .callout {
   border-radius: 3px;
   margin: 0 0 20px 0;
@@ -2423,9 +2423,9 @@ a:focus {
   border-color: #00733e;
 }
 /*
-        * Component: alert
-        * ----------------
-        */
+* Component: alert
+* ----------------
+*/
 .alert {
   border-radius: 3px;
 }
@@ -2462,9 +2462,9 @@ a:focus {
   border-color: #00acd6;
 }
 /*
-        * Component: Nav
-        * --------------
-        */
+* Component: Nav
+* --------------
+*/
 .nav > li > a:hover,
 .nav > li > a:active,
 .nav > li > a:focus {
@@ -2636,9 +2636,9 @@ a:focus {
   border-radius: 0 !important;
 }
 /*
-        * Component: Products List
-        * ------------------------
-        */
+* Component: Products List
+* ------------------------
+*/
 .products-list {
   list-style: none;
   margin: 0;
@@ -2689,9 +2689,9 @@ a:focus {
   border-bottom-width: 0;
 }
 /*
-        * Component: Table
-        * ----------------
-        */
+* Component: Table
+* ----------------
+*/
 .table > thead > tr > th,
 .table > tbody > tr > th,
 .table > tfoot > tr > th,
@@ -2739,17 +2739,17 @@ table.text-center th {
   text-align: right;
 }
 /*
-        * Component: Label
-        * ----------------
-        */
+* Component: Label
+* ----------------
+*/
 .label-default {
   background-color: #d2d6de;
   color: #444;
 }
 /*
-        * Component: Direct Chat
-        * ----------------------
-        */
+* Component: Direct Chat
+* ----------------------
+*/
 .direct-chat .box-body {
   border-bottom-right-radius: 0;
   border-bottom-left-radius: 0;
@@ -2962,9 +2962,9 @@ table.text-center th {
   border-left-color: #00a65a;
 }
 /*
-        * Component: Users List
-        * ---------------------
-        */
+* Component: Users List
+* ---------------------
+*/
 .users-list > li {
   width: 25%;
   float: left;
@@ -2996,9 +2996,9 @@ table.text-center th {
   font-size: 12px;
 }
 /*
-        * Component: Carousel
-        * -------------------
-        */
+* Component: Carousel
+* -------------------
+*/
 .carousel-control.left,
 .carousel-control.right {
   background-image: none;
@@ -3012,9 +3012,9 @@ table.text-center th {
   margin-top: -20px;
 }
 /*
-        * Component: modal
-        * ----------------
-        */
+* Component: modal
+* ----------------
+*/
 .modal {
   background: rgba(0, 0, 0, 0.3);
 }
@@ -3057,9 +3057,9 @@ table.text-center th {
   border-color: #c23321;
 }
 /*
-        * Component: Social Widgets
-        * -------------------------
-        */
+* Component: Social Widgets
+* -------------------------
+*/
 .box-widget {
   border: none;
   position: relative;
@@ -3147,9 +3147,9 @@ table.text-center th {
   width: auto;
 }
 /*
-        * Page: Mailbox
-        * -------------
-        */
+* Page: Mailbox
+* -------------
+*/
 .mailbox-messages > .table {
   margin: 0;
 }
@@ -3216,9 +3216,9 @@ table.text-center th {
   height: auto;
 }
 /*
-        * Page: Lock Screen
-        * -----------------
-        */
+* Page: Lock Screen
+* -----------------
+*/
 /* ADD THIS CLASS TO THE <BODY> TAG */
 .lockscreen {
   background: #d2d6de;
