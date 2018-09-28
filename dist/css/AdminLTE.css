@@ -75,6 +75,12 @@ body {
 .font13{
   font-size: 13px;
 }
+.fontw500{
+  font-weight: 500;
+}
+.fontw600{
+  font-weight: 600;
+}
 /* Layout */
 .wrapper {
   height: 100%;
