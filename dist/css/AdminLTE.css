@@ -81,6 +81,10 @@ body {
 .fontw600{
   font-weight: 600;
 }
+.btnimg{
+  width: 25px;
+  height: 25px;
+}
 /* Layout */
 .wrapper {
   height: 100%;
