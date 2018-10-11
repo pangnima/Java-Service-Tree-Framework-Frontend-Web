@@ -374,6 +374,13 @@
       <!-- sidebar menu: : style can be found in sidebar.less -->
       <ul class="sidebar-menu" data-widget="tree">
         <li class="header fontw600">MAIN NAVIGATION</li>
+
+        <li class="active">
+          <a href="/" class="addressClick" style="font-size:12px">
+            <i class="fa fa-hand-peace-o"></i> Welcome
+          </a>
+        </li>
+
         <li class="active treeview font13">
           <a href="#">
             <i class="fa fa-object-group"></i> <span>Dev Support</span>
@@ -383,8 +390,8 @@
             </span>
           </a>
           <ul class="treeview-menu">
-            <li class="active">
-              <a href="#" class="addressClick" style="font-size:12px">
+            <li>
+              <a href="/DevSupport-ALM.html" class="addressClick" style="font-size:12px">
                 <i class="fa fa-history"></i> ALM
               </a>
             </li>
@@ -398,7 +405,7 @@
 
         <li class="active treeview font13">
           <a href="#">
-            <i class="fa fa-object-group"></i> <span>About TSF</span>
+            <i class="fa fa-graduation-cap"></i> <span>About TSF</span>
             <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
               <span class="label label-primary pull-right">1</span>
@@ -407,7 +414,7 @@
           <ul class="treeview-menu">
             <li>
               <a href="/AboutTSF-TSFIntroduction.html" class="addressClick" style="font-size:12px">
-                <i class="fa fa-history"></i> TSF Introduction
+                <i class="fa fa-television"></i> TSF Introduction
               </a>
             </li>
           </ul>
@@ -415,7 +422,7 @@
 
         <li class="active treeview font13">
           <a href="#">
-            <i class="fa fa-object-group"></i> <span>Community</span>
+            <i class="fa fa-users"></i> <span>Community</span>
             <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
               <span class="label label-primary pull-right">1</span>
@@ -424,7 +431,7 @@
           <ul class="treeview-menu">
             <li>
               <a href="/Community-Contributors.html" class="addressClick" style="font-size:12px">
-                <i class="fa fa-history"></i> Contributors
+                <i class="fa fa-child"></i> Contributors
               </a>
             </li>
           </ul>
@@ -439,13 +446,12 @@
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
-        <i class="fa fa-history"></i> ALM
-        <small>Application Lifecycle Management System</small>
+        <i class="fa fa-hand-peace-o"></i> Welcome!
+        <small>@Validated(value = DeveloperPortal.class)</small>
       </h1>
       <ol class="breadcrumb">
         <li><a href="#"><i class="fa fa-sitemap"></i> Home</a></li>
-        <li class="active">Dev Support</li>
-        <li class="active">ALM</li>
+        <li class="active">Welcome !</li>
       </ol>
     </section>
 
@@ -453,210 +459,125 @@
     <section class="content">
       <div class="row">
         <div class="col-md-12">
-          <div class="box">
+          <!-- Box Comment -->
+          <div class="box box-widget">
             <div class="box-header with-border">
-              <h3 class="box-title">Project Management Body of Knowledge Base</h3>
-
-              <div class="box-tools pull-right">
+              <div class="user-block">
+                <img class="img-circle" src="/dist/img/web/index/admin.jpg" alt="User Image">
+                <span class="username"><a href="#">DongMin Lee.</a></span>
+                <span class="description">Shared publicly - 7:30 PM Today</span>
+              </div>
+              <!-- /.user-block -->
+              <div class="box-tools">
+                <button type="button" class="btn btn-box-tool" data-toggle="tooltip" title="Mark as read">
+                  <i class="fa fa-circle-o"></i></button>
                 <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
                 </button>
-                <div class="btn-group">
-                  <button type="button" class="btn btn-box-tool dropdown-toggle" data-toggle="dropdown">
-                    <i class="fa fa-wrench"></i></button>
-                  <ul class="dropdown-menu" role="menu">
-                    <li><a href="#">Action</a></li>
-                    <li><a href="#">Another action</a></li>
-                    <li><a href="#">Something else here</a></li>
-                    <li class="divider"></li>
-                    <li><a href="#">Separated link</a></li>
-                  </ul>
-                </div>
                 <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
               </div>
+              <!-- /.box-tools -->
             </div>
             <!-- /.box-header -->
             <div class="box-body">
-              <div class="row">
-                <div class="col-md-12">
 
+              <!-- post text -->
+              <p><strong>지혜로운 개발자가 되기 위한 격언</strong></p>
 
+              <p>
+                소프트웨어 개발을 하면 할수록 인생의 지혜를 얻게 된다.
+                어떤 이들은 개발은 단순한 작업이 아닌, 삶을 사는 방식이라고도 말한다.
+                코드를 작성하는 일 자체가 직장과 일상 속에서 자신의 모습을 구현하는 일이기 때문이다.
+                깃허브(GitHub)에는 <a href="https://github.com/AntJanus/programmers-proverbs#a-hundred-programmers-wont-make-a-two-year-project-in-a-week" target="_blank">개발자 속담(Programmer’s Proverbs)</a>이라는 저장소가 생성됐는데,
+                개발자를 위한 지혜로운 문장들을 모아놓은 것이다.
+                이제 미래 세대를 이끌어나갈 새싹들이 보고 배울 지혜에 대해 알려주고자 한다.
+              </p>
+              <br>
+              <p><strong>개발은 기초작업이 중요하다</strong></p>
+              <p>
+                <ul class="list-unstyled">
+                  <li>채색하기 전에 밑그림을 그리듯이, 소프트웨어도 설계와 시공에 대한 가이드가 될 큰 밑그림이 필요하다.
+                    이를 '아키텍처'라고 부르는데,
+                    일단 시스템이 개발된 뒤에는 잘못된 구조를 바로잡기가 쉽지 않다는 점에서 매우 중요한 작업이다.
+                    <ul>
+                      <li>프로토타입 없이 완성품을 만들지 마라.</li>
+                      <li>표준문서가 없다면 개발도 빠를 수 없다.</li>
+                      <li>아키텍처와 디자인은 실행 시간이 핵심이 아니라 문제와 변화를 위한 대비책이다.</li>
+                      <li>장기 지원이 필요한 애플리케이션의 아키텍처를 남겨두라.</li>
+                    </ul>
+                  </li>
+                </ul>
+              </p>
 
+              <blockquote class="font16">
+                <p>프로젝트가 거듭될수록 쌓이는 지식은 다음 프로젝트에 적용이 되어야 한다.</p>
+                <small>일관된 서비스코드 작성을 위한, 재사용 가능하게 협업화된 클래스를 제공하는 <strong><cite title="Source Title">서비스 프레임워크가 필요한 시점이다.</cite></strong></small>
+              </blockquote>
 
-                  <!-- The timeline -->
-                  <ul class="timeline timeline-inverse">
-                    <!-- timeline time label -->
-                    <li class="time-label">
-                        <span class="bg-red font13">
-                          Requirements
-                        </span>
-                    </li>
-                    <!-- /.timeline-label -->
-                    <!-- timeline item -->
-                    <li>
-                      <i class="fa fa-balance-scale bg-maroon"></i>
+              <!-- Attachment -->
+              <div class="attachment-block clearfix">
+                <img class="attachment-img" src="/dist/img/web/index/jstree.png" alt="Attachment Image">
 
-                      <div class="timeline-item">
-                        <span class="time"><i class="fa fa-clock-o"></i> 09:00 (MON)</span>
+                <div class="attachment-pushed">
+                  <h4 class="attachment-heading"><a href="http://www.lipsum.com/">Lorem ipsum text generator</a></h4>
 
-                        <h3 class="timeline-header"><a href="http://www.313.co.kr/confluence" target="_blank">착수</a> <small>Customers & Sales</small></h3>
-
-                        <div class="timeline-body col-md-4 font11">
-                          <a href="http://www.313.co.kr/confluence" target="_blank" class="btn bg-maroon btn-xs" style="font-size: 11px;"><i class="fa fa-share"></i> Confluence by 313 DEV GRP</a>
-                        </div>
-                        <div class="timeline-footer col-md-8 font12 fontw600">
-                          Input : Plan & Opinion & Idea<br>
-                          Skill : Negotiation<br>
-                          Output : Requirements<br>
-                          System : Atlassian Confluence ( Online Document System )
-                        </div>
-                      </div>
-                    </li>
-                    <!-- END timeline item -->
-                    <!-- timeline item -->
-                    <li>
-                      <i class="fa fa-check-square-o bg-yellow"></i>
-
-                      <div class="timeline-item">
-                        <span class="time"><i class="fa fa-clock-o"></i> 10:00 (TUE)</span>
-
-                        <h3 class="timeline-header"><a href="http://www.313.co.kr/confluence" target="_blank">기획</a> <small>Project Manager</small></h3>
-
-                        <div class="timeline-body col-md-4 font11">
-                          <a href="http://www.313.co.kr/confluence" target="_blank" class="btn bg-yellow btn-xs" style="font-size: 11px;"><i class="fa fa-share"></i> Confluence by 313 DEV GRP</a>
-                        </div>
-                        <div class="timeline-footer col-md-8 font12 fontw600">
-                          Input : Requirements<br>
-                          Skill : Requirements engineering<br>
-                          Output : SRS ( Software Requirements Specification )<br>
-                          System : Atlassian Confluence ( Online Document System )
-                        </div>
-                      </div>
-                    </li>
-                    <!-- END timeline item -->
-                    <!-- timeline item -->
-                    <li>
-                      <i class="fa fa-cubes bg-teal"></i>
-
-                      <div class="timeline-item">
-                        <span class="time"><i class="fa fa-clock-o"></i> 12:00 (WED)</span>
-
-                        <h3 class="timeline-header"><a href="http://www.313.co.kr/jira" target="_blank">실행 및 이행</a> <small>Developers</small></h3>
-
-                        <div class="timeline-body col-md-4 font11">
-                          <a href="http://www.313.co.kr/jira" target="_blank" class="btn bg-teal btn-xs" style="font-size: 11px;"><i class="fa fa-share"></i> Jira by 313 DEV GRP</a>
-                        </div>
-                        <div class="timeline-footer col-md-8 font12 fontw600">
-                          Input : SRS ( Software Requirements Specification )<br>
-                          Skill : Architecture design<br>
-                          Output : SDS ( Software Design Specification )<br>
-                          System : Atlassian Jira ( Issue Management System )
-                        </div>
-                      </div>
-                    </li>
-                    <!-- END timeline item -->
-                    <!-- timeline time label -->
-                    <li class="time-label">
-                        <span class="bg-aqua font13">
-                          Development
-                        </span>
-                    </li>
-                    <!-- /.timeline-label -->
-                    <!-- timeline item -->
-                    <li>
-                      <i class="fa fa-sitemap bg-light-blue"></i>
-
-                      <div class="timeline-item">
-                        <span class="time"><i class="fa fa-clock-o"></i> 15:00 (THU)</span>
-
-                        <h3 class="timeline-header"><a href="https://github.com/jstree" target="_blank">실행 및 이행</a> <small>Developers</small></h3>
-
-                        <div class="timeline-body col-md-4 font11">
-                          <a href="https://github.com/jstree" target="_blank" class="btn bg-light-blue btn-xs" style="font-size: 11px;"><i class="fa fa-share"></i> GitHub by 313 DEV GRP</a>
-                          <a href="http://www.313.co.kr/fecru" target="_blank" class="btn bg-light-blue btn-xs" style="font-size: 11px;"><i class="fa fa-share"></i> Fecru by 313 DEV GRP</a>
-                          <a href="http://www.313.co.kr/bamboo" target="_blank" class="btn bg-light-blue btn-xs" style="font-size: 11px;"><i class="fa fa-share"></i> Bamboo by 313 DEV GRP</a>
-                        </div>
-                        <div class="timeline-footer col-md-8 font12 fontw600">
-                          Input : SDS ( Software Design Specification )<br>
-                          Skill : Coding<br>
-                          Output : Source Code & Artifacts<br>
-                          System : GitHub ( Software Version Management )
-                        </div>
-                      </div>
-                    </li>
-                    <!-- END timeline item -->
-                    <!-- timeline item -->
-                    <li>
-                      <i class="fa fa-bug bg-purple"></i>
-
-                      <div class="timeline-item">
-                        <span class="time"><i class="fa fa-clock-o"></i> 17:00 (FRI)</span>
-
-                        <h3 class="timeline-header"><a href="https://github.com/jstree" target="_blank">감시 및 통제</a> <small>Quality Assurance</small></h3>
-
-                        <div class="timeline-body col-md-4 font11">
-                          <a href="http://www.313.co.kr/analysis" target="_blank" class="btn bg-purple btn-xs" style="font-size: 11px;"><i class="fa fa-share"></i> Project Analysis by 313 DEV GRP</a>
-                          <a href="http://www.313.co.kr/nexus" target="_blank" class="btn bg-purple btn-xs" style="font-size: 11px;"><i class="fa fa-share"></i> Nexus by 313 DEV GRP</a>
-                          <a href="http://www.313.co.kr/sonar" target="_blank" class="btn bg-purple btn-xs" style="font-size: 11px;"><i class="fa fa-share"></i> Sonar by 313 DEV GRP</a>
-                        </div>
-                        <div class="timeline-footer col-md-8 font12 fontw600">
-                          Input : Source Code & Artifacts<br>
-                          Skill : Quality Assurance<br>
-                          Output : TCR ( Test Case Result )<br>
-                          System : SonarQube
-                        </div>
-                      </div>
-                    </li>
-                    <!-- END timeline item -->
-                    <!-- timeline time label -->
-                    <li class="time-label">
-                        <span class="bg-navy font13">
-                          Operation
-                        </span>
-                    </li>
-                    <!-- /.timeline-label -->
-                    <!-- timeline item -->
-                    <li>
-                      <i class="fa fa-train bg-black"></i>
-
-                      <div class="timeline-item">
-                        <span class="time"><i class="fa fa-clock-o"></i> 18:00 (SAT)</span>
-
-                        <h3 class="timeline-header"><a href="https://github.com/jstree" target="_blank">종료</a> <small>Project Member</small></h3>
-
-                        <div class="timeline-body col-md-4 font11">
-                          <a href="https://hub.docker.com/u/313devgrp/" target="_blank" class="btn bg-black btn-xs" style="font-size: 11px;"><i class="fa fa-share"></i> DockerHub by 313 DEV GRP</a>
-                        </div>
-                        <div class="timeline-footer col-md-8 font12 fontw600">
-                          Input : TCR ( Test Case Result )<br>
-                          Skill : Lessons learned and retrospective<br>
-                          Output : Container<br>
-                          System : Docker ( Cloud Operating system )
-                        </div>
-                      </div>
-                    </li>
-                    <!-- END timeline item -->
-                    <li>
-                      <i class="fa fa-clock-o bg-gray"></i>
-                    </li>
-                  </ul>
-
-
-
-
-
+                  <div class="attachment-text">
+                    Description about the attachment can be placed here.
+                    Lorem Ipsum is simply dummy text of the printing and typesetting industry... <a href="#">more</a>
+                  </div>
+                  <!-- /.attachment-text -->
                 </div>
-                <!-- /.col -->
+                <!-- /.attachment-pushed -->
               </div>
-              <!-- /.row -->
+              <!-- /.attachment-block -->
+
+              <!-- Social sharing buttons -->
+              <button type="button" class="btn btn-default btn-xs"><i class="fa fa-share"></i> Share</button>
+              <button type="button" class="btn btn-default btn-xs"><i class="fa fa-thumbs-o-up"></i> Like</button>
+              <span class="pull-right text-muted">45 likes - 2 comments</span>
             </div>
-            <!-- ./box-body -->
-            <div class="box-footer">
-              <div class="row">
-                <div class="col-md-12">
-                  &nbsp;
+            <!-- /.box-body -->
+            <div class="box-footer box-comments">
+              <div class="box-comment">
+                <!-- User image -->
+                <img class="img-circle img-sm" src="../dist/img/user3-128x128.jpg" alt="User Image">
+
+                <div class="comment-text">
+                      <span class="username">
+                        Maria Gonzales
+                        <span class="text-muted pull-right">8:03 PM Today</span>
+                      </span><!-- /.username -->
+                  It is a long established fact that a reader will be distracted
+                  by the readable content of a page when looking at its layout.
                 </div>
+                <!-- /.comment-text -->
               </div>
-              <!-- /.row -->
+              <!-- /.box-comment -->
+              <div class="box-comment">
+                <!-- User image -->
+                <img class="img-circle img-sm" src="../dist/img/user5-128x128.jpg" alt="User Image">
+
+                <div class="comment-text">
+                      <span class="username">
+                        Nora Havisham
+                        <span class="text-muted pull-right">8:03 PM Today</span>
+                      </span><!-- /.username -->
+                  The point of using Lorem Ipsum is that it has a more-or-less
+                  normal distribution of letters, as opposed to using
+                  'Content here, content here', making it look like readable English.
+                </div>
+                <!-- /.comment-text -->
+              </div>
+              <!-- /.box-comment -->
+            </div>
+            <!-- /.box-footer -->
+            <div class="box-footer">
+              <form action="#" method="post">
+                <img class="img-responsive img-circle img-sm" src="../dist/img/user4-128x128.jpg" alt="Alt Text">
+                <!-- .img-push is used to add margin to elements next to floating images -->
+                <div class="img-push">
+                  <input type="text" class="form-control input-sm" placeholder="Press enter to post comment">
+                </div>
+              </form>
             </div>
             <!-- /.box-footer -->
           </div>
