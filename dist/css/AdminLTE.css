@@ -75,6 +75,9 @@ body {
 .font13{
   font-size: 13px;
 }
+.contentsTail{
+  margin-left: 10px;
+}
 .fontw500{
   font-weight: 500;
 }
