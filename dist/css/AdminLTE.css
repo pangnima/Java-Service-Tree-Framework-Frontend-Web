@@ -84,6 +84,9 @@ body {
 .fontw600{
   font-weight: 600;
 }
+.lineh165{
+  line-height: 1.65;
+}
 .btnimg{
   width: 25px;
   height: 25px;
