@@ -476,12 +476,13 @@
         <!-- Content Header (Page header) -->
         <section class="content-header">
             <h1>
-                <i class="fa fa-hand-peace-o"></i> Welcome!
-                <small>@Validated(value = DeveloperPortal.class)</small>
+                <i class="fa fa-television"></i> TSF Introduction
+                <small>Prezi Presentation</small>
             </h1>
             <ol class="breadcrumb">
                 <li><a href="#"><i class="fa fa-sitemap"></i> Home</a></li>
-                <li class="active">Welcome !</li>
+                <li class="active">About TSF</li>
+                <li class="active">TSF Introduction</li>
             </ol>
         </section>
 
@@ -494,8 +495,8 @@
                         <div class="box-header with-border">
                             <div class="user-block">
                                 <img class="img-circle" src="/dist/img/web/index/admin.jpg" alt="User Image">
-                                <span class="username"><a href="#">DongMin Lee.</a></span>
-                                <span class="description">Shared publicly - 7:30 PM Today</span>
+                                <span class="username"><a href="#">jsTree Service Framework<sup class="label-primary">TSF</sup></a></span>
+                                <span class="description">Intoduction & Definition</span>
                             </div>
                             <!-- /.user-block -->
                             <div class="box-tools">
@@ -511,49 +512,34 @@
                         <div class="box-body">
 
                             <!-- post text -->
-                            <p><strong>jsTree Service Framework<sup class="label-primary">TSF</sup></strong></p>
+                            <p>(정의) <strong>jsTree Service Framework<sup class="label-primary">TSF</sup>란?</strong></p>
 
                             <p class="font13 lineh165">
-
-                                우리<sup>[1]</sup>는 <strong>엄청나게 빠르게 개발하고<sup>time</sup>, 높은 품질을 보장하면서도<sup>quality</sup>, 비용을 줄일 수 있는 방안<sup>cost</sup></strong>을 제시한다.<br>
-                                우리는 <a href="https://zetawiki.com/wiki/%EC%9D%80%ED%83%84%ED%99%98%EC%9D%80_%EC%97%86%EB%8B%A4"><strong>No Silver Bullets</strong><sub>은탄환은 없다.</sub></a>주장을, 이제 정면으로 반박하고 반증하고자 한다.<br>
-
+                                소프트웨어의 비즈니스 로직 구현시, 미리 구현된 TSF 모델을 확장하여(M)<br>
+                                Service, DAO 등 구현 부분에 해당하는 Base Code를 재사용 가능하게 협업화된 클래스들을 제공하는 것
                             </p>
 
                             <br>
+                            <p>(개요) <strong>jsTree Service Framework<sup class="label-primary">TSF</sup>소개</strong></p>
                             <ul class="list-unstyled font13 lineh165">
-                                <li>우리는 jsTree Service Framework<sup>TSF</sup>을 통해 단순히 템플릿 프로젝트, 라이브러리를 제공하는데 그 목적을 다하지 않는다.
+                                <li>
                                     <ul>
-                                        <li>우리는 세련된 기법으로 <strong>프로젝트 문서를 온라인화 하는 방법</strong>을 소개한다.<a href="https://www.pmi.org/pmbok-guide-standards"><sub>with PMBOK</sub></a></li>
-                                        <li>점증적 개발을 지원하는 <strong>단계별 표준적인 개발 지원도구</strong>를 소개한다.<sub>심지어 이 도구들은 모두 가상화 이미지로 제공될 수 있다.</sub></li>
-                                        <li><strong>통일된 프로그래밍 환경</strong>을 제공한다.<sub>project architect & project template & project source code</sub></li>
-                                        <li>더불어 서비스 레이어 코드 작성시 적용할 jsTree Service Framework<sup>TSF</sup><strong>아키텍쳐와 디자인은 100% 하위 호환성을 가진체 Update</strong>를 제공한다.</li>
+                                        <li>jsTree Service Framework는 날로 복잡해지고, 급격하게 변화하는 고객의 요구사항을 빠르게 반영하면서, 어플리케이션의 품질과 구조를 일정하게 유지하기 위한 서비스 레이어 프레임워크입니다.</li>
+                                        <li>jsTree Service Framework는 일관된 객체 모델을 활용하여 개발 생산성과 품질 그리고 수시 유지보수에 대한 적응성 등을 동시에 보장하는 어플리케이션 서비스 프레임워크 입니다.</li>
+                                        <li>본 프레임워크의 목적은 확장된 단일 모델을 활용하여 어플리케이션을 단일 로직에 대응 할 수 있음을 근간으로 하고 있습니다.</li>
+                                        <li>프레임워크 효용성 증명 방법은 확장 Tree 모델만을 활용하여 토론형 비교 사이트를 개발 후, 실서비스에서 MetaData만을 구현하는 수준만으로도 사용자의 요구사항을 수렴할 수 있다는 명제를 집중하여 구현하고 있습니다.</li>
+                                        <li>또한 활용성 측면을 고려하여, 전자정부 표준 프레임워크를 기반으로 본 서비스 프레임워크를 개발하여, 중소기업부터 대기업까지 폭넓게 사용할 수 있도록 하였습니다.</li>
+                                        <li>구현 결과 RDB를 활용한 대부분의 Java Application 로직을 단일하게 변경 및 개발 할 수 있었으며, Application 구현과 운용에 매우 다양한 긍정적 효과를 확인 할 수 있었습니다.</li>
                                     </ul>
                                 </li>
                             </ul>
 
                             <br><br>
                             <blockquote class="font13">
-                                <p>프로젝트가 거듭될수록 쌓이는 지식은 다음 프로젝트에 적용되어야 한다.</p>
-                                <small>일관된 서비스코드 작성을 위한, 재사용 가능하게 협업화된 클래스를 제공하는 <strong><cite title="Source Title">서비스 프레임워크가 필요한 시점이다.</cite></strong></small>
+                                <p>우리의 TSF 1차 릴리즈는 이미 배포된 상태입니다. ( 깃허브 참조 )</p>
+                                <p>우리는 TSF 2차 릴리즈를 글로벌 오픈프론티어와 함께 발전하고 확산하며,</p>
+                                <p>우리의 TSF가 좀더 많이 쓰이고, 좀더 편하기 쓰이기 위하여 노력할 것입니다.</p>
                             </blockquote>
-
-                            <!-- Attachment -->
-                            <div class="attachment-block clearfix">
-                                <img class="attachment-img" src="/dist/img/web/index/jstree.png" alt="Attachment Image">
-
-                                <div class="attachment-pushed">
-                                    <h4 class="attachment-heading"><a href="http://www.lipsum.com/">jsTree Service Framework</a></h4>
-
-                                    <div class="attachment-text">
-                                        Description about the attachment can be placed here.
-                                        Lorem Ipsum is simply dummy text of the printing and typesetting industry... <a href="#">more</a>
-                                    </div>
-                                    <!-- /.attachment-text -->
-                                </div>
-                                <!-- /.attachment-pushed -->
-                            </div>
-                            <!-- /.attachment-block -->
 
                             <!-- Social sharing buttons -->
                             <button type="button" class="btn btn-default btn-xs"><i class="fa fa-share"></i> Share</button>
