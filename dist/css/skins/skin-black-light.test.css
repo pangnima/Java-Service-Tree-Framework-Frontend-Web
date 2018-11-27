@@ -70,8 +70,10 @@
 .skin-black-light .wrapper,
 .skin-black-light .main-sidebar,
 .skin-black-light .left-side {
+    background-color: #ffffff;
 }
 .skin-black-light .main-sidebar {
+    background-color: #ffffff;
 }
 .skin-black-light .user-panel > .info,
 .skin-black-light .user-panel > .info > a {
