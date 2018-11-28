@@ -212,9 +212,10 @@ body {
     min-height: 250px;
     margin-right: 5px;
     margin-left: auto;
-    -webkit-box-shadow: 4px 4px 3px 0px rgba(0,0,0,0.4);
-    -moz-box-shadow: 4px 4px 3px 0px rgba(0,0,0,0.4);
-    box-shadow: 4px 4px 3px 0px rgba(0,0,0,0.4);
+    background-color: #f5f7f7;
+    -webkit-box-shadow: 2px 2px 2px 0px rgba(0,0,0,0.25);
+    -moz-box-shadow: 2px 2px 2px 0px rgba(0,0,0,0.25);
+    box-shadow: 2px 2px 2px 0px rgba(0,0,0,0.25);
     z-index: 1;
     position: relative;
 }
@@ -489,11 +490,9 @@ a:focus {
     min-height: 100%;
     width: 230px;
     z-index: 810;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
-    -webkit-transition: -webkit-transform 0.3s ease-in-out, width 0.3s ease-in-out;
-    -moz-transition: -moz-transform 0.3s ease-in-out, width 0.3s ease-in-out;
-    -o-transition: -o-transform 0.3s ease-in-out, width 0.3s ease-in-out;
-    transition: transform 0.3s ease-in-out, width 0.3s ease-in-out;
+    -webkit-box-shadow: 4px 0px 2px 0px rgba(0, 0, 0, 0.42);
+    -moz-box-shadow:    4px 0px 2px 0px rgba(0, 0, 0, 0.42);
+    box-shadow:         4px 0px 2px 0px rgba(0, 0, 0, 0.42);
 }
 @media (max-width: 767px) {
     .main-sidebar {
