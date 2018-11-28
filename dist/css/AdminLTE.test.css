@@ -61,6 +61,7 @@ body {
     font-weight: 400;
     overflow-x: hidden;
     overflow-y: auto;
+    margin-top: 100px;
 }
 /* Font */
 .font10{
@@ -253,7 +254,7 @@ a:focus {
 .page-header > small {
     color: #666;
     display: block;
-    margin-top: 5px;
+    padding-top: 5px;
 }
 /*
 * Component: Main Header
@@ -362,7 +363,6 @@ a:focus {
     height: 50px;
     font-size: 20px;
     line-height: 50px;
-    text-align: center;
     width: 230px;
     font-family: 'Nanum Gothic';
     padding: 0 15px;
