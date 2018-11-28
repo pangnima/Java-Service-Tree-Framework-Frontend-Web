@@ -51,10 +51,10 @@
 html,
 body {
     height: 100%;
-    background-image: url('#'), url('/dist/img/web/halfbak.jpg');
-    background-repeat: no-repeat, no-repeat;
-    background-size: 80% 100%;
-    background-position: left top, right top;
+    background-image: url('/dist/img/web/halfbak.jpg');
+    background-repeat: no-repeat;
+    background-size: 80%;
+    background-position: right top;
 }
 .layout-boxed html,
 .layout-boxed body {
