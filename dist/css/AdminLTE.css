@@ -61,6 +61,7 @@ body {
   font-weight: 400;
   overflow-x: hidden;
   overflow-y: auto;
+  margin-top: 100px;
 }
 /* Font */
 .font10{
@@ -110,11 +111,10 @@ body {
   max-width: 1250px;
   margin: 0 auto;
   min-height: 100%;
-  box-shadow: 0 0 8px rgba(0, 0, 0, 0.5);
   position: relative;
 }
 .layout-boxed {
-  background-color: #f9fafc;
+
 }
 /*
 * Content Wrapper - contains the main content
@@ -127,6 +127,7 @@ body {
   transition: transform 0.3s ease-in-out, margin 0.3s ease-in-out;
   margin-left: 230px;
   z-index: 820;
+  background-color: #f5f7f7;
 }
 .layout-top-nav .content-wrapper,
 .layout-top-nav .main-footer {
@@ -155,14 +156,11 @@ body {
 }
 .content-wrapper {
   min-height: 100%;
-  background-color: #ecf0f5;
   z-index: 800;
+  background-color: #f5f7f7;
 }
 .main-footer {
-  background: #fff;
-  padding: 15px;
   color: #444;
-  border-top: 1px solid #d2d6de;
 }
 /* Fixed layout */
 .fixed .main-header,
@@ -207,11 +205,14 @@ body {
 /* Content */
 .content {
   min-height: 250px;
-  padding: 15px;
-  margin-right: auto;
+  margin-right: 5px;
   margin-left: auto;
-  padding-left: 15px;
-  padding-right: 15px;
+  background-color: #f5f7f7;
+  -webkit-box-shadow: 2px 2px 2px 0px rgba(0,0,0,0.25);
+  -moz-box-shadow: 2px 2px 2px 0px rgba(0,0,0,0.25);
+  box-shadow: 2px 2px 2px 0px rgba(0,0,0,0.25);
+  z-index: 1;
+  position: relative;
 }
 /* H1 - H6 font */
 h1,
@@ -247,7 +248,7 @@ a:focus {
 .page-header > small {
   color: #666;
   display: block;
-  margin-top: 5px;
+  padding-top: 5px;
 }
 /*
 * Component: Main Header
@@ -257,7 +258,6 @@ a:focus {
   position: relative;
   max-height: 100px;
   z-index: 1030;
-  border-top: 6px solid #333;
 }
 .main-header .navbar {
   -webkit-transition: margin-left 0.3s ease-in-out;
@@ -357,7 +357,6 @@ a:focus {
   height: 50px;
   font-size: 20px;
   line-height: 50px;
-  text-align: center;
   width: 230px;
   font-family: 'Nanum Gothic';
   padding: 0 15px;
@@ -485,10 +484,9 @@ a:focus {
   min-height: 100%;
   width: 230px;
   z-index: 810;
-  -webkit-transition: -webkit-transform 0.3s ease-in-out, width 0.3s ease-in-out;
-  -moz-transition: -moz-transform 0.3s ease-in-out, width 0.3s ease-in-out;
-  -o-transition: -o-transform 0.3s ease-in-out, width 0.3s ease-in-out;
-  transition: transform 0.3s ease-in-out, width 0.3s ease-in-out;
+  -webkit-box-shadow: 4px 0px 7px 0px rgba(0, 0, 0, 0.4);
+  -moz-box-shadow:    4px 0px 7px 0px rgba(0, 0, 0, 0.4);
+  box-shadow:         4px 0px 7px 0px rgba(0, 0, 0, 0.4);
 }
 @media (max-width: 767px) {
   .main-sidebar {
@@ -750,9 +748,10 @@ a:focus {
 }
 .control-sidebar-bg,
 .control-sidebar {
+  background-color: #ffffff;
   top: 0;
-  right: -230px;
-  width: 230px;
+  right: 0;
+  width: 100%;
   -webkit-transition: right 0.3s ease-in-out;
   -o-transition: right 0.3s ease-in-out;
   transition: right 0.3s ease-in-out;
@@ -760,7 +759,7 @@ a:focus {
 .control-sidebar {
   position: absolute;
   padding-top: 50px;
-  z-index: 1010;
+  box-shadow: 0 6px 4px -2px rgba(0, 0, 0, 0.4);
 }
 @media (max-width: 767px) {
   .control-sidebar {
@@ -964,7 +963,6 @@ a:focus {
   margin-left: -14px;
 }
 .control-sidebar-light .control-sidebar-menu > li > a:hover {
-  background: #f4f4f5;
 }
 .control-sidebar-light .control-sidebar-menu > li > a .menu-info > p {
   color: #5e5e5e;
@@ -1067,7 +1065,6 @@ a:focus {
 .navbar-nav > .notifications-menu > .dropdown-menu > li .menu > li > a:hover,
 .navbar-nav > .messages-menu > .dropdown-menu > li .menu > li > a:hover,
 .navbar-nav > .tasks-menu > .dropdown-menu > li .menu > li > a:hover {
-  background: #f4f4f4;
   text-decoration: none;
 }
 .navbar-nav > .notifications-menu > .dropdown-menu > li .menu > li > a {
@@ -1189,7 +1186,6 @@ a:focus {
   }
 }
 .navbar-nav > .user-menu > .dropdown-menu > .user-footer {
-  background-color: #f9f9f9;
   padding: 10px;
 }
 .navbar-nav > .user-menu > .dropdown-menu > .user-footer:before,
@@ -1205,7 +1201,6 @@ a:focus {
 }
 @media (max-width: 991px) {
   .navbar-nav > .user-menu > .dropdown-menu > .user-footer .btn-default:hover {
-    background-color: #f9f9f9;
   }
 }
 .navbar-nav > .user-menu .user-image {
@@ -1601,7 +1596,6 @@ the class .animated-dropdown-menu to the .dropdown-menu ul (or ol)*/
   border-radius: 3px;
   background: #ffffff;
   border-top: 3px solid #d2d6de;
-  margin-bottom: 20px;
   width: 100%;
   box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
 }

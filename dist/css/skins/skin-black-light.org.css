@@ -2,33 +2,20 @@
  * Skin: Black
  * -----------
  */
-.copyrightLayer{
-    z-index: 1;
-    position: relative;
-    margin-top: 5px;
-}
-
-.asideWrapper{
-    background-color: #f5f7f7;
-    position: absolute;
-    margin-top: 100px;
-    top: 0;
-    right: 0;
-    width: 50%;
-    height: 100%;
-}
 /* skin-black navbar */
 .skin-black-light .main-header {
+    -webkit-box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.05);
+    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.05);
 }
 .skin-black-light .main-header .navbar-toggle {
     color: #333;
 }
 .skin-black-light .main-header .navbar-brand {
     color: #333;
+    border-right: 1px solid #eee;
 }
 .skin-black-light .main-header .navbar {
     background-color: #ffffff;
-    box-shadow: 0 6px 4px -2px rgba(0, 0, 0, 0.4);
 }
 .skin-black-light .main-header .navbar .nav > li > a {
     color: #333333;
@@ -52,31 +39,38 @@
 }
 .skin-black-light .main-header .navbar > .sidebar-toggle {
     color: #333;
+    border-right: 1px solid #eee;
 }
 .skin-black-light .main-header .navbar .navbar-nav > li > a {
+    border-right: 1px solid #eee;
 }
 .skin-black-light .main-header .navbar .navbar-custom-menu .navbar-nav > li > a,
 .skin-black-light .main-header .navbar .navbar-right > li > a {
+    border-left: 1px solid #eee;
     border-right-width: 0;
 }
 .skin-black-light .main-header > .logo {
     background-color: #ffffff;
     color: #333333;
     border-bottom: 0 solid transparent;
+    border-right: 1px solid #eee;
 }
 .skin-black-light .main-header > .logo:hover {
     background-color: #fcfcfc;
 }
 @media (max-width: 767px) {
     .skin-black-light .main-header > .logo {
+        background-color: #222222;
         color: #ffffff;
         border-bottom: 0 solid transparent;
         border-right: none;
     }
     .skin-black-light .main-header > .logo:hover {
+        background-color: #1f1f1f;
     }
 }
 .skin-black-light .main-header li.user-header {
+    background-color: #222;
 }
 .skin-black-light .content-header {
     background: transparent;
@@ -85,10 +79,11 @@
 .skin-black-light .wrapper,
 .skin-black-light .main-sidebar,
 .skin-black-light .left-side {
-    background-color: #ffffff;
+    background-color: #f9fafc;
 }
-.skin-black-light .main-sidebar {
-    background-color: #ffffff;
+.skin-black-light .content-wrapper,
+.skin-black-light .main-footer {
+    border-left: 1px solid #d2d6de;
 }
 .skin-black-light .user-panel > .info,
 .skin-black-light .user-panel > .info > a {
@@ -101,13 +96,16 @@
 }
 .skin-black-light .sidebar-menu > li.header {
     color: #848484;
+    background: #f9fafc;
 }
 .skin-black-light .sidebar-menu > li > a {
+    border-left: 3px solid transparent;
     font-weight: 600;
 }
 .skin-black-light .sidebar-menu > li:hover > a,
 .skin-black-light .sidebar-menu > li.active > a {
     color: #000000;
+    background: #f4f4f5;
 }
 .skin-black-light .sidebar-menu > li.active {
     border-left-color: #ffffff;
@@ -116,6 +114,7 @@
     font-weight: 600;
 }
 .skin-black-light .sidebar-menu > li > .treeview-menu {
+    background: #f4f4f5;
 }
 .skin-black-light .sidebar a {
     color: #444444;
@@ -123,24 +122,26 @@
 .skin-black-light .sidebar a:hover {
     text-decoration: none;
 }
-.skin-black-light .sidebar-menu .treeview-menu > li > a {
+.skin-black-light .treeview-menu > li > a {
     color: #777777;
 }
-.skin-black-light .sidebar-menu .treeview-menu > li.active > a,
-.skin-black-light .sidebar-menu .treeview-menu > li > a:hover {
+.skin-black-light .treeview-menu > li.active > a,
+.skin-black-light .treeview-menu > li > a:hover {
     color: #000000;
 }
-.skin-black-light .sidebar-menu .treeview-menu > li.active > a {
+.skin-black-light .treeview-menu > li.active > a {
     font-weight: 600;
 }
 .skin-black-light .sidebar-form {
     border-radius: 3px;
+    border: 1px solid #d2d6de;
     margin: 10px 10px;
 }
 .skin-black-light .sidebar-form input[type="text"],
 .skin-black-light .sidebar-form .btn {
     box-shadow: none;
     background-color: #fff;
+    border: 1px solid transparent;
     height: 35px;
 }
 .skin-black-light .sidebar-form input[type="text"] {
@@ -167,5 +168,6 @@
 }
 @media (min-width: 768px) {
     .skin-black-light.sidebar-mini.sidebar-collapse .sidebar-menu > li > .treeview-menu {
+        border-left: 1px solid #d2d6de;
     }
 }
