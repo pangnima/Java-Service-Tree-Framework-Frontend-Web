@@ -2,12 +2,16 @@
  * Skin: Black
  * -----------
  */
+.login-text{
+  margin-top: 20px;
+  margin-right: 5px;
+  color: #444444;
+}
 .copyrightLayer{
   z-index: 1;
   position: relative;
   margin-top: 5px;
 }
-
 .asideWrapper{
   background-color: #f5f7f7;
   position: absolute;
@@ -28,7 +32,7 @@
 }
 .skin-black-light .main-header .navbar {
   background-color: #ffffff;
-  box-shadow: 3px 4px 5px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 6px 4px -2px rgba(0, 0, 0, 0.4);
 }
 .skin-black-light .main-header .navbar .nav > li > a {
   color: #333333;
