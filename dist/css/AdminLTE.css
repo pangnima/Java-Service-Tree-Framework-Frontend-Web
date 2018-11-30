@@ -4884,6 +4884,7 @@ table.text-center th {
 .user-block .comment {
   display: block;
   margin-left: 50px;
+  margin-top: 18px;
 }
 .user-block .username {
   font-size: 16px;
