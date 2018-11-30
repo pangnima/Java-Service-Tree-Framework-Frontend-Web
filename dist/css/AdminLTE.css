@@ -386,7 +386,7 @@ a:focus {
   padding-left: 4px;
   font-weight: 300;
 }
-.content-header > .breadcrumb {
+.breadcrumb {
   float: right;
   background: transparent;
   margin-top: 0;
@@ -394,25 +394,25 @@ a:focus {
   font-size: 12px;
   padding: 7px 5px;
   position: absolute;
-  top: 15px;
+  top: 25px;
   right: 10px;
   border-radius: 2px;
 }
-.content-header > .breadcrumb > li > a {
+.breadcrumb > li > a {
   color: #444;
   text-decoration: none;
   display: inline-block;
 }
-.content-header > .breadcrumb > li > a > .fa,
-.content-header > .breadcrumb > li > a > .glyphicon,
-.content-header > .breadcrumb > li > a > .ion {
+.breadcrumb > li > a > .fa,
+.breadcrumb > li > a > .glyphicon,
+.breadcrumb > li > a > .ion {
   margin-right: 5px;
 }
-.content-header > .breadcrumb > li + li:before {
+.breadcrumb > li + li:before {
   content: '>\00a0';
 }
 @media (max-width: 991px) {
-  .content-header > .breadcrumb {
+  .breadcrumb {
     position: relative;
     margin-top: 5px;
     top: 0;
@@ -421,7 +421,7 @@ a:focus {
     background: #d2d6de;
     padding-left: 10px;
   }
-  .content-header > .breadcrumb li:before {
+  .breadcrumb li:before {
     color: #97a0b3;
   }
 }
