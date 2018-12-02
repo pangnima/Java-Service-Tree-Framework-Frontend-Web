@@ -418,7 +418,7 @@ a:focus {
     top: 0;
     right: 0;
     float: none;
-    background: #d2d6de;
+    background: #f9f9f9;
     padding-left: 10px;
   }
   .breadcrumb li:before {
