@@ -65,15 +65,19 @@ body {
 }
 /* Font */
 .font10{
+  font-family: 'Nanum Gothic';
   font-size: 10px;
 }
 .font11{
+  font-family: 'Nanum Gothic';
   font-size: 11px;
 }
 .font12{
+  font-family: 'Nanum Gothic';
   font-size: 12px;
 }
 .font13{
+  font-family: 'Nanum Gothic';
   font-size: 13px;
 }
 .contentsTail{
