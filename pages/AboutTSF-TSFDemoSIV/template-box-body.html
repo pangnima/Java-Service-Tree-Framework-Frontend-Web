@@ -62,24 +62,31 @@
 
     <script type="text/javascript">
         function jstreeDataTableReload() {
-            $('#jstreeTable').dataTable({
+            var jstreeDataTable = $('#jstreeTable').dataTable({
                 "ajax": {
-                    "url": "/com/ext/jstree/springiBatis/core/getMonitor.do",
-                    "dataSrc": ""
+                    "url": "/com/ext/jstree/springiBatis/core/monitor/list.do",
+                    "dataSrc": "rows"
                 },
                 "destroy": true,
                 "processing": true,
                 "responsive": true,
-                "columns": [
-                    { "data": "c_id" },
-                    { "data": "c_parentid" },
-                    { "data": "c_position" },
-                    { "data": "c_left" },
-                    { "data": "c_right" },
-                    { "data": "c_level" },
-                    { "data": "c_title" },
-                    { "data": "c_type" }
-                ]
+                "columns": [{
+                    "data": "cell.0"
+                }, {
+                    "data": "cell.1"
+                }, {
+                    "data": "cell.2"
+                }, {
+                    "data": "cell.3"
+                }, {
+                    "data": "cell.4"
+                }, {
+                    "data": "cell.5"
+                }, {
+                    "data": "cell.6"
+                }, {
+                    "data": "cell.7"
+                }]
             });
         }
 
