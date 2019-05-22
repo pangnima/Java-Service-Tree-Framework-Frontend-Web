@@ -1,44 +1,46 @@
-<div class="font12">
-    <button type="button" id="add_folder">
-        <i class="fa fa-plus"></i>
-        add folder
-    </button>
-    <button type="button" id="add_default">
-        <i class="fa fa-plus"></i>
-        add file
-    </button>
-    <button type="button" id="rename">
-        <i class="fa fa-eraser"></i>
-        rename
-    </button>
-    <button type="button" id="remove">
-        <i class="fa fa-minus"></i>
-        remove
-    </button>
-    <button type="button" id="cut">
-        <i class="fa fa-cut"></i>
-        cut
-    </button>
-    <button type="button" id="copy">
-        <i class="fa fa-copy"></i>
-        copy
-    </button>
-    <button type="button" id="paste">
-        <i class="fa fa-paste"></i>
-        paste
-    </button>
-    <button type="button" id="refresh" title="refresh" onclick="$('#demo').jstree('refresh',-1);">
-        <i class="fa fa-search"></i>
-        refresh
-    </button>
-    <input type="text" id="text" placeholder="찾을 노드 이름 입력" data-tooltip="Press Enter To Node To Search" />
-    <button type="button" id="search" title="Search">
-        <i class="fa fa-search"></i>
-        Search
-    </button>
+<div class="font12 col-md-3">
+    <div>
+        <button type="button" id="add_folder">
+            <i class="fa fa-plus"></i>
+            add folder
+        </button>
+        <button type="button" id="add_default">
+            <i class="fa fa-plus"></i>
+            add file
+        </button>
+        <button type="button" id="rename">
+            <i class="fa fa-eraser"></i>
+            rename
+        </button>
+        <button type="button" id="remove">
+            <i class="fa fa-minus"></i>
+            remove
+        </button>
+        <button type="button" id="cut">
+            <i class="fa fa-cut"></i>
+            cut
+        </button>
+        <button type="button" id="copy">
+            <i class="fa fa-copy"></i>
+            copy
+        </button>
+        <button type="button" id="paste">
+            <i class="fa fa-paste"></i>
+            paste
+        </button>
+        <button type="button" id="refresh" title="refresh" onclick="$('#demo').jstree('refresh',-1);">
+            <i class="fa fa-search"></i>
+            refresh
+        </button>
+        <input type="text" id="text" placeholder="찾을 노드 이름 입력" data-tooltip="Press Enter To Node To Search" />
+        <button type="button" id="search" title="Search">
+            <i class="fa fa-search"></i>
+            Search
+        </button>
+    </div>
+    <div id="demo"></div>
 </div>
-<div id="demo" class="font12"></div>
-<div class="font12">
+<div class="font12 col-md-9">
 
     <table id="jstreeTable" class="display responsive no-wrap" cellspacing="0">
         <thead>
@@ -453,6 +455,5 @@
             jsTreeBuild();
         });
         // Code for the menu buttons
-
     </script>
 </div>
