@@ -1,0 +1,63 @@
+<div class="font12 col-md-3">
+    <div id="mmenu">
+        <!--
+        <button type="button" id="add_folder">
+            <i class="fa fa-plus"></i>
+            add folder
+        </button>
+        <button type="button" id="add_default">
+            <i class="fa fa-plus"></i>
+            add file
+        </button>
+        <button type="button" id="rename">
+            <i class="fa fa-eraser"></i>
+            rename
+        </button>
+        <button type="button" id="remove">
+            <i class="fa fa-minus"></i>
+            remove
+        </button>
+        <button type="button" id="cut">
+            <i class="fa fa-cut"></i>
+            cut
+        </button>
+        <button type="button" id="copy">
+            <i class="fa fa-copy"></i>
+            copy
+        </button>
+        <button type="button" id="paste">
+            <i class="fa fa-paste"></i>
+            paste
+        </button>
+        <button type="button" id="refresh" title="refresh" onclick="$('#demo').jstree('refresh',-1);">
+            <i class="fa fa-search"></i>
+            refresh
+        </button>
+        -->
+        <input type="text" id="text" placeholder="찾을 노드 이름 입력" data-tooltip="Press Enter To Node To Search" />
+        <button type="button" id="search" title="Search">
+            <i class="fa fa-search"></i>
+            Search
+        </button>
+    </div>
+    <div id="demo"></div>
+    <div id='alog' style="float: left; border: 1px solid gray; padding: 5px; height: 150px; margin-top: 15px; overflow: auto; width: 98%;">분석 결과</div>
+</div>
+<div class="font12 col-md-9">
+
+    <table id="jstreeTable" class="display responsive no-wrap" cellspacing="0">
+        <thead>
+        <tr>
+            <th>c_id</th>
+            <th>c_parentid</th>
+            <th>c_position</th>
+            <th>c_left</th>
+            <th>c_right</th>
+            <th>c_level</th>
+            <th>c_title</th>
+            <th>c_type</th>
+        </tr>
+        </thead>
+    </table>
+
+</div>
