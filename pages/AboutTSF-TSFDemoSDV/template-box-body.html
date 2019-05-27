@@ -110,18 +110,12 @@
             console.log("updateOnlineList");
             console.log(onlineList.length);
         }
-        //]]>
-    </script>
-
-    <script type="text/javascript">
-        //<![CDATA[
         function jstreeDataTableReload() {
             var jstreeDataTable = $('#jstreeTable').dataTable({
                 "ajax": {
                     "url": "/com/ext/jstree/springiBatis/core/monitor/list.do",
                     "dataSrc": "rows"
                 },
-                "destroy": true,
                 "processing": true,
                 "responsive": true,
                 "columns": [{
@@ -147,28 +141,21 @@
         $(function() {
             jstreeDataTableReload();
 
-            //DWR CODE start
             function rollDice() {
                 return (Math.floor(Math.random() * 1000000) + 1);
             }
-
-            if (typeof dwr != "undefined") {
-                Chat.login(rollDice(), function(data) {
-                    console.log(data);
-                });
-            }
-            //DWR CODE end
+            Chat.login(rollDice(), function(data) {
+                console.log(data);
+            });
         });
 
         function jsTreeClick(selectedNodeID) {
             console.log(selectedNodeID);
         }
-
         //]]>
     </script>
 
     <script type="text/javascript">
-        //<![CDATA[
         function jsTreeBuild(){
 
             $.ajax({
@@ -535,6 +522,5 @@
             jsTreeBuild();
         });
         // Code for the menu buttons
-        //]]>
     </script>
 </div>
