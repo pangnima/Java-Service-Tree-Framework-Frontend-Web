@@ -106,10 +106,12 @@
             console.log("addMessage");
             console.log(name + time + message);
         }
+
         function updateOnlineList(onlineList) {
             console.log("updateOnlineList");
             console.log(onlineList.length);
         }
+
         function jstreeDataTableReload() {
             var jstreeDataTable = $('#jstreeTable').dataTable({
                 "ajax": {
@@ -156,6 +158,7 @@
     </script>
 
     <script type="text/javascript">
+        //<![CDATA[
         function jsTreeBuild(){
 
             $.ajax({
@@ -522,5 +525,6 @@
             jsTreeBuild();
         });
         // Code for the menu buttons
+        //]]>
     </script>
 </div>
