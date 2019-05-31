@@ -290,7 +290,7 @@
                     // All the options are almost the same as jQuery's AJAX (read the docs)
                     "ajax": {
                         // the URL to fetch the data
-                        "url": "/com/ext/jstree/strutsiBatis/core/getChildNode.do",
+                        "url": "/com/ext/jstree/strutsiBatis/core/getChildNode.action",
                         // the `data` function is executed in the instance's scope
                         // the parameter is the node being loaded
                         // (may be -1, 0, or undefined when loading the root nodes)
@@ -310,7 +310,7 @@
                     // As this has been a common question - async search
                     // Same as above - the `ajax` config option is actually jQuery's AJAX object
                     "ajax": {
-                        "url": "/com/ext/jstree/strutsiBatis/core/searchNode.do",
+                        "url": "/com/ext/jstree/strutsiBatis/core/searchNode.action",
                         // You get the search string as a parameter
                         "data": function(str) {
                             return {
@@ -381,7 +381,7 @@
                     "initially_open": ["node_2", "node_3"]
                 }
             }).bind("create.jstree", function(e, data) {
-                $.post("/com/ext/jstree/strutsiBatis/core/addNode.do", {
+                $.post("/com/ext/jstree/strutsiBatis/core/addNode.action", {
                     "ref": data.rslt.parent.attr("id").replace("node_", "").replace("copy_", ""),
                     "c_position": data.rslt.position,
                     "c_title": data.rslt.name,
@@ -406,7 +406,7 @@
                     $.ajax({
                         async: false,
                         type: 'POST',
-                        url: "/com/ext/jstree/strutsiBatis/core/removeNode.do",
+                        url: "/com/ext/jstree/strutsiBatis/core/removeNode.action",
                         data: {
                             "c_id": this.id.replace("node_", "").replace("copy_", "")
                         },
@@ -423,7 +423,7 @@
                     });
                 });
             }).bind("rename.jstree", function(e, data) {
-                $.post("/com/ext/jstree/strutsiBatis/core/alterNode.do", {
+                $.post("/com/ext/jstree/strutsiBatis/core/alterNode.action", {
                     "c_id": data.rslt.obj.attr("id").replace("node_", "").replace("copy_", ""),
                     "c_title": data.rslt.new_name,
                     "c_type": data.rslt.obj.attr("rel")
@@ -441,7 +441,7 @@
                     jsTreeBuild();
                 });
             }).bind("set_type.jstree", function(e, data) {
-                $.post("/com/ext/jstree/strutsiBatis/core/alterNodeType.do", {
+                $.post("/com/ext/jstree/strutsiBatis/core/alterNodeType.action", {
                     "c_id": data.rslt.obj.attr("id").replace("node_", "").replace("copy_", ""),
                     "c_title": data.rslt.new_name,
                     "c_type": data.rslt.obj.attr("rel")
@@ -460,7 +460,7 @@
                     $.ajax({
                         async: false,
                         type: 'POST',
-                        url: "/com/ext/jstree/strutsiBatis/core/moveNode.do",
+                        url: "/com/ext/jstree/strutsiBatis/core/moveNode.action",
                         data: {
                             "c_id": $(this).attr("id").replace("node_", "").replace("copy_", ""),
                             "ref": data.rslt.cr === -1 ? 1 : data.rslt.np.attr("id").replace("node_", "").replace("copy_", ""),
