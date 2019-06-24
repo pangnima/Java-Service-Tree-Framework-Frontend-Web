@@ -18,7 +18,7 @@
         </div>
         <div class="clear"></div>
         <div>
-            <input type="hidden" name="_csrf" value="e51faa89-d24d-453f-993c-7726bb30f997" />
+            <input type="hidden" name="_csrf" id="_csrf" value="" />
         </div></form><div class="account">
     <h2><a href="../services/signup">Don't have an account? Sign Up!</a></h2>
     <div class="span">
@@ -28,11 +28,11 @@
             </button>
             <div class="clear"></div>
             <div>
-                <input type="hidden" name="_csrf" value="e51faa89-d24d-453f-993c-7726bb30f997" />
+                <input type="hidden" name="_csrf" id="_csrf" value="" />
             </div></form></div>
     <div class="span1">
         <form name='TwitterSocialloginForm'
-              action="../auth/twitter?scope=email,user_about_me,user_birthday" method='POST'>
+              action="../auth/twitter?scope=email" method='POST'>
             <img src="../images/twitter.png" alt="">
             <button type="submit">
                 <i>Sign In with Twitter</i>
@@ -47,7 +47,7 @@
             </button>
             <div class="clear"></div>
             <div>
-                <input type="hidden" name="_csrf" value="e51faa89-d24d-453f-993c-7726bb30f997" />
+                <input type="hidden" name="_csrf" id="_csrf" value="" />
             </div></form></div>
     <div class="span3">
         <form id="command" name="GoogleSocialloginForm" action="&lt;c:url value=&#39;../auth/google&#39; /&gt;" method="POST"><img src="../images/gmail2.png" alt="">
@@ -57,8 +57,34 @@
             <input type="hidden" name="scope" value="https://www.googleapis.com/auth/userinfo.profile https://www.googleapis.com/auth/userinfo#email https://www.googleapis.com/auth/plus.me https://www.googleapis.com/auth/tasks https://www-opensocial.googleusercontent.com/api/people https://www.googleapis.com/auth/plus.login" />
             <div class="clear"></div>
             <div>
-                <input type="hidden" name="_csrf" value="e51faa89-d24d-453f-993c-7726bb30f997" />
+                <input type="hidden" name="_csrf" id="_csrf" value="" />
             </div></form></div>
 </div>
     <div class="clear"></div>
 </div>
+
+<script type="text/javascript">
+    //<![CDATA[
+    function jsTreeBuild() {
+
+        $.ajax({
+            async: false,
+            type: 'GET',
+            url: "/api/jsTreeServiceFramework/security/csrf.do",
+            success: function (r) {
+                var token = r._csrf_token;
+                var header = r._csrf_headerName;
+                $(document).ajaxSend(function (e, xhr, options) {
+                    xhr.setRequestHeader(header, token);
+                });
+
+                $('#_csrf').val(token);
+            }
+        });
+    }
+
+    $(function() {
+        jsTreeBuild();
+    });
+    //]]>
+</script>
