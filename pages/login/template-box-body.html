@@ -1,0 +1,64 @@
+<div class="login-form">
+    <form id="command" name="loginForm" class="login_form" action="/j_spring_security_check" method="POST"><h1>Login Into Your Account</h1>
+        <ul>
+            <li>
+                <input type="text" class="textbox1" id="username" name="j_username" placeholder="Username" required="">
+                <p><img src="../images/contact.png" alt=""></p>
+            </li>
+            <li>
+                <input type="password" id="password" name="j_password" class="textbox2" placeholder="Password">
+                <p><img src="../images/lock.png" alt=""></p>
+            </li>
+        </ul>
+        <input type="submit" name="Sign In" value="Sign In">
+        <div class="clear"></div>
+        <label class="checkbox"><input type="checkbox" name="checkbox" checked=""><i></i>Remember me</label>
+        <div class="forgot">
+            <a href="#">forgot password?</a>
+        </div>
+        <div class="clear"></div>
+        <div>
+            <input type="hidden" name="_csrf" value="e51faa89-d24d-453f-993c-7726bb30f997" />
+        </div></form><div class="account">
+    <h2><a href="../services/signup">Don't have an account? Sign Up!</a></h2>
+    <div class="span">
+        <form id="command" name="facebookSocialloginForm" action="../auth/facebook?scope=email" method="POST"><img src="../images/facebook.png" alt="">
+            <button type="submit">
+                <i>Sign In with Facebook</i>
+            </button>
+            <div class="clear"></div>
+            <div>
+                <input type="hidden" name="_csrf" value="e51faa89-d24d-453f-993c-7726bb30f997" />
+            </div></form></div>
+    <div class="span1">
+        <form name='TwitterSocialloginForm'
+              action="../auth/twitter?scope=email,user_about_me,user_birthday" method='POST'>
+            <img src="../images/twitter.png" alt="">
+            <button type="submit">
+                <i>Sign In with Twitter</i>
+            </button>
+            <div class="clear"></div>
+        </form>
+    </div>
+    <div class="span2">
+        <form id="command" name="LinkedInSocialloginForm" action="&lt;c:url value=&#39;../auth/linkedin&#39; /&gt;" method="POST"><img src="../images/linkedin.png" alt="">
+            <button type="submit">
+                <i>Sign In with Linkedin</i>
+            </button>
+            <div class="clear"></div>
+            <div>
+                <input type="hidden" name="_csrf" value="e51faa89-d24d-453f-993c-7726bb30f997" />
+            </div></form></div>
+    <div class="span3">
+        <form id="command" name="GoogleSocialloginForm" action="&lt;c:url value=&#39;../auth/google&#39; /&gt;" method="POST"><img src="../images/gmail2.png" alt="">
+            <button type="submit">
+                <i>Sign In with Google</i>
+            </button>
+            <input type="hidden" name="scope" value="https://www.googleapis.com/auth/userinfo.profile https://www.googleapis.com/auth/userinfo#email https://www.googleapis.com/auth/plus.me https://www.googleapis.com/auth/tasks https://www-opensocial.googleusercontent.com/api/people https://www.googleapis.com/auth/plus.login" />
+            <div class="clear"></div>
+            <div>
+                <input type="hidden" name="_csrf" value="e51faa89-d24d-453f-993c-7726bb30f997" />
+            </div></form></div>
+</div>
+    <div class="clear"></div>
+</div>
