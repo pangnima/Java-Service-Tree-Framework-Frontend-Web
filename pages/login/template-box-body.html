@@ -29,6 +29,7 @@
                             <label>
                                 <input type="checkbox"> Remember me
                             </label>
+                            <button type="submit" class="btn btn-primary pull-right btn-sm">Login</button>
                         </div>
                     </div>
                 </div>
@@ -39,81 +40,51 @@
             </div>
             <!-- /.box-body -->
             <div class="box-footer">
-                <button type="submit" class="btn btn-default">forgot password?</button>
-                <button type="submit" class="btn btn-info pull-right">Sign in</button>
+                <button type="button" class="btn btn-default btn-sm" onClick="location.href='http://www.daum.net'">forgot password?</button>
+                <button type="button" class="btn btn-default pull-right btn-sm" onClick="location.href='http://www.daum.net'">Want SignUp?</button>
             </div>
             <!-- /.box-footer -->
         </form>
     </div>
-</div>
 
-<div class="login-form">
-    <form id="command" name="loginForm" class="login_form" action="/j_spring_security_check" method="POST"><h1>Login Into Your Account</h1>
-        <ul>
-            <li>
-                <input type="text" class="textbox1" id="username" name="j_username" placeholder="Username" required="">
-                <p><img src="../images/contact.png" alt=""></p>
-            </li>
-            <li>
-                <input type="password" id="password" name="j_password" class="textbox2" placeholder="Password">
-                <p><img src="../images/lock.png" alt=""></p>
-            </li>
-        </ul>
-        <input type="submit" name="Sign In" value="Sign In">
-        <div class="clear"></div>
-        <label class="checkbox"><input type="checkbox" name="checkbox" checked=""><i></i>Remember me</label>
-        <div class="forgot">
-            <a href="#">forgot password?</a>
+    <div class="col-sm-12 col-md-6">
+        <div class="box-header with-border">
+            <h4 style="background-color:#f7f7f7; font-size: 14px; font-weight: bold; text-align: center; padding: 7px 10px; margin-top: 0;">
+                Social Login ( Auto Signup )
+            </h4>
         </div>
-        <div class="clear"></div>
-        <div>
-            <input type="hidden" name="_csrf" id="_csrf" value="" />
+        <!-- /.box-header -->
+        <!-- form start -->
+        <div class="box-body">
+            <a class="btn btn-block btn-social btn-dropbox">
+                <i class="fa fa-dropbox"></i> Sign in with Dropbox
+            </a>
+            <a class="btn btn-block btn-social btn-facebook">
+                <i class="fa fa-facebook"></i> Sign in with Facebook
+            </a>
+            <a class="btn btn-block btn-social btn-flickr">
+                <i class="fa fa-flickr"></i> Sign in with Flickr
+            </a>
+            <a class="btn btn-block btn-social btn-github">
+                <i class="fa fa-github"></i> Sign in with GitHub
+            </a>
+            <a class="btn btn-block btn-social btn-google">
+                <i class="fa fa-google-plus"></i> Sign in with Google
+            </a>
+            <a class="btn btn-block btn-social btn-instagram">
+                <i class="fa fa-instagram"></i> Sign in with Instagram
+            </a>
+            <a class="btn btn-block btn-social btn-linkedin">
+                <i class="fa fa-linkedin"></i> Sign in with LinkedIn
+            </a>
+            <a class="btn btn-block btn-social btn-tumblr">
+                <i class="fa fa-tumblr"></i> Sign in with Tumblr
+            </a>
+            <a class="btn btn-block btn-social btn-twitter">
+                <i class="fa fa-twitter"></i> Sign in with Twitter
+            </a>
         </div>
-    </form>
-
-
-    <div class="account">
-    <h2><a href="../services/signup">Don't have an account? Sign Up!</a></h2>
-    <div class="span">
-        <form id="command" name="facebookSocialloginForm" action="../auth/facebook?scope=email" method="POST"><img src="../images/facebook.png" alt="">
-            <button type="submit">
-                <i>Sign In with Facebook</i>
-            </button>
-            <div class="clear"></div>
-            <div>
-                <input type="hidden" name="_csrf" id="_csrf" value="" />
-            </div></form></div>
-    <div class="span1">
-        <form name='TwitterSocialloginForm'
-              action="../auth/twitter?scope=email" method='POST'>
-            <img src="../images/twitter.png" alt="">
-            <button type="submit">
-                <i>Sign In with Twitter</i>
-            </button>
-            <div class="clear"></div>
-        </form>
     </div>
-    <div class="span2">
-        <form id="command" name="LinkedInSocialloginForm" action="&lt;c:url value=&#39;../auth/linkedin&#39; /&gt;" method="POST"><img src="../images/linkedin.png" alt="">
-            <button type="submit">
-                <i>Sign In with Linkedin</i>
-            </button>
-            <div class="clear"></div>
-            <div>
-                <input type="hidden" name="_csrf" id="_csrf" value="" />
-            </div></form></div>
-    <div class="span3">
-        <form id="command" name="GoogleSocialloginForm" action="&lt;c:url value=&#39;../auth/google&#39; /&gt;" method="POST"><img src="../images/gmail2.png" alt="">
-            <button type="submit">
-                <i>Sign In with Google</i>
-            </button>
-            <input type="hidden" name="scope" value="https://www.googleapis.com/auth/userinfo.profile https://www.googleapis.com/auth/userinfo#email https://www.googleapis.com/auth/plus.me https://www.googleapis.com/auth/tasks https://www-opensocial.googleusercontent.com/api/people https://www.googleapis.com/auth/plus.login" />
-            <div class="clear"></div>
-            <div>
-                <input type="hidden" name="_csrf" id="_csrf" value="" />
-            </div></form></div>
-</div>
-    <div class="clear"></div>
 </div>
 
 <script type="text/javascript">
