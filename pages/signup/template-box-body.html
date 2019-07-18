@@ -2,10 +2,6 @@
 <div id="result" style="color:#ff0000"></div>
 <TABLE border="0" cellspacing="5" cellpadding="3">
     <TR>
-        <th> UserId </th>
-        <td><input type="text" id="userId" name="userId" placeholder="UserId"  /></td>
-    </TR>
-    <TR>
         <th> EmailId </th>
         <td><input type="text" id="email" name="email" placeholder="EmailId"  /></td>
     </TR>
@@ -19,7 +15,6 @@
     </TR>
     <TR>
         <th>
-            <input type="hidden" id="socialProvider" name="socialProvider" value="NONE" />
             <button type="button" id="doRegister" onclick="proceed()">Submit</button>
         </th>
     </TR>
@@ -31,9 +26,7 @@
 
     function proceed(){
 
-        var userIdVar = $("#registrationForm #userId").val();
         var emailVar = $("#registrationForm #email").val();
-        var phonenoVar = $("#registrationForm #phoneno").val();
         var passwordVar =  $("#registrationForm #password").val();
         var conformPasswordVar =  $("#registrationForm #confirmpassword").val();
         var div = document.getElementById('result');
@@ -58,7 +51,7 @@
                 lastName: 'empty',
                 phoneno: 'empty',
                 password: passwordVar,
-                socialProvider:'empty'
+                socialProvider:'NONE'
             }
 
 
