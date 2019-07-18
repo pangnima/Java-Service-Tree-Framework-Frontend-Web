@@ -37,17 +37,9 @@
         var passwordVar =  $("#registrationForm #password").val();
         var conformPasswordVar =  $("#registrationForm #confirmpassword").val();
         var div = document.getElementById('result');
-        if(!userIdVar)
-        {
-            div.innerHTML = "User Id can not be empty";
-        }
-        else if(!emailVar)
+        if(!emailVar)
         {
             div.innerHTML = "email Id can not be empty";
-        }
-        else if(!phonenoVar)
-        {
-            div.innerHTML = "phone no can not be empty";
         }
         else if(!passwordVar || !conformPasswordVar)
         {
