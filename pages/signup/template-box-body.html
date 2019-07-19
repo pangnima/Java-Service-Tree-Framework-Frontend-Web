@@ -1,4 +1,3 @@
-<div id="registrationForm" />
 <div id="result" style="color:#ff0000"></div>
 <TABLE border="0" cellspacing="5" cellpadding="3">
     <TR>
@@ -26,9 +25,9 @@
 
     function proceed(){
 
-        var emailVar = $("#registrationForm #email").val();
-        var passwordVar =  $("#registrationForm #password").val();
-        var conformPasswordVar =  $("#registrationForm #confirmpassword").val();
+        var emailVar = $("#email").val();
+        var passwordVar =  $("#password").val();
+        var conformPasswordVar =  $("#confirmpassword").val();
         var div = document.getElementById('result');
         if(!emailVar)
         {
@@ -57,7 +56,7 @@
 
             $.ajax({
                 type: "POST",
-                url: '../services/user/register',
+                url: '/services/user/register',
                 data: JSON.stringify(person),
                 contentType: "application/json",
                 success: function(data) {
@@ -70,7 +69,3 @@
     }
 
 </script>
-
-
-</body>
-</html>
