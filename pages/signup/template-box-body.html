@@ -11,6 +11,7 @@
     <TR>
         <th> Confirm Password </th>
         <td><input type="password" id="confirmpassword" name="confirmpassword" placeholder="Confirm Password" /></td>
+        <input type="hidden" name="_csrf" id="_csrf" value="" />
     </TR>
     <TR>
         <th>
@@ -20,8 +21,36 @@
 </TABLE>
 </div>
 
+<script type="text/javascript">
+    //<![CDATA[
+    function jsTreeBuild() {
+
+        $.ajax({
+            async: false,
+            type: 'GET',
+            url: "/api/jsTreeServiceFramework/security/csrf.do",
+            success: function (r) {
+                var token = r._csrf_token;
+                var header = r._csrf_headerName;
+                $(document).ajaxSend(function (e, xhr, options) {
+                    xhr.setRequestHeader(header, token);
+                });
+
+                $('#_csrf').val(token);
+            }
+        });
+    }
+
+    $(function() {
+        jsTreeBuild();
+    });
+    //]]>
+</script>
+
 
 <script>
+
+
 
     function proceed(){
 
