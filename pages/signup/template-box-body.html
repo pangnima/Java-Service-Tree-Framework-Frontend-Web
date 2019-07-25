@@ -89,7 +89,11 @@
                 data: JSON.stringify(person),
                 contentType: "application/json",
                 success: function(data) {
-                    div.innerHTML = "User "+ emailVar + " registered successfully,click <a href='login.html'>here </a> to login!!!";
+                    if(data.hasOwnProperty('error')){
+                        div.innerHTML = data.error;
+                    }else{
+                        div.innerHTML = "User "+ emailVar + " registered successfully,click <a href='login.html'>here </a> to login!!!";
+                    }
                 }
 
             });
