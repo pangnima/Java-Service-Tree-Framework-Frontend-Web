@@ -1,4 +1,3 @@
-
 @-webkit-keyframes bZGgwh {
     from {
         opacity: 0;
@@ -1784,12 +1783,7 @@ body #page {
 
 .software-body .jira-dialog-content #content {
     margin: 0 40px;
-}</style>
-   <style type="text/css">.css-1y5giwt-container-className {
-                              position: relative;
-                              box-sizing: border-box;
-                              min-width: 200px;
-                          }
+}
 
 .css-w46f6b-control-className {
     -webkit-align-items: center;
@@ -2316,7 +2310,6 @@ figcaption,
 figure,
 footer,
 header,
-hgroup,
 main,
 menu,
 nav,
@@ -3040,7 +3033,7 @@ body.deferred div[id^='aui-'] {
     white-space: nowrap;
     background: #0052CC;
     border-radius: 3px;
-    box-shadow: 0 0 0 2px inherit;
+    box-shadow: 0 0 0 2px;
     color: #FFFFFF !important;
     cursor: default;
     height: 2.2857142857142856em;
@@ -3117,7 +3110,7 @@ body.deferred div[id^='aui-'] {
     white-space: nowrap;
     background: none;
     border-radius: 3px;
-    box-shadow: 0 0 0 2px inherit;
+    box-shadow: 0 0 0 2px;
     color: #6B778C !important;
     cursor: default;
     height: auto;
@@ -3182,7 +3175,7 @@ body.deferred div[id^='aui-'] {
     white-space: nowrap;
     background: none;
     border-radius: 3px;
-    box-shadow: 0 0 0 2px inherit;
+    box-shadow: 0 0 0 2px;
     color: #505F79 !important;
     cursor: default;
     height: 2.2857142857142856em;
@@ -3226,17 +3219,17 @@ body.deferred div[id^='aui-'] {
     transition: opacity 0.3s;
     opacity: 1;
 }
-             body::before {
-                 content: '';
-                 display: block;
-                 background: #0052CC;
-                 height: 3px;
-                 z-index: 210;
-                 width: 100%;
-                 position: fixed;
-                 top: 0px;
-                 left: 0px;
-                 transform: scaleX(0.3);
-                 transform-origin: 0 0;
-                 will-change: transform;
-             }
+body::before {
+    content: '';
+    display: block;
+    background: #0052CC;
+    height: 3px;
+    z-index: 210;
+    width: 100%;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    transform: scaleX(1);
+    transform-origin: 0 0;
+    will-change: transform;
+}
