@@ -1,584 +1,742 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="en">
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=Edge"/>
-    <meta name="referrer" content="same-origin">
+    <title>Process management - Jira</title>
+    <meta name="application-name" content="JIRA" data-name="jira" data-version="8.9.0">
+    <meta name="ajs-server-scheme" content="http">
+    <meta name="ajs-server-port" content="8080">
+    <meta name="ajs-server-name" content="localhost">
+    <meta name="ajs-behind-proxy" content="null">
+    <meta name="ajs-base-url" content="http://localhost:8080">
+    <meta name="ajs-dev-mode" content="false">
+    <meta name="ajs-context-path" content="">
+    <meta name="ajs-version-number" content="8.9.0">
+    <meta name="ajs-build-number" content="809000">
+    <meta name="ajs-is-beta" content="false">
+    <meta name="ajs-is-rc" content="false">
+    <meta name="ajs-is-snapshot" content="false">
+    <meta name="ajs-is-milestone" content="false">
+    <meta name="ajs-remote-user" content="admin">
+    <meta name="ajs-remote-user-fullname" content="admin">
+    <meta name="ajs-user-locale" content="en_US">
+    <meta name="ajs-user-locale-group-separator" content=",">
+    <meta name="ajs-app-title" content="Jira">
+    <meta name="ajs-keyboard-shortcuts-enabled" content="true">
+    <meta name="ajs-keyboard-accesskey-modifier" content="Alt">
+    <meta name="ajs-enabled-dark-features"
+          content="[&quot;com.atlassian.jira.agile.darkfeature.editable.detailsview&quot;,&quot;nps.survey.inline.dialog&quot;,&quot;com.atlassian.jira.agile.darkfeature.edit.closed.sprint.enabled&quot;,&quot;jira.plugin.devstatus.phasetwo&quot;,&quot;jira.frother.reporter.field&quot;,&quot;atlassian.rest.xsrf.legacy.enabled&quot;,&quot;jira.issue.status.lozenge&quot;,&quot;com.atlassian.jira.config.BIG_PIPE&quot;,&quot;com.atlassian.jira.projects.issuenavigator&quot;,&quot;com.atlassian.jira.config.PDL&quot;,&quot;jira.plugin.devstatus.phasetwo.enabled&quot;,&quot;atlassian.aui.raphael.disabled&quot;,&quot;app-switcher.new&quot;,&quot;frother.assignee.field&quot;,&quot;com.atlassian.jira.projects.ProjectCentricNavigation.Switch&quot;,&quot;jira.onboarding.cyoa&quot;,&quot;com.atlassian.jira.agile.darkfeature.kanplan.enabled&quot;,&quot;com.atlassian.jira.config.ProjectConfig.MENU&quot;,&quot;com.atlassian.jira.projects.sidebar.DEFER_RESOURCES&quot;,&quot;com.atlassian.jira.agile.darkfeature.kanplan.epics.and.versions.enabled&quot;,&quot;com.atlassian.jira.agile.darkfeature.sprint.goal.enabled&quot;,&quot;jira.zdu.admin-updates-ui&quot;,&quot;jira.zdu.jmx-monitoring&quot;,&quot;mail.batching.enabled&quot;,&quot;sd.new.settings.sidebar.location.disabled&quot;,&quot;jira.zdu.cluster-upgrade-state&quot;,&quot;com.atlassian.jira.agile.darkfeature.splitissue&quot;,&quot;com.atlassian.jira.config.CoreFeatures.LICENSE_ROLES_ENABLED&quot;,&quot;jira.export.csv.enabled&quot;]">
+    <meta name="ajs-in-admin-mode" content="false">
+    <meta name="ajs-is-sysadmin" content="true">
+    <meta name="ajs-is-admin" content="true">
+    <meta name="ajs-outgoing-mail-enabled" content="false">
+    <meta name="ajs-archiving-enabled" content="true">
+    <meta name="ajs-date-relativize" content="true">
+    <meta name="ajs-date-time" content="h:mm a">
+    <meta name="ajs-date-day" content="EEEE h:mm a">
+    <meta name="ajs-date-dmy" content="dd/MMM/yy">
+    <meta name="ajs-date-complete" content="dd/MMM/yy h:mm a">
+    <script type="text/javascript">var AJS = AJS || {};
+    AJS.debug = true;</script>
+    <meta name="ajs-admin-quicksearch-show" content="true">
 
-    <title>프로젝트 - ARMS</title>
-    <!-- Bootstrap 3.3.7 -->
-    <link rel="stylesheet" href="css/arms.css">
+    <link rel="shortcut icon" href="fav-jsw.png">
+    <link rel="search" type="application/opensearchdescription+xml" href="osd.xml" title="Process management - Jira"/>
+
+
+    <!--[if IE]><![endif]-->
+    <script type="text/javascript">
+        (function () {
+            var contextPath = '';
+
+            function printDeprecatedMsg() {
+                if (console && console.warn) {
+                    console.warn('DEPRECATED JS - contextPath global variable has been deprecated since 7.4.0. Use `wrm/context-path` module instead.');
+                }
+            }
+
+            Object.defineProperty(window, 'contextPath', {
+                get: function () {
+                    printDeprecatedMsg();
+                    return contextPath;
+                },
+                set: function (value) {
+                    printDeprecatedMsg();
+                    contextPath = value;
+                }
+            });
+        })();
+
+    </script>
+    <script>
+        window.WRM = window.WRM || {};
+        window.WRM._unparsedData = window.WRM._unparsedData || {};
+        window.WRM._unparsedErrors = window.WRM._unparsedErrors || {};
+        WRM._unparsedData["com.atlassian.plugins.atlassian-plugins-webresource-plugin:context-path.context-path"] = "\"\"";
+        WRM._unparsedData["jira.core:feature-flags-data.feature-flag-data"] = "{\"enabled-feature-keys\":[\"com.atlassian.jira.agile.darkfeature.editable.detailsview\",\"nps.survey.inline.dialog\",\"com.atlassian.jira.agile.darkfeature.edit.closed.sprint.enabled\",\"jira.plugin.devstatus.phasetwo\",\"jira.frother.reporter.field\",\"atlassian.rest.xsrf.legacy.enabled\",\"jira.issue.status.lozenge\",\"com.atlassian.jira.config.BIG_PIPE\",\"com.atlassian.jira.projects.issuenavigator\",\"com.atlassian.jira.config.PDL\",\"jira.plugin.devstatus.phasetwo.enabled\",\"atlassian.aui.raphael.disabled\",\"app-switcher.new\",\"frother.assignee.field\",\"com.atlassian.jira.projects.ProjectCentricNavigation.Switch\",\"jira.onboarding.cyoa\",\"com.atlassian.jira.agile.darkfeature.kanplan.enabled\",\"com.atlassian.jira.config.ProjectConfig.MENU\",\"com.atlassian.jira.projects.sidebar.DEFER_RESOURCES\",\"com.atlassian.jira.agile.darkfeature.kanplan.epics.and.versions.enabled\",\"com.atlassian.jira.agile.darkfeature.sprint.goal.enabled\",\"jira.zdu.admin-updates-ui\",\"jira.zdu.jmx-monitoring\",\"mail.batching.enabled\",\"sd.new.settings.sidebar.location.disabled\",\"jira.zdu.cluster-upgrade-state\",\"com.atlassian.jira.agile.darkfeature.splitissue\",\"com.atlassian.jira.config.CoreFeatures.LICENSE_ROLES_ENABLED\",\"jira.export.csv.enabled\"],\"feature-flag-states\":{\"atlassian.cdn.static.assets\":true,\"mail.batching\":false,\"com.atlassian.jira.diagnostics.perflog\":true,\"com.atlassian.jira.privateEntitiesEditable\":false,\"com.atlassian.jira.issuetable.move.links.hidden\":true,\"jira.priorities.per.project.edit.default\":false,\"com.atlassian.jira.agile.darkfeature.unlink.sprints.on.issue.move\":true,\"jira.renderer.consider.variable.format\":true,\"com.atlassian.jira.user.dbIdBasedKeyGenerationStrategy\":true,\"jira.priorities.per.project.jsd\":true,\"com.atlassian.jira.agile.darkfeature.rapid.boards.bands\":true,\"com.atlassian.jira.sharedEntityEditRights\":true,\"com.atlassian.jira.agile.darkfeature.flexible.boards\":true,\"com.atlassian.jira.agile.darkfeature.sprint.picker.allsprints.suggestion\":true,\"com.atlassian.jira.agile.darkfeature.sprint.goal\":false,\"jira.dc.lock.leasing\":true,\"com.atlassian.jira.accessibility.personal.settings\":true,\"jira.cluster.monitoring.show.offline.nodes\":true,\"mail.batching.create.section.cf\":true,\"com.atlassian.jira.custom.csv.escaper\":true,\"com.atlassian.jira.plugin.issuenavigator.filtersUxImprovment\":true,\"com.atlassian.jira.agile.darkfeature.kanplan.epics.and.versions\":false,\"com.atlassian.jira.upgrade.startup.fix.index\":true,\"jira.dc.cleanup.cluser.tasks\":true,\"com.atlassian.jira.issues.archiving.filters\":false,\"mail.batching.override.core\":true,\"jira.users.and.roles.page.in.react\":true,\"com.atlassian.jira.agile.darkfeature.velocity.chart.ui\":true,\"com.atlassian.jira.issuetable.draggable\":true,\"com.atlassian.jira.attachments.generate.unique.suffix\":true,\"com.atlassian.jira.agile.darkfeature.kanban.hide.old.done.issues\":true,\"jira.jql.suggestrecentfields\":false,\"com.atlassian.jira.agile.darkfeature.backlog.showmore\":true,\"com.atlassian.jira.gdpr.rtbf\":true,\"com.atlassian.jira.security.xsrf.session.token\":true,\"com.atlassian.jira.agile.darkfeature.optimistic.transitions\":true,\"com.atlassian.jira.agile.darkfeature.kanplan\":false,\"com.atlassian.jira.agile.darkfeature.burnupchart\":true,\"com.atlassian.jira.issues.archiving.browse\":true,\"com.atlassian.jira.agile.darkfeature.future.sprint.dates\":true,\"jira.instrumentation.laas\":false,\"jira.customfields.paginated.ui\":true,\"com.atlassian.jira.agile.darkfeature.edit.closed.sprint\":false,\"mail.batching.user.notification\":true,\"jira.create.linked.issue\":true,\"com.atlassian.jira.agile.darkfeature.dataonpageload\":true,\"com.atlassian.jira.advanced.audit.log\":true,\"jira.sal.host.connect.accessor.existing.transaction.will.create.transactions\":true,\"external.links.new.window\":true,\"jira.quick.search\":true,\"com.atlassian.jira.projects.per.project.permission.query\":true,\"jira.jql.smartautoselectfirst\":false,\"com.atlassian.jira.issues.archiving\":true,\"index.use.snappy\":true,\"jira.priorities.per.project\":true}}";
+        WRM._unparsedData["jira.core:default-comment-security-level-data.DefaultCommentSecurityLevelHelpLink"] = "{\"extraClasses\":\"default-comment-level-help\",\"title\":\"Commenting on an Issue\",\"url\":\"https://docs.atlassian.com/jira/jsw-docs-089/Editing+and+collaborating+on+issues#Editingandcollaboratingonissues-restrictacomment\",\"isLocal\":false}";
+        WRM._unparsedData["com.atlassian.analytics.analytics-client:policy-update-init.policy-update-data-provider"] = "false";
+        WRM._unparsedData["com.atlassian.analytics.analytics-client:programmatic-analytics-init.programmatic-analytics-data-provider"] = "false";
+        WRM._unparsedData["jira.core:dateFormatProvider.allFormats"] = "{\"dateFormats\":{\"meridiem\":[\"AM\",\"PM\"],\"eras\":[\"BC\",\"AD\"],\"months\":[\"January\",\"February\",\"March\",\"April\",\"May\",\"June\",\"July\",\"August\",\"September\",\"October\",\"November\",\"December\"],\"monthsShort\":[\"Jan\",\"Feb\",\"Mar\",\"Apr\",\"May\",\"Jun\",\"Jul\",\"Aug\",\"Sep\",\"Oct\",\"Nov\",\"Dec\"],\"weekdaysShort\":[\"Sun\",\"Mon\",\"Tue\",\"Wed\",\"Thu\",\"Fri\",\"Sat\"],\"weekdays\":[\"Sunday\",\"Monday\",\"Tuesday\",\"Wednesday\",\"Thursday\",\"Friday\",\"Saturday\"]},\"lookAndFeelFormats\":{\"relativize\":\"true\",\"time\":\"h:mm a\",\"day\":\"EEEE h:mm a\",\"dmy\":\"dd/MMM/yy\",\"complete\":\"dd/MMM/yy h:mm a\"}}";
+        WRM._unparsedData["jira.core:avatar-picker-data.data"] = "{}";
+        WRM._unparsedData["com.atlassian.jira.jira-header-plugin:dismissedFlags.flags"] = "{\"dismissed\":[]}";
+        WRM._unparsedData["com.atlassian.jira.jira-header-plugin:newsletter-signup-tip-init.newsletterSignup"] = "{\"signupDescription\":\"Get updates, inspiration and best practices from the team behind Jira.\",\"formUrl\":\"https://www.atlassian.com/apis/exact-target/{0}/subscribe?mailingListId=1401671\",\"userEmail\":\"spear79@ncsoft.com\",\"signupTitle\":\"Sign up!\",\"signupId\":\"newsletter-signup-tip\",\"showNewsletterTip\":false}";
+        WRM._unparsedData["com.atlassian.jira.project-templates-plugin:project-templates-plugin-resources.ptAnalyticsData"] = "{\"instanceCreatedDate\":\"2020-06-15\"}";
+        WRM._unparsedData["jira.core:user-message-flags-data.adminLockout"] = "{}";
+        WRM._unparsedData["com.atlassian.plugins.helptips.jira-help-tips:help-tip-manager.JiraHelpTipData"] = "{\"dismissed\":[\"onboarding-create-sprint\",\"qs-onboarding-tip\"],\"anonymous\":false}";
+        WRM._unparsedData["jira.request.correlation-id"] = "\"db468e5f4a9530\"";
+        WRM._unparsedData["tzdetect.pref.auto.detect"] = "true";
+        WRM._unparsedData["tzdetect.pref.tzid"] = "\"Asia/Seoul\"";
+        WRM._unparsedData["tzdetect.pref.tzname"] = "\"(GMT+09:00) Seoul\"";
+        WRM._unparsedData["tzdetect.pref.janOffset"] = "32400000";
+        WRM._unparsedData["tzdetect.pref.julyOffset"] = "32400000";
+        WRM._unparsedData["agile-reports"] = "[]";
+        WRM._unparsedData["project-id"] = "10104";
+        WRM._unparsedData["project-key"] = "\"PCM\"";
+        WRM._unparsedData["project-name"] = "\"Process management\"";
+        WRM._unparsedData["project-type"] = "\"business\"";
+        WRM._unparsedData["should-display-chaperone"] = "false";
+        if (window.WRM._dataArrived) window.WRM._dataArrived();</script>
+    <link type="text/css" rel="stylesheet"
+          href="css/batch.css"
+          data-wrm-key="_super" data-wrm-batch-type="context" media="all">
+    <link type="text/css" rel="stylesheet"
+          href="css/batch2.css"
+          data-wrm-key="com.atlassian.jira.project.reports.page,jira.project.sidebar,atl.general,jira.global,com.atlassian.jira.projects.sidebar.init,-_super"
+          data-wrm-batch-type="context" media="all">
+    <link type="text/css" rel="stylesheet"
+          href="css/calendar-lib.css"
+          data-wrm-key="jira.webresources:calendar-lib" data-wrm-batch-type="resource" media="all">
+    <link type="text/css" rel="stylesheet"
+          href="css/autocomplete.css"
+          data-wrm-key="jira.webresources:autocomplete" data-wrm-batch-type="resource" media="all">
+    <link type="text/css" rel="stylesheet"
+          href="css/groupbrowser.css"
+          data-wrm-key="jira.webresources:groupbrowser" data-wrm-batch-type="resource" media="all">
+    <link type="text/css" rel="stylesheet"
+          href="css/group-pickers.css"
+          data-wrm-key="jira.webresources:group-pickers" data-wrm-batch-type="resource" media="all">
+    <script type="text/javascript"
+            src="js/batch.js"
+            data-wrm-key="_super" data-wrm-batch-type="context" data-initially-rendered></script>
+    <script type="text/javascript"
+            src="js/batch2.js"
+            data-wrm-key="com.atlassian.jira.project.reports.page,jira.project.sidebar,atl.general,jira.global,com.atlassian.jira.projects.sidebar.init,-_super"
+            data-wrm-batch-type="context" data-initially-rendered></script>
+    <script type="text/javascript"
+            src="js/batch3.js?locale=en-US"
+            data-wrm-key="atl.global,-_super" data-wrm-batch-type="context" data-initially-rendered></script>
+    <script type="text/javascript"
+            src="js/tzdetect-banner-component.js?locale=en-US"
+            data-wrm-key="com.atlassian.jira.jira-tzdetect-plugin:tzdetect-banner-component"
+            data-wrm-batch-type="resource" data-initially-rendered></script>
+    <script type="text/javascript"
+            src="js/tzdetect-lib.js"
+            data-wrm-key="com.atlassian.jira.jira-tzdetect-plugin:tzdetect-lib" data-wrm-batch-type="resource"
+            data-initially-rendered></script>
+    <script type="text/javascript"
+            src="js/calendar-lib.js"
+            data-wrm-key="jira.webresources:calendar-lib" data-wrm-batch-type="resource"
+            data-initially-rendered></script>
+    <script type="text/javascript"
+            src="js/calendar.js"
+            data-wrm-key="jira.webresources:calendar" data-wrm-batch-type="resource" data-initially-rendered></script>
+    <script type="text/javascript"
+            src="js/autocomplete.js"
+            data-wrm-key="jira.webresources:autocomplete" data-wrm-batch-type="resource"
+            data-initially-rendered></script>
+    <script type="text/javascript"
+            src="js/group-label-lozenge.js?locale=en-US"
+            data-wrm-key="jira.webresources:group-label-lozenge" data-wrm-batch-type="resource"
+            data-initially-rendered></script>
+    <script type="text/javascript"
+            src="js/groupbrowser.js"
+            data-wrm-key="jira.webresources:groupbrowser" data-wrm-batch-type="resource"
+            data-initially-rendered></script>
+    <script type="text/javascript"
+            src="js/group-pickers.js?locale=en-US"
+            data-wrm-key="jira.webresources:group-pickers" data-wrm-batch-type="resource"
+            data-initially-rendered></script>
+    <script type="text/javascript"
+            src="js/jira-project-issuetype-fields.js?locale=en-US"
+            data-wrm-key="jira.webresources:jira-project-issuetype-fields" data-wrm-batch-type="resource"
+            data-initially-rendered></script>
+    <script type="text/javascript"
+            src="js/jira-fields.js?locale=en-US"
+            data-wrm-key="jira.webresources:jira-fields" data-wrm-batch-type="resource"
+            data-initially-rendered></script>
+    <script type="text/javascript"
+            src="js/calendar-en.js"
+            data-wrm-key="jira.webresources:calendar-en" data-wrm-batch-type="resource"
+            data-initially-rendered></script>
+    <script type="text/javascript"
+            src="js/calendar-localisation-moment.js"
+            data-wrm-key="jira.webresources:calendar-localisation-moment" data-wrm-batch-type="resource"
+            data-initially-rendered></script>
+    <link type="text/css" rel="stylesheet"
+          href="css/batch3.css"
+          data-wrm-key="jira.global.look-and-feel,-_super" data-wrm-batch-type="context" media="all">
+
+    <script type="text/javascript" src="js/shortcuts.js"></script>
+
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="decorator" content="atl.general"/>
 </head>
-<body id="jira" class="deferred adg3" data-version="1001.0.0-SNAPSHOT">
+<body id="jira" class="aui-layout aui-theme-default  " data-version="8.9.0">
+<div id="page">
+    <header id="header" role="banner">
+        <nav class="aui-header aui-dropdown2-trigger-group" role="navigation">
+            <div class="aui-header-inner">
+                <div class="aui-header-primary"><h1 id="logo" class="aui-header-logo aui-header-logo-custom"><a
+                        href="http://localhost:8080/secure/MyJiraHome.jspa"><img
+                        src="jira-software.png" alt="Jira"/></a>
+                </h1>
+                    <ul class='aui-nav'>
+                        <li><a href="/secure/Dashboard.jspa"
+                               class=" aui-nav-link aui-dropdown2-trigger aui-dropdown2-ajax" id="home_link"
+                               aria-haspopup="true" aria-controls="home_link-content"
+                               title="View and manage your dashboards" accesskey="d">Dashboards</a>
+                            <div class="aui-dropdown2 aui-style-default" id="home_link-content"
+                                 data-aui-dropdown2-ajax-key="home_link"></div>
+                        </li>
+                        <li><a href="/browse/PCM" class=" aui-nav-link aui-dropdown2-trigger aui-dropdown2-ajax"
+                               id="browse_link" aria-haspopup="true" aria-controls="browse_link-content"
+                               title="View recent projects and browse a list of projects" accesskey="p">Projects</a>
+                            <div class="aui-dropdown2 aui-style-default" id="browse_link-content"
+                                 data-aui-dropdown2-ajax-key="browse_link"></div>
+                        </li>
+                        <li><a href="/issues/" class=" aui-nav-link aui-dropdown2-trigger aui-dropdown2-ajax"
+                               id="find_link" aria-haspopup="true" aria-controls="find_link-content"
+                               title="Search for issues and view recent issues" accesskey="i">Issues</a>
+                            <div class="aui-dropdown2 aui-style-default" id="find_link-content"
+                                 data-aui-dropdown2-ajax-key="find_link"></div>
+                        </li>
+                        <li><a href="/secure/RapidBoard.jspa"
+                               class=" aui-nav-link aui-dropdown2-trigger aui-dropdown2-ajax" id="greenhopper_menu"
+                               aria-haspopup="true" aria-controls="greenhopper_menu-content"
+                               title="Manage your project with Jira Software">Boards</a>
+                            <div class="aui-dropdown2 aui-style-default" id="greenhopper_menu-content"
+                                 data-aui-dropdown2-ajax-key="greenhopper_menu"></div>
+                        </li>
+                        <li id="create-menu"><a id="create_link"
+                                                class="aui-button aui-button-primary aui-style create-issue "
+                                                title="Create a new issue / bug / feature request / etc"
+                                                href="/secure/CreateIssue!default.jspa" accesskey="c">Create</a></li>
+                    </ul>
+                </div>
+                <div class="aui-header-secondary">
+                    <ul class='aui-nav'>
+                        <li id="quicksearch-menu">
+                            <form action="/secure/QuickSearch.jspa" method="get" id="quicksearch"
+                                  class="aui-quicksearch dont-default-focus ajs-dirty-warning-exempt">
+                                <input id="quickSearchInput" autocomplete="off" class="search" type="text"
+                                       title="Search" placeholder="Search" name="searchString" accessKey="q"/>
+                                <input type="submit" class="hidden" value="Search">
+                            </form>
+                        </li>
+                        <li><a class="jira-feedback-plugin" role="button" aria-haspopup="true"
+                               id="jira-header-feedback-link" href="#"><span
+                                class="aui-icon aui-icon-small aui-iconfont-feedback">Give feedback to Atlassian</span></a>
+                        </li>
 
-<div id="jira-frontend">
-    <div class="sc-bveJEc hUKjCU" id="helpPanelContainer">
-        <div class="sc-jsqbLq cizWFD">
-            <div class="css-gm0y5n-css">
-                <div data-testid="Navigation" class="css-1hual0y-css">
-                    <div class="css-48nmiy-css">
-                        <div data-testid="GlobalNavigation">
-                            <div style="margin-left:64px" class="css-mjpcdn-css"></div>
-                            <async-bundle style="display:none" data-id="async-global-navigation"></async-bundle><span
-                                data-test-id="navigation-next.global-navigation.components.global-nav-with-id"><div
-                                class="css-gim7cw">
-                            <div class="css-9jdp7z-css">
-                                <span><div class="css-2rlxtj">
-                                    <div role="presentation" class="css-7xjigh">
-                                        <div>
-                                            <div class="css-1baulvz">
-                                                <button id="starDrawerGlobalItem" data-testid="GlobalNavigationItem"
-                                                        class="css-bhnd0z-css">
-                                                    <div class="css-1ixbp0l"><span class="sc-cVVlNl hjUWPm"
-                                                                                   aria-label="별표 표시 항목 및 최근 항목(\\)"><svg
-                                                            width="24" height="24" viewBox="0 0 24 24" focusable="false"
-                                                            role="presentation">
-                                                        <path d="M15.673 14.042l3.673-3.58-5.076-.738L12 5.125l-2.27 4.6-5.076.737 3.673 3.58-.867 5.055L12 16.711l4.54 2.386-.867-5.055zM12 19.04l-4.505 2.37a1.546 1.546 0 0 1-2.244-1.63l.86-5.017-3.644-3.553a1.546 1.546 0 0 1 .857-2.637l5.037-.732 2.252-4.564a1.546 1.546 0 0 1 2.774 0l2.252 4.564 5.037.732a1.546 1.546 0 0 1 .857 2.637l-3.645 3.553.86 5.016a1.546 1.546 0 0 1-2.243 1.63L12 19.04z"
-                                                              fill="currentColor"/>
-                                                    </svg></span></div>
-                                                </button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div></span><span><div class="css-2rlxtj">
-                                <div role="presentation" class="css-7xjigh">
-                                    <div>
-                                        <div class="css-1baulvz">
-                                            <button id="quickSearchGlobalItem" data-testid="GlobalNavigationItem"
-                                                    class="css-bhnd0z-css">
-                                                <div class="css-1ixbp0l"><span class="sc-cVVlNl hjUWPm"
-                                                                               aria-label="검색(/)"><svg width="24"
-                                                                                                       height="24"
-                                                                                                       viewBox="0 0 24 24"
-                                                                                                       focusable="false"
-                                                                                                       role="presentation">
-                                                    <path d="M16.436 15.085l3.94 4.01a1 1 0 0 1-1.425 1.402l-3.938-4.006a7.5 7.5 0 1 1 1.423-1.406zM10.5 16a5.5 5.5 0 1 0 0-11 5.5 5.5 0 0 0 0 11z"
-                                                          fill="currentColor" fill-rule="evenodd"/>
-                                                </svg></span></div>
-                                            </button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div></span><span><div class="css-2rlxtj">
-                                <div role="presentation" class="css-7xjigh">
-                                    <div>
-                                        <div class="css-1baulvz">
-                                            <button id="createGlobalItem" data-testid="GlobalNavigationItem"
-                                                    class="css-bhnd0z-css">
-                                                <div class="css-1ixbp0l"><span class="sc-cVVlNl hjUWPm"
-                                                                               aria-label="만들기(c)"><svg width="24"
-                                                                                                        height="24"
-                                                                                                        viewBox="0 0 24 24"
-                                                                                                        focusable="false"
-                                                                                                        role="presentation">
-                                                    <path d="M13 11V3.993A.997.997 0 0 0 12 3c-.556 0-1 .445-1 .993V11H3.993A.997.997 0 0 0 3 12c0 .557.445 1 .993 1H11v7.007c0 .548.448.993 1 .993.556 0 1-.445 1-.993V13h7.007A.997.997 0 0 0 21 12c0-.556-.445-1-.993-1H13z"
-                                                          fill="currentColor" fill-rule="evenodd"/>
-                                                </svg></span></div>
-                                            </button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div></span></div>
-                            <div class="css-1d6cbv7-css"><span><div class="css-2rlxtj">
-                                <div role="presentation" class="css-7xjigh">
-                                    <div>
-                                        <div class="css-1baulvz">
-                                            <button id="notificationsGlobalItem" data-testid="GlobalNavigationItem"
-                                                    class="css-bhnd0z-css">
-                                                <div class="css-1ixbp0l"><span class="sc-cVVlNl hjUWPm" aria-label="알림"><svg
-                                                        width="24" height="24" viewBox="0 0 24 24" focusable="false"
-                                                        role="presentation">
-                                                    <path d="M6.485 17.669a2 2 0 0 0 2.829 0l-2.829-2.83a2 2 0 0 0 0 2.83zm4.897-12.191l-.725.725c-.782.782-2.21 1.813-3.206 2.311l-3.017 1.509c-.495.248-.584.774-.187 1.171l8.556 8.556c.398.396.922.313 1.171-.188l1.51-3.016c.494-.988 1.526-2.42 2.311-3.206l.725-.726a5.048 5.048 0 0 0 .64-6.356 1.01 1.01 0 1 0-1.354-1.494c-.023.025-.046.049-.066.075a5.043 5.043 0 0 0-2.788-.84 5.036 5.036 0 0 0-3.57 1.478z"
-                                                          fill="currentColor" fill-rule="evenodd"/>
-                                                </svg></span></div>
-                                            </button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div></span><span><div class="css-2rlxtj">
-                                <div role="presentation" class="css-7xjigh">
-                                    <div>
-                                        <div class="css-1baulvz">
-                                            <button data-testid="GlobalNavigationItem" class="css-bhnd0z-css">
-                                                <div class="css-1ixbp0l"><span class="Icon__IconWrapper-dyhwwi-0 elWdVp"
-                                                                               aria-label=""><svg width="24" height="24"
-                                                                                                  viewBox="0 0 24 24"
-                                                                                                  focusable="false"
-                                                                                                  role="presentation">
-                                                    <path fill="currentColor" fill-rule="evenodd"
-                                                          d="M4 5.01C4 4.451 4.443 4 5.01 4h1.98C7.549 4 8 4.443 8 5.01v1.98C8 7.549 7.557 8 6.99 8H5.01C4.451 8 4 7.557 4 6.99V5.01zm0 6c0-.558.443-1.01 1.01-1.01h1.98c.558 0 1.01.443 1.01 1.01v1.98C8 13.549 7.557 14 6.99 14H5.01C4.451 14 4 13.557 4 12.99v-1.98zm6-6c0-.558.443-1.01 1.01-1.01h1.98c.558 0 1.01.443 1.01 1.01v1.98C14 7.549 13.557 8 12.99 8h-1.98C10.451 8 10 7.557 10 6.99V5.01zm0 6c0-.558.443-1.01 1.01-1.01h1.98c.558 0 1.01.443 1.01 1.01v1.98c0 .558-.443 1.01-1.01 1.01h-1.98c-.558 0-1.01-.443-1.01-1.01v-1.98zm6-6c0-.558.443-1.01 1.01-1.01h1.98c.558 0 1.01.443 1.01 1.01v1.98C20 7.549 19.557 8 18.99 8h-1.98C16.451 8 16 7.557 16 6.99V5.01zm0 6c0-.558.443-1.01 1.01-1.01h1.98c.558 0 1.01.443 1.01 1.01v1.98c0 .558-.443 1.01-1.01 1.01h-1.98c-.558 0-1.01-.443-1.01-1.01v-1.98zm-12 6c0-.558.443-1.01 1.01-1.01h1.98c.558 0 1.01.443 1.01 1.01v1.98C8 19.549 7.557 20 6.99 20H5.01C4.451 20 4 19.557 4 18.99v-1.98zm6 0c0-.558.443-1.01 1.01-1.01h1.98c.558 0 1.01.443 1.01 1.01v1.98c0 .558-.443 1.01-1.01 1.01h-1.98c-.558 0-1.01-.443-1.01-1.01v-1.98zm6 0c0-.558.443-1.01 1.01-1.01h1.98c.558 0 1.01.443 1.01 1.01v1.98c0 .558-.443 1.01-1.01 1.01h-1.98c-.558 0-1.01-.443-1.01-1.01v-1.98z"/>
-                                                </svg></span></div>
-                                            </button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div></span><span><div class="css-2rlxtj">
-                                <div role="presentation" class="css-7xjigh">
-                                    <div>
-                                        <div class="css-1baulvz">
-                                            <button id="helpGlobalItem" data-testid="GlobalNavigationItem"
-                                                    class="css-bhnd0z-css">
-                                                <div class="css-1ixbp0l"><span class="sc-cVVlNl hjUWPm"
-                                                                               aria-label="도움말"><svg width="24"
-                                                                                                     height="24"
-                                                                                                     viewBox="0 0 24 24"
-                                                                                                     focusable="false"
-                                                                                                     role="presentation">
-                                                    <g fill-rule="evenodd">
-                                                        <circle fill="currentColor" cx="12" cy="12" r="10"/>
-                                                        <circle fill="inherit" cx="12" cy="18" r="1"/>
-                                                        <path d="M15.89 9.05a3.975 3.975 0 0 0-2.957-2.942C10.321 5.514 8.017 7.446 8 9.95l.005.147a.992.992 0 0 0 .982.904c.552 0 1-.447 1.002-.998a2.004 2.004 0 0 1 4.007-.002c0 1.102-.898 2-2.003 2H12a1 1 0 0 0-1 .987v2.014a1.001 1.001 0 0 0 2.004 0v-.782c0-.217.145-.399.35-.472A3.99 3.99 0 0 0 15.89 9.05"
-                                                              fill="inherit"/>
-                                                    </g>
-                                                </svg></span></div>
-                                            </button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div></span><span><div class="css-2rlxtj">
-                                <div role="presentation" class="css-7xjigh">
-                                    <div>
-                                        <div class="css-1baulvz">
-                                            <button id="settingsGlobalItem" data-testid="GlobalNavigationItem"
-                                                    class="css-bhnd0z-css">
-                                                <div class="css-1ixbp0l"><span class="sc-cVVlNl hjUWPm" aria-label="설정"><svg
-                                                        width="24" height="24" viewBox="0 0 24 24" focusable="false"
-                                                        role="presentation">
-                                                    <path d="M11.701 16.7a5.002 5.002 0 1 1 0-10.003 5.002 5.002 0 0 1 0 10.004m8.368-3.117a1.995 1.995 0 0 1-1.346-1.885c0-.876.563-1.613 1.345-1.885a.48.48 0 0 0 .315-.574 8.947 8.947 0 0 0-.836-1.993.477.477 0 0 0-.598-.195 2.04 2.04 0 0 1-1.29.08 1.988 1.988 0 0 1-1.404-1.395 2.04 2.04 0 0 1 .076-1.297.478.478 0 0 0-.196-.597 8.98 8.98 0 0 0-1.975-.826.479.479 0 0 0-.574.314 1.995 1.995 0 0 1-1.885 1.346 1.994 1.994 0 0 1-1.884-1.345.482.482 0 0 0-.575-.315c-.708.2-1.379.485-2.004.842a.47.47 0 0 0-.198.582A2.002 2.002 0 0 1 4.445 7.06a.478.478 0 0 0-.595.196 8.946 8.946 0 0 0-.833 1.994.48.48 0 0 0 .308.572 1.995 1.995 0 0 1 1.323 1.877c0 .867-.552 1.599-1.324 1.877a.479.479 0 0 0-.308.57 8.99 8.99 0 0 0 .723 1.79.477.477 0 0 0 .624.194c.595-.273 1.343-.264 2.104.238.117.077.225.185.302.3.527.8.512 1.58.198 2.188a.473.473 0 0 0 .168.628 8.946 8.946 0 0 0 2.11.897.474.474 0 0 0 .57-.313 1.995 1.995 0 0 1 1.886-1.353c.878 0 1.618.567 1.887 1.353a.475.475 0 0 0 .57.313 8.964 8.964 0 0 0 2.084-.883.473.473 0 0 0 .167-.631c-.318-.608-.337-1.393.191-2.195.077-.116.185-.225.302-.302.772-.511 1.527-.513 2.125-.23a.477.477 0 0 0 .628-.19 8.925 8.925 0 0 0 .728-1.793.478.478 0 0 0-.314-.573"
-                                                          fill="currentColor" fill-rule="evenodd"/>
-                                                </svg></span></div>
-                                            </button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div></span><span><div>
-                                <div class="Droplist-sc-1z05y4v-0 cLrmQm">
-                                    <div>
-                                        <div>
-                                            <div class="Droplist__Trigger-sc-1z05y4v-3 eteVrT">
-                                                <div>
-                                                    <div class="css-2rlxtj">
-                                                        <div role="presentation" class="css-7xjigh">
-                                                            <div>
-                                                                <div class="css-1baulvz">
-                                                                    <button id="profileGlobalItem"
-                                                                            data-testid="GlobalNavigationItem"
-                                                                            class="css-bhnd0z-css">
-                                                                        <div class="css-1ixbp0l"><span><div
-                                                                                style="display:inline-block;position:relative;outline:0;height:28px;width:28px">
-                                                                            <span class="sc-kxYOAa iMvScl"><svg
-                                                                                    style="background-color:transparent;border-radius:50%;height:100%;width:100%"
-                                                                                    viewBox="0 0 128 128" version="1.1"
-                                                                                    xmlns="http://www.w3.org/2000/svg"
-                                                                                    role="img" aria-label="프로필 및 설정">
-                                                                                <g class="sc-lhGUXL fpjZKW"
-                                                                                   mode="light">
-                                                                                    <circle cx="64" cy="64"
-                                                                                            r="64"></circle>
-                                                                                    <g>
-                                                                                        <path d="M103,102.1388 C93.094,111.92 79.3504,118 64.1638,118 C48.8056,118 34.9294,111.768 25,101.7892 L25,95.2 C25,86.8096 31.981,80 40.6,80 L87.4,80 C96.019,80 103,86.8096 103,95.2 L103,102.1388 Z"></path>
-                                                                                        <path d="M63.9961647,24 C51.2938136,24 41,34.2938136 41,46.9961647 C41,59.7061864 51.2938136,70 63.9961647,70 C76.6985159,70 87,59.7061864 87,46.9961647 C87,34.2938136 76.6985159,24 63.9961647,24"></path>
-                                                                                    </g>
-                                                                                </g>
-                                                                            </svg></span></div></span></div>
-                                                                    </button>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="Layer__FixedTarget-qunuuz-0 cXwmnx">
-                                            <div style="height:100%;width:100%"></div>
-                                        </div>
-                                        <div class="styledContentContainer-p0j3f7-0 caSnlw">
-                                            <div style="top:0;left:0;position:absolute;z-index:400;opacity:0"></div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div></span></div>
-                        </div></span>
-                        </div>
-                        <div style="will-change:width;width:240px" data-testid="ContextualNavigation"
-                             class="css-1nb3pat-css">
-                            <div class="css-1lqxdf5-css">
-                                <div tabindex="-1" role="group" class="css-12d2vdc-css">
-                                    <async-bundle style="display:none" data-id="async-navigation-views"></async-bundle>
-                                    <div class="css-79elbk">
-                                        <div class="css-0">
-                                            <div class="css-12fuwai">
-                                                <div class="css-10nzr6g-css"><img
-                                                        class="sc-dwLhYX armslogo"
-                                                        src="logoARMS.jpg"
-                                                        alt="ARMS"/>
-                                                    <span class="sc-kjKmiN bocuSU">Req Software</span></div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="css-424011">
-                                        <div class="css-14ezb7w-css">
-                                            <div class="css-40fhqo">
-                                                <div class="css-1tw9lwf">
-                                                    <div role="presentation" class="css-7xjigh"><a
-                                                            data-testid="NavigationItem" id="dashboards" text="대시보드"
-                                                            index="2" customComponents="[object Object]"
-                                                            spacing="default" class="css-1krxkzl-css"
-                                                            href="/secure/Dashboard.jspa" target="_self">
-                                                        <div class="css-1k6xeo5"><span
-                                                                class="Icon__IconWrapper-dyhwwi-0 bcqBjl"><svg
-                                                                width="24" height="24" viewBox="0 0 24 24"
-                                                                focusable="false" role="presentation">
-                                                            <g fill="currentColor">
-                                                                <path d="M4 18h16.008C20 18 20 6 20 6H3.992C4 6 4 18 4 18zM2 5.994C2 4.893 2.898 4 3.99 4h16.02C21.108 4 22 4.895 22 5.994v12.012A1.997 1.997 0 0 1 20.01 20H3.99A1.994 1.994 0 0 1 2 18.006V5.994z"/>
-                                                                <path d="M7 5v14h2V5z"/>
-                                                                <path d="M7 11h14V9H7z"/>
-                                                            </g>
-                                                        </svg></span></div>
-                                                        <div class="css-t44v0r">
-                                                            <div class="css-zccy0n">대시보드</div>
-                                                        </div>
-                                                    </a></div>
-                                                    <div role="presentation" class="css-7xjigh">
-                                                        <a  data-testid="NavigationItem" id="home" text="내 작업" index="0"
-                                                            customComponents="[object Object]" spacing="default"
-                                                            class="css-1krxkzl-css" href="/jira/your-work" target="_self">
-                                                        <div class="css-1k6xeo5">
-                                                            <span   class="Icon__IconWrapper-dyhwwi-0 bcqBjl">
-                                                                <svg width="24" height="24" viewBox="0 0 24 24"
-                                                                    focusable="false" role="presentation">
-                                                            <g fill="currentColor" fill-rule="evenodd">
-                                                                <path d="M5 19h14V5H5v14zM3 4.995C3 3.893 3.893 3 4.995 3h14.01C20.107 3 21 3.893 21 4.995v14.01A1.995 1.995 0 0 1 19.005 21H4.995A1.995 1.995 0 0 1 3 19.005V4.995z"
-                                                                      fill-rule="nonzero"/>
-                                                                <path d="M9.17 17H4v1.5A1.5 1.5 0 0 0 5.505 20h12.99c.838 0 1.505-.672 1.505-1.5V17h-5.17a3.001 3.001 0 0 1-5.66 0zM7 12h10v2H7zm0-4h10v2H7z"/>
-                                                            </g>
-                                                        </svg></span></div>
-                                                        <div class="css-t44v0r">
-                                                            <div class="css-zccy0n">내 작업</div>
-                                                        </div>
-                                                    </a></div>
-                                                    <div role="presentation" class="css-7xjigh"><a
-                                                            data-testid="NavigationItem"
-                                                            navigationUIController="[object Object]"
-                                                            engagementId="global-product-projects" id="projects"
-                                                            items="[object Object]" index="1"
-                                                            customComponents="[object Object]" text="요구사항 관리"
-                                                            spacing="default" class="css-1cb0vma-css"
-                                                            href="/secure/BrowseProjects.jspa" target="_self">
-                                                        <div class="css-1k6xeo5"><span
-                                                                class="Icon__IconWrapper-dyhwwi-0 bcqBjl"><svg
-                                                                width="24" height="24" viewBox="0 0 24 24"
-                                                                focusable="false" role="presentation">
-                                                            <path d="M20 19V8h-9.154l-.503-1.258-.455-1.136C9.778 5.33 9.291 5 9.003 5H3.997C4.002 5 4 19 4 19h16zM12.2 6h7.809C21.109 6 22 6.893 22 7.992v11.016c0 1.1-.898 1.992-1.991 1.992H3.991C2.891 21 2 20.107 2 19.008V5.006C2 3.898 2.896 3 3.997 3h5.006c1.103 0 2.327.826 2.742 1.862L12.2 6z"
-                                                                  fill="currentColor"/>
-                                                        </svg></span></div>
-                                                        <div class="css-t44v0r">
-                                                            <div class="css-zccy0n">요구사항 관리</div>
-                                                        </div>
-                                                    </a></div>
-                                                    <div role="presentation" class="css-7xjigh"><a
-                                                            data-testid="NavigationItem" id="people" text="사용자"
-                                                            index="4" customComponents="[object Object]"
-                                                            spacing="default" class="css-1krxkzl-css"
-                                                            href="/jira/people" target="_self">
-                                                        <div class="css-1k6xeo5"><span
-                                                                class="Icon__IconWrapper-dyhwwi-0 bcqBjl"><svg
-                                                                width="24" height="24" viewBox="0 0 24 24"
-                                                                focusable="false" role="presentation">
-                                                            <g fill="currentColor" fill-rule="evenodd">
-                                                                <circle cx="16" cy="9" r="3"/>
-                                                                <circle cx="8" cy="6" r="3"/>
-                                                                <path d="M11 15c0-1.105.887-2 2-2h6c1.105 0 2 .885 2 2v3.73c0 3.027-10 3.027-10 0V15z"/>
-                                                                <path d="M13 12a1.997 1.997 0 0 0-2-2H5c-1.113 0-2 .897-2 2.003v3.826c0 1.921 4.054 2.518 7 1.984v-2.807A3.001 3.001 0 0 1 12.997 12H13z"/>
-                                                            </g>
-                                                        </svg></span></div>
-                                                        <div class="css-t44v0r">
-                                                            <div class="css-zccy0n">사용자</div>
-                                                        </div>
-                                                    </a></div>
-                                                    <div role="presentation" class="css-7xjigh"><a
-                                                            data-testid="NavigationItem"
-                                                            href="/secure/admin/ViewApplicationProperties.jspa"
-                                                            class="css-1krxkzl-css">
-                                                        <div class="css-1k6xeo5"><span
-                                                                class="Icon__IconWrapper-dyhwwi-0 bcqBjl"><svg
-                                                                width="24" height="24" viewBox="0 0 24 24"
-                                                                focusable="false" role="presentation">
-                                                            <path d="M11.701 16.7a5.002 5.002 0 1 1 0-10.003 5.002 5.002 0 0 1 0 10.004m8.368-3.117a1.995 1.995 0 0 1-1.346-1.885c0-.876.563-1.613 1.345-1.885a.48.48 0 0 0 .315-.574 8.947 8.947 0 0 0-.836-1.993.477.477 0 0 0-.598-.195 2.04 2.04 0 0 1-1.29.08 1.988 1.988 0 0 1-1.404-1.395 2.04 2.04 0 0 1 .076-1.297.478.478 0 0 0-.196-.597 8.98 8.98 0 0 0-1.975-.826.479.479 0 0 0-.574.314 1.995 1.995 0 0 1-1.885 1.346 1.994 1.994 0 0 1-1.884-1.345.482.482 0 0 0-.575-.315c-.708.2-1.379.485-2.004.842a.47.47 0 0 0-.198.582A2.002 2.002 0 0 1 4.445 7.06a.478.478 0 0 0-.595.196 8.946 8.946 0 0 0-.833 1.994.48.48 0 0 0 .308.572 1.995 1.995 0 0 1 1.323 1.877c0 .867-.552 1.599-1.324 1.877a.479.479 0 0 0-.308.57 8.99 8.99 0 0 0 .723 1.79.477.477 0 0 0 .624.194c.595-.273 1.343-.264 2.104.238.117.077.225.185.302.3.527.8.512 1.58.198 2.188a.473.473 0 0 0 .168.628 8.946 8.946 0 0 0 2.11.897.474.474 0 0 0 .57-.313 1.995 1.995 0 0 1 1.886-1.353c.878 0 1.618.567 1.887 1.353a.475.475 0 0 0 .57.313 8.964 8.964 0 0 0 2.084-.883.473.473 0 0 0 .167-.631c-.318-.608-.337-1.393.191-2.195.077-.116.185-.225.302-.302.772-.511 1.527-.513 2.125-.23a.477.477 0 0 0 .628-.19 8.925 8.925 0 0 0 .728-1.793.478.478 0 0 0-.314-.573"
-                                                                  fill="currentColor" fill-rule="evenodd"/>
-                                                        </svg></span></div>
-                                                        <div class="css-t44v0r">
-                                                            <div class="css-zccy0n">ARMS 설정</div>
-                                                        </div>
-                                                        <div class="css-1o0dqfr"></div>
-                                                    </a></div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
+
+                        <li id="system-help-menu">
+                            <a class="aui-nav-link aui-dropdown2-trigger aui-dropdown2-trigger-arrowless" id="help_menu"
+                               aria-haspopup="true" aria-owns="system-help-menu-content"
+                               href="https://docs.atlassian.com/jira/jsw-docs-089/"
+                               target="$textUtils.htmlEncode($rootHelpMenuItem.params.target)" title="Help"><span
+                                    class="aui-icon aui-icon-small aui-iconfont-question-filled">Help</span></a>
+                            <div id="system-help-menu-content" class="aui-dropdown2 aui-style-default">
+                                <div class="aui-dropdown2-section">
+                                    <ul id="jira-help" class="aui-list-truncate">
+                                        <li>
+                                            <a id="gh_view_help" class="aui-nav-link "
+                                               title="Get help online for Jira Software"
+                                               href="https://docs.atlassian.com/jira/jsw-docs-089/" target="_blank">Jira
+                                                Software help</a>
+                                        </li>
+                                        <li>
+                                            <a id="view_core_help" class="aui-nav-link "
+                                               title="Go to the online documentation for Jira Core"
+                                               href="https://docs.atlassian.com/jira/jcore-docs-089/" target="_blank">Jira
+                                                Core help</a>
+                                        </li>
+                                        <li>
+                                            <a id="view_admin_help" class="aui-nav-link "
+                                               title="Go to the latest Jira admin documentation"
+                                               href="https://docs.atlassian.com/jira/jadm-docs-089/" target="_blank">Jira
+                                                admin help</a>
+                                        </li>
+                                        <li>
+                                            <a id="keyshortscuthelp" class="aui-nav-link "
+                                               title="Get more information about Jira's Keyboard Shortcuts"
+                                               href="/secure/ViewKeyboardShortcuts!default.jspa" target="_blank">Keyboard
+                                                Shortcuts</a>
+                                        </li>
+                                        <li>
+                                            <a id="view_about" class="aui-nav-link "
+                                               title="Get more information about Jira" href="/secure/AboutPage.jspa">About
+                                                Jira</a>
+                                        </li>
+                                        <li>
+                                            <a id="view_credits" class="aui-nav-link " title="See who did what"
+                                               href="/secure/credits/AroundTheWorld!default.jspa" target="_blank">Jira
+                                                Credits</a>
+                                        </li>
+                                    </ul>
                                 </div>
                             </div>
-                        </div>
-                    </div>
-                    <div class="css-fwx9m2-css">
-                        <div class="css-bouca4-css"></div>
-                        <div class="css-xl5crp-css">
-                            <div class="css-19t75e1-css"></div>
-                        </div>
-                        <div>
-                            <div>
-                                <button class="ak-navigation-resize-button css-pkc7ok-css" type="button"
-                                        aria-expanded="true" aria-label="Toggle navigation">
-                                    <div class="css-rmhfod-css"></div>
-                                    <span class="sc-fdcRnX jvPWHn"><svg width="24" height="24" viewBox="0 0 24 24"
-                                                                        focusable="false" role="presentation">
-                                        <path d="M13.706 9.698a.988.988 0 0 0 0-1.407 1.01 1.01 0 0 0-1.419 0l-2.965 2.94a1.09 1.09 0 0 0 0 1.548l2.955 2.93a1.01 1.01 0 0 0 1.42 0 .988.988 0 0 0 0-1.407l-2.318-2.297 2.327-2.307z"
-                                              fill="currentColor" fill-rule="evenodd"/>
-                                    </svg></span></button>
+                        </li>
+
+
+                        <li id="system-admin-menu">
+                            <a href="/plugins/servlet/applications/versions-licenses" id="admin_menu"
+                               class="aui-nav-link aui-dropdown2-trigger aui-dropdown2-trigger-arrowless"
+                               aria-haspopup="true" aria-owns="system-admin-menu-content" title="Administration">
+                                <span class="aui-icon aui-icon-small aui-iconfont-configure">Administration</span>
+                            </a>
+                            <div id="system-admin-menu-content" class="aui-dropdown2 aui-style-default">
+                                <div class="aui-dropdown2-section">
+                                    <strong>Jira administration</strong>
+                                    <ul class="aui-list-truncate">
+                                        <li>
+                                            <a href="/plugins/servlet/applications/versions-licenses"
+                                               class="aui-nav-link" id="admin_applications_menu">Applications</a>
+                                        </li>
+                                        <li>
+                                            <a href="/secure/project/BrowseProjects.jspa?s=view_projects"
+                                               class="aui-nav-link" id="admin_project_menu">Projects</a>
+                                        </li>
+                                        <li>
+                                            <a href="/secure/admin/ViewIssueTypes.jspa" class="aui-nav-link"
+                                               id="admin_issues_menu">Issues</a>
+                                        </li>
+                                        <li>
+                                            <a href="/plugins/servlet/upm/marketplace?source=side_nav_find_new_addons"
+                                               class="aui-nav-link" id="admin_plugins_menu">Manage apps</a>
+                                        </li>
+                                        <li>
+                                            <a href="/secure/admin/user/UserBrowser.jspa" class="aui-nav-link"
+                                               id="admin_users_menu">User management</a>
+                                        </li>
+                                        <li>
+                                            <a href="/secure/PostUpgradeLandingPage.jspa" class="aui-nav-link"
+                                               id="admin_pulp_menu">Latest upgrade report</a>
+                                        </li>
+                                        <li>
+                                            <a href="/secure/admin/ViewApplicationProperties.jspa" class="aui-nav-link"
+                                               id="admin_system_menu">System</a>
+                                        </li>
+                                    </ul>
+                                </div>
                             </div>
-                        </div>
-                    </div>
+                        </li>
+
+
+                        <li id="user-options">
+                            <a id="header-details-user-fullname"
+                               class="aui-dropdown2-trigger aui-dropdown2-trigger-arrowless" aria-haspopup="true"
+                               aria-owns="user-options-content" data-username="admin" data-displayname="admin"
+                               href="/secure/ViewProfile.jspa" title="User profile for admin">
+            <span class="aui-avatar aui-avatar-small">
+                <span class="aui-avatar-inner">
+                    <img src="https://www.gravatar.com/avatar/4e61ca4ae3ac67909314cb92241901ab?d=mm&s=24"
+                         alt="User profile for admin"/>
+                </span>
+            </span>
+                            </a>
+                            <div id="user-options-content" class="aui-dropdown2 aui-style-default">
+                                <div class="aui-dropdown2-section">
+                                    <ul id="personal" class="aui-list-truncate">
+                                        <li>
+                                            <a id="view_profile" class=""
+                                               title="View and change your details and preferences"
+                                               href="/secure/ViewProfile.jspa">Profile</a>
+                                        </li>
+                                        <li>
+                                            <a id="a11y-personal-settings-link" class=""
+                                               title="Change your accessibility settings"
+                                               href="/secure/AccessibilityPersonalSettings!default.jspa">Accessibility</a>
+                                        </li>
+                                        <li>
+                                            <a id="upm-requests-link" class=""
+                                               href="/plugins/servlet/upm/requests?source=header_user">Atlassian
+                                                Marketplace</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="aui-dropdown2-section">
+                                    <strong>My Jira Home</strong>
+                                    <ul id="set_my_jira_home" class="aui-list-truncate">
+                                        <li>
+                                            <a id="set_my_jira_home_default"
+                                               class="aui-dropdown2-radio interactive checked    "
+                                               title="Set my Jira Home to the Dashboard."
+                                               href="/secure/UpdateMyJiraHome.jspa?target=com.atlassian.jira.jira-my-home-plugin%3Aset_my_jira_home_dashboard&atl_token=BO84-C8GQ-EYXH-XJ3S_dbbe80dacbe38232b82ad01e7a3da3ca7fb2b842_lin">Dashboard</a>
+                                        </li>
+                                        <li>
+                                            <a id="greenhopper-my-jira-home-set"
+                                               class="aui-dropdown2-radio interactive    "
+                                               title="Set my Jira home page to Boards."
+                                               href="/secure/UpdateMyJiraHome.jspa?target=com.pyxis.greenhopper.jira%3Agreenhopper-my-jira-home-set-51&atl_token=BO84-C8GQ-EYXH-XJ3S_dbbe80dacbe38232b82ad01e7a3da3ca7fb2b842_lin">Boards</a>
+                                        </li>
+                                        <li>
+                                            <a id="set_my_jira_home_issuenav"
+                                               class="aui-dropdown2-radio interactive    "
+                                               title="Set my Jira Home to the Issue Navigator."
+                                               href="/secure/UpdateMyJiraHome.jspa?target=com.atlassian.jira.jira-my-home-plugin%3Aset_my_jira_home_issue&atl_token=BO84-C8GQ-EYXH-XJ3S_dbbe80dacbe38232b82ad01e7a3da3ca7fb2b842_lin">Issue
+                                                Navigator</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="aui-dropdown2-section">
+                                    <ul id="system" class="aui-list-truncate">
+                                        <li>
+                                            <a id="log_out" class="" title="Log out and cancel any automatic login."
+                                               href="/logout?atl_token=BO84-C8GQ-EYXH-XJ3S_dbbe80dacbe38232b82ad01e7a3da3ca7fb2b842_lin">Log
+                                                Out</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
                 </div>
-                <div style="will-change:padding-left;padding-left:240px" data-testid="Content" class="css-teprsg">
-                    <style>#navigation-app {
-                        display: none !important
-                    }</style>
-                    <async-bundle style="display:none" data-id="async-projects-directory"></async-bundle>
-                    <div class="sc-kzfUGa fSIqLW">
-                        <div class="sc-isojaI ejMWcX">
-                            <div class="sc-bRBYWo fyaYte">
-                                <div class="styled__Outer-sc-1a16ki5-0 ibOodI">
-                                    <div class="styled__TitleWrapper-sc-1a16ki5-2 BcVQM">
-                                        <div class="styled__TitleContainer-sc-1a16ki5-3 deGCMa"><h1
-                                                class="styled__StyledTitle-sc-1a16ki5-1 gHQUZE">요구사항 관리</h1></div>
-                                        <div class="styled__ActionsWrapper-sc-1a16ki5-4 dbMQVK">
-                                            <div class="sc-jOnSTu chPXxh">
-                                                <div class="sc-bRBYWo fyaYte">
-                                                    <button data-test-id="global-pages.directories.projects-directory-v2.create-projects-button.button.button"
-                                                            type="button" class="css-1yx6h60"><span
-                                                            class="css-j8fq0c"><span class="css-t5emrf">요구사항 제출하기</span></span>
-                                                    </button>
-                                                </div>
-                                            </div>
+            </div><!-- .aui-header-inner--></nav><!-- .aui-header -->
+    </header>
+
+
+    <section id="content" role="main">
+        <big-pipe data-id="sidebar-id" unresolved></big-pipe>
+        <div class="aui-sidebar  sidebar-placeholder">
+            <div class="aui-sidebar-wrapper">
+                <div class="aui-sidebar-body">
+                    <header class="aui-page-header">
+                        <div class="aui-page-header-inner">
+                            <div class="aui-page-header-image"><a href="/projects/PCM/summary"
+                                                                  title="Process management"
+                                                                  class="jira-project-avatar"><span
+                                    class="aui-avatar aui-avatar-large aui-avatar-project"><span
+                                    class="aui-avatar-inner"><img src="/secure/projectavatar?avatarId=10324"
+                                                                  alt="Process management"></span></span><img
+                                    src="data:image/svg+xml;base64,PHN2ZyB2ZXJzaW9uPSIxIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA3MSA3MSI+PGNpcmNsZSBjeD0iMzUuNSIgY3k9IjM1LjUiIHI9IjM1LjUiIGZpbGw9IiMwMDY1ZmYiLz48cGF0aCBkPSJNMTguNyAzNy41aDMzLjVjMS42IDAgMyAxLjMgMyAzcy0xLjMgMy0zIDNIMTguN2MtMS42IDAtMy0xLjMtMy0zczEuNC0zIDMtM3ptMC05LjloMzMuNWMxLjYgMCAzIDEuMyAzIDMgMCAxLjYtMS4zIDMtMyAzSDE4LjdjLTEuNiAwLTMtMS4zLTMtMyAuMS0xLjcgMS40LTMgMy0zem0wLTkuOGgzMy41YzEuNiAwIDMgMS4zIDMgM3MtMS4zIDMtMyAzSDE4LjdjLTEuNiAwLTMtMS4zLTMtM3MxLjQtMyAzLTN6bS4xIDI5LjVoMTcuN2MxLjcgMCAzIDEuMyAzIDNzLTEuMyAzLTMgM0gxOC44Yy0xLjcgMC0zLTEuMy0zLTMgMC0xLjYgMS4zLTMgMy0zeiIgZmlsbD0iI2ZmZiIvPjwvc3ZnPg=="
+                                    alt="Project Type: business" class="jira-project-avatar-icon"></a></div>
+                            <!-- .aui-page-header-image -->
+                            <div class="aui-page-header-main">
+                                <h1>
+                                    <div class="aui-group aui-group-split">
+                                        <div class="aui-item project-title"><a href="/projects/PCM/summary"
+                                                                               title="Process management">Process
+                                            management</a></div>
+                                    </div>
+                                </h1>
+                            </div><!-- .aui-page-header-main -->
+                            <div class="aui-page-header-main scopeFilterContainer"></div><!-- .aui-page-header-main -->
+                        </div><!-- .aui-page-header-inner --></header><!-- .aui-page-header -->
+                    <nav class="aui-navgroup aui-navgroup-vertical">
+                        <div class="aui-navgroup-inner sidebar-content-container jira-navigation">
+                            <div class="aui-sidebar-group aui-sidebar-group-tier-one"
+                                 data-id="sidebar-navigation-panel">
+                                <ul class="aui-nav" resolved="">
+                                    <li><a class="aui-nav-item " href="/projects/PCM/summary"
+                                           data-link-id="com.atlassian.jira.jira-projects-plugin:summary-page"><span
+                                            class="aui-icon aui-icon-large icon-sidebar-summary"></span><span
+                                            class="aui-nav-item-label" title="Summary">Summary</span></a></li>
+                                    <li><a class="aui-nav-item " href="/projects/PCM/issues"
+                                           data-link-id="com.atlassian.jira.jira-projects-issue-navigator:sidebar-issue-navigator"><span
+                                            class="aui-icon aui-icon-large icon-sidebar-issues aui-iconfont-issues"></span><span
+                                            class="aui-nav-item-label" title="Issues">Issues</span></a></li>
+                                    <li class="aui-nav-selected"><a class="aui-nav-item "
+                                                                    href="http://localhost:8080/static/"
+                                                                    data-link-id="com.atlassian.jira.jira-projects-plugin:report-page"><span
+                                            class="aui-icon aui-icon-large agile-icon-report aui-iconfont-graph-line"></span><span
+                                            class="aui-nav-item-label" title="Reports">Reports</span></a></li>
+                                </ul>
+                            </div>
+                            <div class="aui-sidebar-group jira-sidebar-group-with-divider project-shortcuts-group"
+                                 data-id="project-shortcuts-group"><span
+                                    class="aui-icon aui-icon-small aui-iconfont-link">Project shortcuts</span>
+                                <div class="aui-nav-heading">Project shortcuts</div>
+                                <p class="project-shortcuts-group__description hidden">Add a link to useful information
+                                    for your whole team to see.</p>
+                                <ul class="aui-nav project-shortcuts-list" resolved="">
+                                    <li class="project-shortcut"><a class="aui-nav-item project-shortcuts-group__link"
+                                                                    href="https://docs.atlassian.com/jira/jcore-docs-089/Process+management"
+                                                                    title="Process management ideas" target="_blank"
+                                                                    data-shortcut-id="5"
+                                                                    data-link-id="project-shortcut-5"><span
+                                            class="aui-nav-item-label">Process management ideas</span></a>
+                                        <button class="aui-button aui-button-subtle aui-dropdown2-trigger aui-dropdown2-trigger-arrowless project-shortcuts-group__actions"
+                                                aria-owns="project-shortcuts-dropdown_5"
+                                                aria-controls="project-shortcuts-dropdown_5" aria-haspopup="true"
+                                                resolved="" aria-expanded="false"><span
+                                                class="aui-icon aui-icon-small aui-iconfont-more">Filter Actions</span>
+                                        </button>
+                                        <div id="project-shortcuts-dropdown_5"
+                                             class="aui-dropdown2 aui-style-default project-shortcuts-group__dropdown aui-layer"
+                                             resolved="" aria-hidden="true">
+                                            <ul class="aui-list-truncate">
+                                                <li><a class="project-shortcuts-group__actions__edit" href="#">Edit</a>
+                                                </li>
+                                                <li><a class="project-shortcuts-group__actions__delete  " href="#">Delete</a>
+                                                </li>
+                                            </ul>
                                         </div>
-                                    </div>
-                                    <div class="styled__BottomBarWrapper-sc-1a16ki5-5 hzujZM">
-                                        <div class="sc-bRBYWo fyaYte"></div>
-                                        <div class="sc-fLcSlx jItwFt">
-                                            <div class="Content__ContentWrapper-ve26fj-2 bXOmNt">
-                                                <div class="Content__ChildWrapper-ve26fj-0 emyNPN">
-                                                    <div class="Content-ve26fj-1 dVarue">
-                                                        <div class="sc-dlyikq kyOXBO">
-                                                            <div class="sc-glUWqk jDVrEp"><input type="text"
-                                                                                                 class="ajs-dirty-warning-exempt SingleLineTextInput__EditView-sc-4hfvq0-1 igmCwp"
-                                                                                                 aria-label="검색"
-                                                                                                 data-test-id="common.components.field-search"
-                                                                                                 name="search"
-                                                                                                 placeholder=""
-                                                                                                 autoComplete="on"/>
-                                                            </div>
-                                                            <div class="sc-fFTYTi jYmpha"
-                                                                 data-test-id="common.components.field-search.clear-button">
-                                                                <span class="Icon__IconWrapper-dyhwwi-0 dqqHMN"
-                                                                      aria-label="검색"><svg width="24" height="24"
-                                                                                           viewBox="0 0 24 24"
-                                                                                           focusable="false"
-                                                                                           role="presentation">
-                                                                    <path d="M16.436 15.085l3.94 4.01a1 1 0 0 1-1.425 1.402l-3.938-4.006a7.5 7.5 0 1 1 1.423-1.406zM10.5 16a5.5 5.5 0 1 0 0-11 5.5 5.5 0 0 0 0 11z"
-                                                                          fill="currentColor" fill-rule="evenodd"/>
-                                                                </svg></span></div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="sc-bRBYWo fyaYte">
-                                                <div class="css-1y5giwt-container-className">
-                                                    <div class="css-w46f6b-control-className">
-                                                        <div class="css-vgndgl-className">
-                                                            <div style="overflow:hidden;white-space:nowrap;width:auto">
-                                                                <div class="css-es5nqv-multiValue-className">
-                                                                    <div class="css-i9pmv3-className">
-                                                                        <div class="sc-fZEjqe hXByPh">Software</div>
-                                                                    </div>
-                                                                    <div class="css-fyxd8g-className"><span
-                                                                            class="Icon__IconWrapper-dyhwwi-0 eEXFSz"><svg
-                                                                            width="24" height="24" viewBox="0 0 24 24"
-                                                                            focusable="false" role="presentation">
-                                                                        <g fill-rule="evenodd">
-                                                                            <circle fill="currentColor" cx="12" cy="12"
-                                                                                    r="9"/>
-                                                                            <path d="M16.155 14.493a1.174 1.174 0 1 1-1.662 1.663L12 13.662l-2.494 2.494a1.172 1.172 0 0 1-1.662 0 1.176 1.176 0 0 1 0-1.663L10.337 12 7.844 9.507a1.176 1.176 0 0 1 1.662-1.662L12 10.338l2.493-2.493a1.174 1.174 0 1 1 1.662 1.662L13.662 12l2.493 2.493z"
-                                                                                  fill="inherit"/>
-                                                                        </g>
-                                                                    </svg></span></div>
-                                                                </div>
-                                                            </div>
-                                                            <input id="react-select-2-input" readonly="" tabindex="0"
-                                                                   value="" class="css-1y6fgam-dummyInput-className"/>
-                                                        </div>
-                                                        <div class="css-1um1oee-className">
-                                                            <div aria-hidden="true"
-                                                                 class="css-18o9rlk-indicatorContainer-className"><span
-                                                                    class="Icon__IconWrapper-dyhwwi-0 kAaUwJ"><svg
-                                                                    width="24" height="24" viewBox="0 0 24 24"
-                                                                    focusable="false" role="presentation">
-                                                                <g fill-rule="evenodd">
-                                                                    <circle fill="currentColor" cx="12" cy="12" r="9"/>
-                                                                    <path d="M16.155 14.493a1.174 1.174 0 1 1-1.662 1.663L12 13.662l-2.494 2.494a1.172 1.172 0 0 1-1.662 0 1.176 1.176 0 0 1 0-1.663L10.337 12 7.844 9.507a1.176 1.176 0 0 1 1.662-1.662L12 10.338l2.493-2.493a1.174 1.174 0 1 1 1.662 1.662L13.662 12l2.493 2.493z"
-                                                                          fill="inherit"/>
-                                                                </g>
-                                                            </svg></span></div>
-                                                            <div aria-hidden="true"
-                                                                 class="css-lzj9iy-indicatorContainer-className"><span
-                                                                    class="Icon__IconWrapper-dyhwwi-0 bcqBjl"><svg
-                                                                    width="24" height="24" viewBox="0 0 24 24"
-                                                                    focusable="false" role="presentation">
-                                                                <path d="M6.744 8.744a1.053 1.053 0 0 0 0 1.49l4.547 4.557a1 1 0 0 0 1.416 0l4.55-4.558a1.051 1.051 0 1 0-1.488-1.488l-3.77 3.776-3.768-3.776a1.051 1.051 0 0 0-1.487 0z"
-                                                                      fill="currentColor"/>
-                                                            </svg></span></div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
+                                    </li>
+                                    <li class="project-shortcut"><a class="aui-nav-item project-shortcuts-group__link"
+                                                                    href="https://docs.atlassian.com/jira/jcore-docs-089/Working+in+a+project"
+                                                                    title="Working in a project" target="_blank"
+                                                                    data-shortcut-id="6"
+                                                                    data-link-id="project-shortcut-6"><span
+                                            class="aui-nav-item-label">Working in a project</span></a>
+                                        <button class="aui-button aui-button-subtle aui-dropdown2-trigger aui-dropdown2-trigger-arrowless project-shortcuts-group__actions"
+                                                aria-owns="project-shortcuts-dropdown_6"
+                                                aria-controls="project-shortcuts-dropdown_6" aria-haspopup="true"
+                                                resolved="" aria-expanded="false"><span
+                                                class="aui-icon aui-icon-small aui-iconfont-more">Filter Actions</span>
+                                        </button>
+                                        <div id="project-shortcuts-dropdown_6"
+                                             class="aui-dropdown2 aui-style-default project-shortcuts-group__dropdown aui-layer"
+                                             resolved="" aria-hidden="true">
+                                            <ul class="aui-list-truncate">
+                                                <li><a class="project-shortcuts-group__actions__edit" href="#">Edit</a>
+                                                </li>
+                                                <li><a class="project-shortcuts-group__actions__delete  " href="#">Delete</a>
+                                                </li>
+                                            </ul>
                                         </div>
-                                    </div>
-                                </div>
-                                <div class="sc-lfrgnC bmpvXU"
-                                     data-test-id="global-pages.directories.directory-base.content.table.container">
-                                    <div class="sc-qurOa ghCOJp">
-                                        <table class="sc-jpYMuy WKgtx">
-                                            <thead class="sc-ktwmPu gXaXfk">
-                                            <tr>
-                                                <th class="sc-bUVJja hnHwJs" width="32px"><span><div
-                                                        class="sc-eEOpXj fxkLUV"><span
-                                                        class="Icon__IconWrapper-dyhwwi-0 dqqHMN"><svg width="24"
-                                                                                                       height="24"
-                                                                                                       viewBox="0 0 24 24"
-                                                                                                       focusable="false"
-                                                                                                       role="presentation">
-                                                    <path d="M12.072 17.284l-3.905 2.053a1 1 0 0 1-1.451-1.054l.745-4.349-3.159-3.08a1 1 0 0 1 .554-1.705l4.366-.635 1.953-3.956a1 1 0 0 1 1.794 0l1.952 3.956 4.366.635a1 1 0 0 1 .555 1.705l-3.16 3.08.746 4.349a1 1 0 0 1-1.45 1.054l-3.906-2.053z"
-                                                          fill="currentColor" fill-rule="evenodd"/>
-                                                </svg></span></div></span></th>
-                                                <th class="sc-bUVJja iXtyqj" width="248px" tabindex="0"><span><span
-                                                        class="sc-bTXUnW cvhvMQ">이름</span></span></th>
-                                                <th class="sc-bUVJja czhmpg" width="12" tabindex="0"><span><span
-                                                        class="sc-bTXUnW cvhvMQ">키</span></span></th>
-                                                <th class="sc-bUVJja eUuYSQ" width="20"><span><span
-                                                        class="sc-bTXUnW cvhvMQ">유형</span></span></th>
-                                                <th class="sc-bUVJja dpkLGb" width="175px" tabindex="0"><span><span
-                                                        class="sc-bTXUnW cvhvMQ">리드</span></span></th>
-                                                <th class="sc-bUVJja fpbpnx" width="48px"><span><span
-                                                        class="sc-bTXUnW cvhvMQ"
-                                                        data-test-id="projects-main.content.headerCell.actions.container"></span></span>
-                                                </th>
-                                            </tr>
-                                            </thead>
-                                            <tbody>
-                                            <tr class="sc-ifKPLn fiAwQg">
-                                                <td class="sc-cApOHT kbbuqs" width="32px">
-                                                    <div class="sc-kyseJx hnmewa"><span class="sc-kKBQAD kPLUlz"
-                                                                                        role="presentation"
-                                                                                        data-is-favourite="false"><div>
-                                                        <button aria-label="별표 표시" type="button" class="css-thxho1">
-                                                            <span class="css-j8fq0c"><span class="css-eaycls"><span
-                                                                    class="sc-dLxkki iXAqDQ"
-                                                                    data-test-id="favouriting.favourite-button-stateless.icon-wrapper-list"><span
-                                                                    class="Icon__IconWrapper-dyhwwi-0 bcqBjl"><svg
-                                                                    width="24" height="24" viewBox="0 0 24 24"
-                                                                    focusable="false" role="presentation">
-                                                                <path d="M12 16.373l3.98 2.193-.76-4.655 3.276-3.347-4.524-.69L12 5.687l-1.972 4.189-4.524.689L8.78 13.91l-.762 4.655L12 16.373zm0 2.283l-3.016 1.662a2 2 0 0 1-2.939-2.075l.599-3.656-2.57-2.624a2 2 0 0 1 1.129-3.377l3.47-.528 1.518-3.224a2 2 0 0 1 3.618 0l1.519 3.224 3.47.528a2 2 0 0 1 1.127 3.377l-2.569 2.624.599 3.656a2 2 0 0 1-2.94 2.075L12 18.656z"
-                                                                      fill="currentColor"/>
-                                                            </svg></span></span></span></span></button>
-                                                    </div></span></div>
-                                                </td>
-                                                <td class="sc-cApOHT kfTkUV" width="248px"><a class="sc-fHeoTs cFNAVF"
-                                                                                              href="/browse/ARMS">
-                                                    <div class="sc-gwUXUd eZBkQJ sc-gsCAQV ccjmWS"><img
-                                                            class="sc-dwLhYX jwvNxC"
-                                                            src="https://313devgrp.atlassian.net/secure/projectavatar?pid=10000&amp;avatarId=10411"
-                                                            srcSet="https://313devgrp.atlassian.net/secure/projectavatar?pid=10000&amp;avatarId=10411&amp;size=small, https://313devgrp.atlassian.net/secure/projectavatar?pid=10000&amp;avatarId=10411&amp;size=large 2x"
-                                                            alt="ARMS"/><span class="sc-kjKmiN bocuSU">ARMS</span></div>
-                                                </a></td>
-                                                <td class="sc-cApOHT fGpbpQ" width="12">
-                                                    <div class="sc-gTwXSI jEqvVc sc-gsCAQV ccjmWS">ARMS</div>
-                                                </td>
-                                                <td class="sc-cApOHT iIpcUA" width="20">
-                                                    <div class="sc-dyEdBL dsppFy sc-gsCAQV ccjmWS">
-                                                        <div class="sc-leGWhw gswgBH">클래식 소프트웨어</div>
-                                                    </div>
-                                                </td>
-                                                <td class="sc-cApOHT gskIFc" width="175px">
-                                                    <div class="sc-hgDJdk grPaeR"><a class="sc-hbkdQL hcJmAu"
-                                                                                     href="/jira/people/5e2e94f5e127810e8286e270">
-                                                        <div class="sc-dtmvvg ijnspx">
-                                                            <div class="sc-cCXWQg fiJvJi">
-                                                                <div style="display:inline-block;position:relative;outline:0;height:28px;width:28px">
-                                                                    <span class="styledCache__StyledSpan-zohhd2-3 fmTriT"><span
-                                                                            style="background-color:transparent;background-image:url(https://secure.gravatar.com/avatar/65143d42ce30f92019ec0686f5e931a9?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Fdefault-avatar-0.png&amp;size=48&amp;s=48);background-position:center;background-repeat:no-repeat;background-size:cover;border-radius:50%;display:flex;flex:1 1 100%;height:100%;width:100%"
-                                                                            role="img"></span></span></div>
-                                                            </div>
-                                                            <div class="sc-hpXyHi elXGuD">313 313</div>
-                                                        </div>
-                                                    </a></div>
-                                                </td>
-                                                <td class="sc-cApOHT gekAGa" width="48px">
-                                                    <div class="sc-limVHe iICQle"
-                                                         data-test-id="projects-main.content.cells.actions.dropdown-menu-container">
-                                                        <div>
-                                                            <div class="Droplist-sc-1z05y4v-0 cLrmQm">
-                                                                <div>
-                                                                    <div>
-                                                                        <div class="Droplist__Trigger-sc-1z05y4v-3 eteVrT">
-                                                                            <div>
-                                                                                <button aria-controls="uid5"
-                                                                                        aria-expanded="false"
-                                                                                        aria-haspopup="true"
-                                                                                        type="button"
-                                                                                        class="css-fn5tqh"><span
-                                                                                        class="css-j8fq0c"><span
-                                                                                        class="css-noix33"><span
-                                                                                        class="Icon__IconWrapper-dyhwwi-0 bcqBjl"
-                                                                                        aria-label="더 보기"><svg
-                                                                                        width="24" height="24"
-                                                                                        viewBox="0 0 24 24"
-                                                                                        focusable="false"
-                                                                                        role="presentation">
-                                                                                    <g fill="currentColor"
-                                                                                       fill-rule="evenodd">
-                                                                                        <circle cx="5" cy="12" r="2"/>
-                                                                                        <circle cx="12" cy="12" r="2"/>
-                                                                                        <circle cx="19" cy="12" r="2"/>
-                                                                                    </g>
-                                                                                </svg></span></span></span></button>
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                    <div class="Layer__FixedTarget-qunuuz-0 cXwmnx">
-                                                                        <div style="height:100%;width:100%"></div>
-                                                                    </div>
-                                                                    <div class="styledContentContainer-p0j3f7-0 caSnlw">
-                                                                        <div style="top:0;left:0;position:absolute;z-index:400;opacity:0"></div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </td>
-                                            </tr>
-                                            </tbody>
-                                        </table>
-                                    </div>
-                                </div>
-                                <div></div>
+                                    </li>
+                                    <li><a class="aui-nav-item project-shortcuts-group__add" href="#"
+                                           data-link-id="project-shortcut-add"><span
+                                            class="aui-icon aui-icon-large aui-iconfont-add-small"></span><span
+                                            class="aui-nav-item-label">Add link</span></a></li>
+                                </ul>
                             </div>
                         </div>
-                    </div>
+                    </nav>
                 </div>
+                <div class="aui-sidebar-footer"><a href="/plugins/servlet/project-config/PCM"
+                                                   class="aui-button aui-button-subtle aui-sidebar-settings-button"
+                                                   data-tooltip="Project settings" resolved=""><span
+                        class="aui-icon aui-icon-small aui-iconfont-configure"></span><span class="aui-button-label">Project settings</span></a><a
+                        class="aui-button aui-button-subtle aui-sidebar-toggle aui-sidebar-footer-tipsy"
+                        data-tooltip="Expand sidebar ( [ )" href="#" resolved="" original-title=""><span
+                        class="aui-icon aui-icon-small"></span></a></div>
             </div>
         </div>
-    </div>
+        <script id="projects-sidebar-events-attach">
+            (function () {
+                var scriptTag = document.getElementById('projects-sidebar-events-attach');
+                var sidebarElement = document.querySelector('big-pipe[data-id=sidebar-id]');
+                sidebarElement.addEventListener('error', function (e) {
+                    require(['jira/projects/sidebar/sidebar-placeholder-initializer'], function (sidebarPlaceholderInitializer) {
+                        sidebarPlaceholderInitializer.onError(e);
+                    });
+                });
+                sidebarElement.addEventListener('success', function (e) {
+                    require(['jira/projects/sidebar/sidebar-placeholder-initializer'], function (sidebarPlaceholderInitializer) {
+                        sidebarPlaceholderInitializer.onSuccess(e);
+                    });
+                });
+                scriptTag.parentElement.removeChild(scriptTag);
+            }())
+        </script>
+        <script id="projects-sidebar-init">
+            require(['jira/projects/sidebar/expansion-manager'], function (expansionManager) {
+                var scriptTag = document.getElementById('projects-sidebar-init');
+                var sidebar = AJS.sidebar('.aui-sidebar');
+                expansionManager(sidebar);
+                scriptTag.parentElement.removeChild(scriptTag);
+            });
+        </script>
+        <div class="aui-page-panel">
+            <div class="aui-page-panel-inner">
+                <section class="aui-page-panel-content contains-header" id="sidebar-page-container">
+                    <header class="aui-page-header aui-page-header-fixed header-with-border">
+                        <div class="aui-page-header-inner"><h1><span class="reports-subnav-container"><span
+                                id="reports-subnav-title"></span><span id="reports-subnav-trigger"></span></span></h1>
+                            <span id="reports-subnav-opts"></span></div><!-- .aui-page-header-inner --></header>
+                    <!-- .aui-page-header -->
+                    <section class="aui-page-panel-content aui-page-panel-content-no-table">
+                        <div class="reports"><h2 class="reports__category">Issue analysis</h2>
+                            <ul class="reports__list" data-category-key="issue.analysis">
+                                <li class="reports__list__item"><a
+                                        href="/secure/ConfigureReport!default.jspa?selectedProjectId=10104&amp;projectOrFilterId=project-10104&amp;projectOrFilterName=Process management&amp;reportKey=com.atlassian.jira.jira-core-reports-plugin:averageage-report"
+                                        class="reports__list__report report-thumbnail-averageage"
+                                        data-report-key="com.atlassian.jira.jira-core-reports-plugin:averageage-report">Average
+                                    Age Report</a>
+                                    <p>Shows the average age of unresolved issues for a project or filter. This helps
+                                        you see whether your backlog is being kept up to date.</p></li>
+                                <li class="reports__list__item"><a
+                                        href="/secure/ConfigureReport!default.jspa?selectedProjectId=10104&amp;projectOrFilterId=project-10104&amp;projectOrFilterName=Process management&amp;reportKey=com.atlassian.jira.jira-core-reports-plugin:createdvsresolved-report"
+                                        class="reports__list__report report-thumbnail-createdvsresolved"
+                                        data-report-key="com.atlassian.jira.jira-core-reports-plugin:createdvsresolved-report">Created
+                                    vs. Resolved Issues Report</a>
+                                    <p>Maps created issues versus resolved issues over a period of time. This can help
+                                        you understand whether your overall backlog is growing or shrinking.</p></li>
+                                <li class="reports__list__item"><a
+                                        href="/secure/ConfigureReport!default.jspa?selectedProjectId=10104&amp;projectOrFilterId=project-10104&amp;projectOrFilterName=Process management&amp;reportKey=com.atlassian.jira.jira-core-reports-plugin:pie-report"
+                                        class="reports__list__report report-thumbnail-piechart"
+                                        data-report-key="com.atlassian.jira.jira-core-reports-plugin:pie-report">Pie
+                                    Chart Report</a>
+                                    <p>Shows a pie chart of issues for a project/filter grouped by a specified field.
+                                        This helps you see the breakdown of a set of issues, at a glance.</p></li>
+                                <li class="reports__list__item"><a
+                                        href="/secure/ConfigureReport!default.jspa?selectedProjectId=10104&amp;projectOrFilterId=project-10104&amp;projectOrFilterName=Process management&amp;reportKey=com.atlassian.jira.jira-core-reports-plugin:recentlycreated-report"
+                                        class="reports__list__report report-thumbnail-recentlycreated"
+                                        data-report-key="com.atlassian.jira.jira-core-reports-plugin:recentlycreated-report">Recently
+                                    Created Issues Report</a>
+                                    <p>Shows the number of issues created over a period of time for a project/filter,
+                                        and how many were resolved. This helps you understand if your team is keeping up
+                                        with incoming work.</p></li>
+                                <li class="reports__list__item"><a
+                                        href="/secure/ConfigureReport!default.jspa?selectedProjectId=10104&amp;projectOrFilterId=project-10104&amp;projectOrFilterName=Process management&amp;reportKey=com.atlassian.jira.jira-core-reports-plugin:resolutiontime-report"
+                                        class="reports__list__report report-thumbnail-resolutiontime"
+                                        data-report-key="com.atlassian.jira.jira-core-reports-plugin:resolutiontime-report">Resolution
+                                    Time Report</a>
+                                    <p>Shows the length of time taken to resolve a set of issues for a project/filter.
+                                        This helps you identify trends and incidents that you can investigate
+                                        further.</p></li>
+                                <li class="reports__list__item"><a
+                                        href="/secure/ConfigureReport!default.jspa?selectedProjectId=10104&amp;projectOrFilterId=project-10104&amp;projectOrFilterName=Process management&amp;reportKey=com.atlassian.jira.jira-core-reports-plugin:singlelevelgroupby"
+                                        class="reports__list__report report-thumbnail-singlelevelgroupby"
+                                        data-report-key="com.atlassian.jira.jira-core-reports-plugin:singlelevelgroupby">Single
+                                    Level Group By Report</a>
+                                    <p>Shows issues grouped by a particular field for a filter. This helps you group
+                                        search results by a field and see the overall status of each group.</p></li>
+                                <li class="reports__list__item"><a
+                                        href="/secure/ConfigureReport!default.jspa?selectedProjectId=10104&amp;projectOrFilterId=project-10104&amp;projectOrFilterName=Process management&amp;reportKey=com.atlassian.jira.jira-core-reports-plugin:timesince-report"
+                                        class="reports__list__report report-thumbnail-timesince"
+                                        data-report-key="com.atlassian.jira.jira-core-reports-plugin:timesince-report">Time
+                                    Since Issues Report</a>
+                                    <p>For a date field and project/filter, maps the issues against the date that the
+                                        field was set. This can help you track how many issues were created, updated,
+                                        etc, over a period of time.</p></li>
+                            </ul>
+                            <h2 class="reports__category">Forecast &amp; management</h2>
+                            <ul class="reports__list" data-category-key="forecast.management">
+                                <li class="reports__list__item"><a
+                                        href="/secure/ConfigureReport!default.jspa?selectedProjectId=10104&amp;projectOrFilterId=project-10104&amp;projectOrFilterName=Process management&amp;reportKey=com.atlassian.jira.jira-core-reports-plugin:time-tracking"
+                                        class="reports__list__report report-thumbnail-timetracking"
+                                        data-report-key="com.atlassian.jira.jira-core-reports-plugin:time-tracking">Time
+                                    Tracking Report</a>
+                                    <p>Shows the original and current time estimates for issues in the current project.
+                                        This can help you determine whether work is on track for those issues.</p></li>
+                                <li class="reports__list__item"><a
+                                        href="/secure/ConfigureReport!default.jspa?selectedProjectId=10104&amp;projectOrFilterId=project-10104&amp;projectOrFilterName=Process management&amp;reportKey=com.atlassian.jira.jira-core-reports-plugin:developer-workload"
+                                        class="reports__list__report report-thumbnail-developerworkload"
+                                        data-report-key="com.atlassian.jira.jira-core-reports-plugin:developer-workload">User
+                                    Workload Report</a>
+                                    <p>Shows the time estimates for all unresolved issues assigned to a user across
+                                        projects. This helps you understand the user&#39;s workload better.</p></li>
+                                <li class="reports__list__item"><a
+                                        href="/secure/ConfigureReport!default.jspa?selectedProjectId=10104&amp;projectOrFilterId=project-10104&amp;projectOrFilterName=Process management&amp;reportKey=com.atlassian.jira.plugins.jira-software-plugin:version-workload-report"
+                                        class="reports__list__report report-thumbnail-versionworkload"
+                                        data-report-key="com.atlassian.jira.plugins.jira-software-plugin:version-workload-report">Version
+                                    Workload Report</a>
+                                    <p>Shows the time estimates for all unresolved issues assigned to a version, broken
+                                        down by user and issues. This helps you understand the remaining work for the
+                                        version.</p></li>
+                            </ul>
+                        </div>
+                    </section><!-- .aui-page-panel-content --></section><!-- .aui-page-panel-content --></div>
+            <!-- .aui-page-panel-inner --></div><!-- .aui-page-panel -->
+    </section>
+    <footer id="footer" role="contentinfo">
+
+
+        <section class="footer-body">
+            <ul class="atlassian-footer">
+                <li>
+                    Atlassian Jira <a class="seo-link" rel="nofollow" href="https://www.atlassian.com/software/jira">Project
+                    Management Software</a>
+                    <span id="footer-build-information">(v8.9.0#809000-<span
+                            title='4ceb90abd8e813f4565a1705e597aeab0a82fc50'
+                            data-commit-id='4ceb90abd8e813f4565a1705e597aeab0a82fc50}'>sha1:4ceb90a</span>)</span>
+                </li>
+                <li>
+                    <a id="about-link" rel="nofollow" href="/secure/AboutPage.jspa/secure/AboutPage.jspa">About Jira</a>
+                </li>
+                <li>
+                    <a id="footer-report-problem-link" rel="nofollow" href="/plugins/servlet/troubleshooting/view/">Report
+                        a problem</a>
+                </li>
+            </ul>
+            <p class="atlassian-footer">
+        <span class="licensemessagered">
+                Powered by a free Atlassian <a rel='nofollow' href='http://www.atlassian.com/software/jira'>Jira evaluation license</a>. Please consider <a
+                rel='nofollow' href='/plugins/servlet/applications/versions-licenses'>purchasing it</a> today.
+
+        </span>
+            </p>
+
+            <div id="footer-logo"><a rel="nofollow" href="http://www.atlassian.com/">Atlassian</a></div>
+        </section>
+
+
+        <fieldset class="hidden parameters">
+            <input type="hidden" title="loggedInUser" value="">
+            <input type="hidden" title="ajaxTimeout"
+                   value="The call to the Jira server did not complete within the timeout period.  We are unsure of the result of this operation.">
+            <input type="hidden" title="JiraVersion" value="8.9.0"/>
+            <input type="hidden" title="ajaxUnauthorised"
+                   value="You are not authorized to perform this operation.  Please log in.">
+            <input type="hidden" title="baseURL" value="http://localhost:8080"/>
+            <input type="hidden" title="ajaxCommsError"
+                   value="The Jira server could not be contacted. This may be a temporary glitch or the server may be down. ">
+            <input type="hidden" title="ajaxServerError"
+                   value="The Jira server was contacted but has returned an error response. We are unsure of the result of this operation.">
+            <input type="hidden" title="ajaxErrorCloseDialog"
+                   value="Close this dialog and press refresh in your browser">
+            <input type="hidden" title="ajaxErrorDialogHeading" value="Communications Breakdown">
+
+            <input type="hidden" title="dirtyMessage"
+                   value="You have entered new data on this page. If you navigate away from this page without first saving your data, the changes will be lost.">
+            <input type="hidden" title="dirtyDialogMessage"
+                   value="You have entered new data in this dialog. If you navigate away from this dialog without first saving your data, the changes will be lost. Click cancel to return to the dialog.">
+            <input type="hidden" title="keyType" value="Type">
+            <input type="hidden" title="keyThen" value="then">
+            <input type="hidden" title="dblClickToExpand" value="Double click to expand">
+            <input type="hidden" title="actions" value="Actions">
+            <input type="hidden" title="removeItem" value="Remove">
+            <input type="hidden" title="workflow" value="Workflow">
+            <input type="hidden" title="labelNew" value="New Label">
+            <input type="hidden" title="issueActionsHint"
+                   value="Begin typing for available operations or press down to see all">
+            <input type="hidden" title="closelink" value="Close">
+            <input type="hidden" title="dotOperations" value="Operations">
+            <input type="hidden" title="dotLoading" value="Loading...">
+            <input type="hidden" title="frotherSuggestions" value="Suggestions">
+            <input type="hidden" title="frotherNomatches" value="No Matches">
+            <input type="hidden" title="multiselectVersionsError" value="{0} is not a valid version.">
+            <input type="hidden" title="multiselectComponentsError" value="{0} is not a valid component.">
+            <input type="hidden" title="multiselectGenericError" value="The value {0} is invalid.">
+        </fieldset>
+
+    </footer>
 </div>
 
-</body>
 
+<script type="text/javascript"
+        src="js/bigpipe-js.js"
+        data-wrm-key="jira.webresources:bigpipe-js" data-wrm-batch-type="resource" data-initially-rendered></script>
+<script>
+    window.WRM = window.WRM || {};
+    window.WRM._unparsedData = window.WRM._unparsedData || {};
+    window.WRM._unparsedErrors = window.WRM._unparsedErrors || {};
+    WRM._unparsedData["scope-filter-data"] = "{\"createScopeActions\":[],\"scopes\":[]}";
+    WRM._unparsedData["com.atlassian.jira.projects.shortcuts:can-manage"] = "true";
+    WRM._unparsedData["com.atlassian.jira.projects.shortcuts:with-icons"] = "false";
+    WRM._unparsedData["com.atlassian.jira.projects.shortcuts:shortcuts"] = "[{\"id\":\"5\",\"name\":\"Process management ideas\",\"url\":\"https://docs.atlassian.com/jira/jcore-docs-089/Process+management\",\"icon\":\"\"},{\"id\":\"6\",\"name\":\"Working in a project\",\"url\":\"https://docs.atlassian.com/jira/jcore-docs-089/Working+in+a+project\",\"icon\":\"\"}]";
+    WRM._unparsedData["com.atlassian.jira.projects.shortcuts:project-id"] = "10104";
+    WRM._unparsedData["sidebar-id"] = "\"\u003cdiv class=\\\"aui-sidebar  projects-sidebar sidebar-pending\\\" \u003e\u003cdiv class=\\\"aui-sidebar-wrapper\\\"\u003e\u003cdiv class=\\\"aui-sidebar-body\\\"\u003e\u003cheader class=\\\"aui-page-header\\\"\u003e\u003cdiv class=\\\"aui-page-header-inner\\\"\u003e\u003cdiv class=\\\"aui-page-header-image\\\"\u003e\u003ca href=\\\"\\/projects\\/PCM\\/summary\\\" title=\\\"Process management\\\" class=\\\"jira-project-avatar\\\"\u003e\u003cspan class=\\\"aui-avatar aui-avatar-large aui-avatar-project\\\"\u003e\u003cspan class=\\\"aui-avatar-inner\\\"\u003e\u003cimg src=\\\"\\/secure\\/projectavatar?avatarId=10324\\\" alt=\\\"Process management\\\" \\/\u003e\u003c\\/span\u003e\u003c\\/span\u003e\u003cimg src=\\\"data:image\\/svg+xml;base64,PHN2ZyB2ZXJzaW9uPSIxIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA3MSA3MSI+PGNpcmNsZSBjeD0iMzUuNSIgY3k9IjM1LjUiIHI9IjM1LjUiIGZpbGw9IiMwMDY1ZmYiLz48cGF0aCBkPSJNMTguNyAzNy41aDMzLjVjMS42IDAgMyAxLjMgMyAzcy0xLjMgMy0zIDNIMTguN2MtMS42IDAtMy0xLjMtMy0zczEuNC0zIDMtM3ptMC05LjloMzMuNWMxLjYgMCAzIDEuMyAzIDMgMCAxLjYtMS4zIDMtMyAzSDE4LjdjLTEuNiAwLTMtMS4zLTMtMyAuMS0xLjcgMS40LTMgMy0zem0wLTkuOGgzMy41YzEuNiAwIDMgMS4zIDMgM3MtMS4zIDMtMyAzSDE4LjdjLTEuNiAwLTMtMS4zLTMtM3MxLjQtMyAzLTN6bS4xIDI5LjVoMTcuN2MxLjcgMCAzIDEuMyAzIDNzLTEuMyAzLTMgM0gxOC44Yy0xLjcgMC0zLTEuMy0zLTMgMC0xLjYgMS4zLTMgMy0zeiIgZmlsbD0iI2ZmZiIvPjwvc3ZnPg==\\\" alt=\\\"Project Type: business\\\" class=\\\"jira-project-avatar-icon\\\" \\/\u003e\u003c\\/a\u003e\u003c\\/div\u003e\u003c!-- .aui-page-header-image --\u003e\u003cdiv class=\\\"aui-page-header-main\\\"\u003e\u003ch1\u003e\u003cdiv class=\\\"aui-group aui-group-split\\\"\u003e\u003cdiv class=\\\"aui-item project-title\\\"\u003e\u003ca href=\\\"\\/projects\\/PCM\\/summary\\\" title=\\\"Process management\\\"\u003eProcess management\u003c\\/a\u003e\u003c\\/div\u003e\u003c\\/div\u003e\u003c\\/h1\u003e\u003c\\/div\u003e\u003c!-- .aui-page-header-main --\u003e\u003cdiv class=\\\"aui-page-header-main scopeFilterContainer\\\"\u003e\u003c\\/div\u003e\u003c!-- .aui-page-header-main --\u003e\u003c\\/div\u003e\u003c!-- .aui-page-header-inner --\u003e\u003c\\/header\u003e\u003c!-- .aui-page-header --\u003e\u003cnav class=\\\"aui-navgroup aui-navgroup-vertical\\\"\u003e\u003cdiv class=\\\"aui-navgroup-inner sidebar-content-container jira-navigation\\\"\u003e\u003cdiv class=\\\"aui-sidebar-group aui-sidebar-group-tier-one\\\" data-id=\\\"sidebar-navigation-panel\\\"\u003e\u003cul class=\\\"aui-nav\\\"\u003e\u003cli  \u003e\u003ca class=\\\"aui-nav-item \\\" href=\\\"\\/projects\\/PCM\\/summary\\\" data-link-id=\\\"com.atlassian.jira.jira-projects-plugin:summary-page\\\" \u003e\u003cspan class=\\\"aui-icon aui-icon-large icon-sidebar-summary\\\"\u003e\u003c\\/span\u003e\u003cspan class=\\\"aui-nav-item-label\\\" title=\\\"Summary\\\"\u003eSummary\u003c\\/span\u003e\u003c\\/a\u003e\u003c\\/li\u003e\u003cli  \u003e\u003ca class=\\\"aui-nav-item \\\" href=\\\"\\/projects\\/PCM\\/issues\\\" data-link-id=\\\"com.atlassian.jira.jira-projects-issue-navigator:sidebar-issue-navigator\\\" \u003e\u003cspan class=\\\"aui-icon aui-icon-large icon-sidebar-issues aui-iconfont-issues\\\"\u003e\u003c\\/span\u003e\u003cspan class=\\\"aui-nav-item-label\\\" title=\\\"Issues\\\"\u003eIssues\u003c\\/span\u003e\u003c\\/a\u003e\u003c\\/li\u003e\u003cli class=\\\"aui-nav-selected\\\" \u003e\u003ca class=\\\"aui-nav-item \\\" href=\\\"\\/projects\\/PCM?selectedItem=com.atlassian.jira.jira-projects-plugin:report-page\\\" data-link-id=\\\"com.atlassian.jira.jira-projects-plugin:report-page\\\" \u003e\u003cspan class=\\\"aui-icon aui-icon-large agile-icon-report aui-iconfont-graph-line\\\"\u003e\u003c\\/span\u003e\u003cspan class=\\\"aui-nav-item-label\\\" title=\\\"Reports\\\"\u003eReports\u003c\\/span\u003e\u003c\\/a\u003e\u003c\\/li\u003e\u003c\\/ul\u003e\u003c\\/div\u003e\u003cdiv class=\\\"aui-sidebar-group jira-sidebar-group-with-divider project-shortcuts-group\\\" data-id=\\\"project-shortcuts-group\\\"\u003e\u003cspan class=\\\"aui-icon aui-icon-small aui-iconfont-link\\\"\u003eProject shortcuts\u003c\\/span\u003e\u003cdiv class=\\\"aui-nav-heading\\\"\u003eProject shortcuts\u003c\\/div\u003e\u003cp class=\\\"project-shortcuts-group__description hidden\\\"\u003eAdd a link to useful information for your whole team to see.\u003c\\/p\u003e\u003cul class=\\\"aui-nav project-shortcuts-list\\\"\u003e\u003cli class=\\\"project-shortcut\\\"\u003e\u003ca class=\\\"aui-nav-item project-shortcuts-group__link\\\" href=\\\"https:\\/\\/docs.atlassian.com\\/jira\\/jcore-docs-089\\/Process+management\\\" title=\\\"Process management ideas\\\" target=\\\"_blank\\\" data-shortcut-id=\\\"5\\\" data-link-id=\\\"project-shortcut-5\\\"\u003e\u003cspan class=\\\"aui-nav-item-label\\\"\u003eProcess management ideas\u003c\\/span\u003e\u003c\\/a\u003e\u003cbutton class=\\\"aui-button aui-button-subtle aui-dropdown2-trigger aui-dropdown2-trigger-arrowless project-shortcuts-group__actions\\\" aria-owns=\\\"project-shortcuts-dropdown_5\\\" aria-controls=\\\"project-shortcuts-dropdown_5\\\" aria-haspopup=\\\"true\\\"\u003e\u003cspan class=\\\"aui-icon aui-icon-small aui-iconfont-more\\\"\u003eFilter Actions\u003c\\/span\u003e\u003c\\/button\u003e\u003cdiv id=\\\"project-shortcuts-dropdown_5\\\" class=\\\"aui-dropdown2 aui-style-default project-shortcuts-group__dropdown\\\"\u003e\u003cul class=\\\"aui-list-truncate\\\"\u003e\u003cli\u003e\u003ca class=\\\"project-shortcuts-group__actions__edit\\\" href=\\\"#\\\"\u003eEdit\u003c\\/a\u003e\u003c\\/li\u003e\u003cli\u003e\u003ca class=\\\"project-shortcuts-group__actions__delete  \\\" href=\\\"#\\\"\u003eDelete\u003c\\/a\u003e\u003c\\/li\u003e\u003c\\/ul\u003e\u003c\\/div\u003e\u003c\\/li\u003e\u003cli class=\\\"project-shortcut\\\"\u003e\u003ca class=\\\"aui-nav-item project-shortcuts-group__link\\\" href=\\\"https:\\/\\/docs.atlassian.com\\/jira\\/jcore-docs-089\\/Working+in+a+project\\\" title=\\\"Working in a project\\\" target=\\\"_blank\\\" data-shortcut-id=\\\"6\\\" data-link-id=\\\"project-shortcut-6\\\"\u003e\u003cspan class=\\\"aui-nav-item-label\\\"\u003eWorking in a project\u003c\\/span\u003e\u003c\\/a\u003e\u003cbutton class=\\\"aui-button aui-button-subtle aui-dropdown2-trigger aui-dropdown2-trigger-arrowless project-shortcuts-group__actions\\\" aria-owns=\\\"project-shortcuts-dropdown_6\\\" aria-controls=\\\"project-shortcuts-dropdown_6\\\" aria-haspopup=\\\"true\\\"\u003e\u003cspan class=\\\"aui-icon aui-icon-small aui-iconfont-more\\\"\u003eFilter Actions\u003c\\/span\u003e\u003c\\/button\u003e\u003cdiv id=\\\"project-shortcuts-dropdown_6\\\" class=\\\"aui-dropdown2 aui-style-default project-shortcuts-group__dropdown\\\"\u003e\u003cul class=\\\"aui-list-truncate\\\"\u003e\u003cli\u003e\u003ca class=\\\"project-shortcuts-group__actions__edit\\\" href=\\\"#\\\"\u003eEdit\u003c\\/a\u003e\u003c\\/li\u003e\u003cli\u003e\u003ca class=\\\"project-shortcuts-group__actions__delete  \\\" href=\\\"#\\\"\u003eDelete\u003c\\/a\u003e\u003c\\/li\u003e\u003c\\/ul\u003e\u003c\\/div\u003e\u003c\\/li\u003e\u003cli\u003e\u003ca class=\\\"aui-nav-item project-shortcuts-group__add\\\" href=\\\"#\\\" data-link-id=\\\"project-shortcut-add\\\"\u003e\u003cspan class=\\\"aui-icon aui-icon-large aui-iconfont-add-small\\\"\u003e\u003c\\/span\u003e\u003cspan class=\\\"aui-nav-item-label\\\"\u003eAdd link\u003c\\/span\u003e\u003c\\/a\u003e\u003c\\/li\u003e\u003c\\/ul\u003e\u003c\\/div\u003e\u003c\\/div\u003e\u003c\\/nav\u003e\u003c\\/div\u003e\u003cdiv class=\\\"aui-sidebar-footer\\\"\u003e\u003ca href=\\\"\\/plugins\\/servlet\\/project-config\\/PCM\\\" class=\\\"aui-button aui-button-subtle aui-sidebar-settings-button\\\" data-tooltip=\\\"Project settings\\\"\u003e\u003cspan class=\\\"aui-icon aui-icon-small aui-iconfont-configure\\\"\u003e\u003c\\/span\u003e\u003cspan class=\\\"aui-button-label\\\"\u003eProject settings\u003c\\/span\u003e\u003c\\/a\u003e\u003ca class=\\\"aui-button aui-button-subtle aui-sidebar-toggle aui-sidebar-footer-tipsy\\\" data-tooltip=\\\"Expand sidebar ( [ )\\\" href=\\\"#\\\"\u003e\u003cspan class=\\\"aui-icon aui-icon-small\\\"\u003e\u003c\\/span\u003e\u003c\\/a\u003e\u003c\\/div\u003e\u003c\\/div\u003e\u003c\\/div\u003e\"";
+    if (window.WRM._dataArrived) window.WRM._dataArrived();</script>
+<script type="text/javascript"
+        src="js/bigpipe-init.js"
+        data-wrm-key="jira.webresources:bigpipe-init" data-wrm-batch-type="resource" data-initially-rendered></script>
+
+</body>
 </html>

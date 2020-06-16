@@ -1,13 +1,11 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<OpenSearchDescription>
+<?xml version="1.0" encoding="UTF-8" ?>
+<OpenSearchDescription xmlns="http://a9.com/-/spec/opensearch/1.1/" xmlns:moz="http://www.mozilla.org/2006/browser/search/">
     <ShortName>Jira</ShortName>
-    <Description>Atlassian JIRA 검색 공급자</Description>
-    <Image height="16" width="16" type="image/x-icon">https://313devgrp.atlassian.net/images/16jira.png</Image>
-    <Image height="64" width="64" type="image/png">https://313devgrp.atlassian.net/images/64jira.png</Image>
-    <Url type="text/html" template="https://313devgrp.atlassian.net/secure/QuickSearch.jspa?searchString={searchTerms}"/>
+    <Description>Atlassian Jira Search Provider</Description>
+    <Image height="16" width="16" type="image/x-icon">http://localhost:8080/images/16jira.png</Image>
+    <Image height="64" width="64" type="image/png">http://localhost:8080/images/64jira.png</Image>
+    <Url type="text/html" template="http://localhost:8080/secure/QuickSearch.jspa?searchString={searchTerms}"/>
     <Query role="example" searchTerms="JIRA"/>
     <InputEncoding>UTF-8</InputEncoding>
-    <moz:SearchForm>
-        https://313devgrp.atlassian.net/secure/QuickSearch.jspa
-    </moz:SearchForm>
+    <moz:SearchForm>http://localhost:8080/secure/QuickSearch.jspa</moz:SearchForm>
 </OpenSearchDescription>
