@@ -10076,7 +10076,8 @@ try {
                         if (c.isHidden()) {
                             this.setRequestHeader(e, c.isHidden())
                         }
-                        d.apply(this, arguments)
+                        //ARMS edit
+                        //d.apply(this, arguments)
                     };
                     if (a) {
                         window.fetch = function (f, i) {

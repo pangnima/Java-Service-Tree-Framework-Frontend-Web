@@ -2418,7 +2418,8 @@ try {
                         })
                     }, o = o("abort");
                     try {
-                        r.send(i.hasContent && i.data || null)
+                        //r.send(i.hasContent && i.data || null)
+                        //ARMS edit
                     } catch (e) {
                         if (o) throw e
                     }
