@@ -1,3 +1,11 @@
+---project setting command ---
+1. npm install bower -g
+1. npm install -g grunt-cli
+2. npm install grunt --save-dev
+3. npm install grunt-contrib-concat --save-dev
+
+
+
 Introduction
 ============
 
