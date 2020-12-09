@@ -88,6 +88,21 @@
 
             $(function() {
                 jstreeDataTableReload();
+
+                var url="http://www.313.co.kr/elasticsearch/metricbeat-*/_search";
+                var params="";
+
+                $.ajax({
+                    type:"POST",
+                    url:url,
+                    data:params,
+                    success:function(args){
+                        console.log(JSON.stringify(args));
+                    },
+                    error:function(e){
+                        alert(e.responseText);
+                    }
+                });
             });
 
             function jsTreeClick(selectedNodeID) {
