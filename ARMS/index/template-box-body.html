@@ -503,7 +503,7 @@
             $.ajax({
                 url : url,
                 type : type,
-                data : queryString,
+                data : JSON.stringify(queryString),
                 dataType : 'json',
                 jsonp : false,
                 jsonpCallback : 'undefined' === typeof jsonpCallback || null == jsonpCallback ? "callback" : jsonpCallback,
