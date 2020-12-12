@@ -1,0 +1,57 @@
+{
+  "aggs": {
+    "2": {
+      "terms": {
+        "field": "proc.name.keyword",
+        "order": {
+          "_count": "desc"
+        },
+        "size": 10
+      }
+    }
+  },
+  "size": 0,
+  "_source": {
+    "excludes": []
+  },
+  "stored_fields": [
+    "*"
+  ],
+  "script_fields": {},
+  "docvalue_fields": [
+    {
+      "field": "@timestamp",
+      "format": "date_time"
+    }
+  ],
+  "query": {
+    "bool": {
+      "must": [],
+      "filter": [
+        {
+          "bool": {
+            "should": [
+              {
+                "match": {
+                  "beat.hostname": ""
+                }
+              }
+            ],
+            "minimum_should_match": 1
+          }
+        },
+        {
+          "range": {
+            "@timestamp": {
+              "format": "strict_date_optional_time",
+              "gte": "2020-12-12T07:33:23.504Z",
+              "lte": "2020-12-12T07:48:23.504Z"
+            }
+          }
+        }
+      ],
+      "should": [],
+      "must_not": []
+    }
+  }
+}
