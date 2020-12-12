@@ -515,11 +515,8 @@
                 data : JSON.stringify(queryString),
                 dataType : 'json',
                 jsonp : false,
-                jsonpCallback : 'undefined' === typeof jsonpCallback || null == jsonpCallback ? "callback" : jsonpCallback,
                 timeout : 7313,
                 global : true,
-                contentType : 'undefined' === typeof contentType || null == contentType ? 'application/x-www-form-urlencoded; charset=UTF-8' : contentType,
-                async : 'undefined' === typeof async || null == async ? true : async,
                 cache : false,
                 success : function(data) {
 
