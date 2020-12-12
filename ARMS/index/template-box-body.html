@@ -484,88 +484,68 @@
             return Math.round(Math.random() * 100);
         };
 
+        var config;
+
         $(function() {
-            chartBuild();
+            var url = "";
+            var queryString = "";
+            var type = "";
+            if($(location).attr('port') == 9999){
+                url = "/api/elasticsearch/topbeat/search/api.json";
+                queryString = "nonepararm";
+                type = "get";
+            }else{
+                url="/elasticsearch/topbeat-*/_search";
+                queryString = "jsonparm";
+                type = "post";
+            }
+
+            $.ajax({
+                url : url,
+                type : type,
+                data : queryString,
+                dataType : 'json',
+                jsonp : false,
+                jsonpCallback : 'undefined' === typeof jsonpCallback || null == jsonpCallback ? "callback" : jsonpCallback,
+                timeout : 7313,
+                global : true,
+                contentType : 'undefined' === typeof contentType || null == contentType ? 'application/x-www-form-urlencoded; charset=UTF-8' : contentType,
+                async : 'undefined' === typeof async || null == async ? true : async,
+                cache : false,
+                success : function(data) {
+
+                    var chartLabels = [];
+                    var chartData = [];
+
+                    var filteredObj = data.aggregations[2].buckets;
+
+                    $.each(filteredObj, function(inx, obj){
+                        chartLabels.push(obj.key);
+                        chartData.push(obj.doc_count);
+                    });
+
+                    console.log(chartLabels);
+                    console.log(chartData);
+
+                    config = {
+                        type: 'radar',
+                        data: {
+                            labels: chartLabels,
+                            datasets: [{
+                                label: 'Topbeat Chart',
+                                data: chartData,
+                                backgroundColor: 'rgba(0, 119, 204, 0.3)'
+                            }]
+                        }
+                    }
+
+                    //console.log(config);
+                    window.myRadar = new Chart(document.getElementById('canvas'), config);
+                }
+            });
+
         });
 
-        function chartBuild(){
-
-            var url= "";
-
-            if($(location).attr('port') == 9999){
-                url="/api/elasticsearch/metricbeat/search/api.json";
-            }else{
-                url="/elasticsearch/metricbeat-*/_search";
-            }
-
-            $.getJSON(url,
-            {
-                tags: "mount rainier",
-                tagmode: "any",
-                format: "json"
-            },
-            function(data) {
-                $.each(data.items, function(i,item) {
-                    $("<img/>").attr("src", item.media.m).appendTo("#images");
-                    if ( i == 3 ) return false;
-                });
-            });
-        }
-
-        var color = Chart.helpers.color;
-        var config = {
-            type: 'radar',
-            data: {
-                labels: [['Eating', 'Dinner'], ['Drinking', 'Water'], 'Sleeping', ['Designing', 'Graphics'], 'Coding', 'Cycling', 'Running'],
-                datasets: [{
-                    label: 'hostname',
-                    backgroundColor: color(window.chartColors.red).alpha(0.2).rgbString(),
-                    borderColor: window.chartColors.red,
-                    pointBackgroundColor: window.chartColors.red,
-                    data: [
-                        randomScalingFactor(),
-                        randomScalingFactor(),
-                        randomScalingFactor(),
-                        randomScalingFactor(),
-                        randomScalingFactor(),
-                        randomScalingFactor(),
-                        randomScalingFactor()
-                    ]
-                }, {
-                    label: 'My Second dataset',
-                    backgroundColor: color(window.chartColors.blue).alpha(0.2).rgbString(),
-                    borderColor: window.chartColors.blue,
-                    pointBackgroundColor: window.chartColors.blue,
-                    data: [
-                        randomScalingFactor(),
-                        randomScalingFactor(),
-                        randomScalingFactor(),
-                        randomScalingFactor(),
-                        randomScalingFactor(),
-                        randomScalingFactor(),
-                        randomScalingFactor()
-                    ]
-                }]
-            },
-            options: {
-                legend: {
-                    position: 'top',
-                },
-                title: {
-                    display: true,
-                    text: 'Chart.js Radar Chart'
-                },
-                scale: {
-                    ticks: {
-                        beginAtZero: true
-                    }
-                }
-            }
-        };
-
-        window.onload = function() {
-            window.myRadar = new Chart(document.getElementById('canvas'), config);
-        };
     </script>
     <style>
         canvas {
