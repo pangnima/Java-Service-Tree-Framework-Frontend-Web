@@ -88,21 +88,6 @@
 
             $(function() {
                 jstreeDataTableReload();
-
-                var url="http://www.313.co.kr/elasticsearch/metricbeat-*/_search";
-                var params="";
-
-                $.ajax({
-                    type:"POST",
-                    url:url,
-                    data:params,
-                    success:function(args){
-                        console.log(JSON.stringify(args));
-                    },
-                    error:function(e){
-                        alert(e.responseText);
-                    }
-                });
             });
 
             function jsTreeClick(selectedNodeID) {
@@ -112,18 +97,31 @@
         <script type="text/javascript">
             function jsTreeBuild(){
 
-                $.ajax({
-                    async: false,
-                    type: 'GET',
-                    url: "/api/jsTreeServiceFramework/security/csrf.do",
-                    success: function(r) {
-                        var token = r._csrf_token;
-                        var header = r._csrf_headerName;
-                        $(document).ajaxSend(function(e, xhr, options) {
-                            xhr.setRequestHeader(header, token);
-                        });
-                    }
-                });
+                console.log("href: "+$(location).attr('href'));
+                console.log("protocol: "+$(location).attr('protocol'));
+                console.log("host: "+$(location).attr('host'));
+                console.log("pathname: "+$(location).attr('pathname'));
+                console.log("search: "+$(location).attr('search'));
+
+                console.log("hostname: "+$(location).attr('hostname'));
+                console.log("port: "+$(location).attr('port'));
+
+                if($(location).attr('port') == 9999){
+                    console.log("csrf 우회");
+                }else{
+                    $.ajax({
+                        async: false,
+                        type: 'GET',
+                        url: "/api/jsTreeServiceFramework/security/csrf.do",
+                        success: function(r) {
+                            var token = r._csrf_token;
+                            var header = r._csrf_headerName;
+                            $(document).ajaxSend(function(e, xhr, options) {
+                                xhr.setRequestHeader(header, token);
+                            });
+                        }
+                    });
+                }
 
                 $("#demo").bind(
                         "before.jstree",
@@ -485,6 +483,34 @@
         var randomScalingFactor = function() {
             return Math.round(Math.random() * 100);
         };
+
+        $(function() {
+            chartBuild();
+        });
+
+        function chartBuild(){
+
+            var url= "";
+
+            if($(location).attr('port') == 9999){
+                url="/api/elasticsearch/metricbeat/search/api.json";
+            }else{
+                url="/elasticsearch/metricbeat-*/_search";
+            }
+
+            $.getJSON(url,
+            {
+                tags: "mount rainier",
+                tagmode: "any",
+                format: "json"
+            },
+            function(data) {
+                $.each(data.items, function(i,item) {
+                    $("<img/>").attr("src", item.media.m).appendTo("#images");
+                    if ( i == 3 ) return false;
+                });
+            });
+        }
 
         var color = Chart.helpers.color;
         var config = {
