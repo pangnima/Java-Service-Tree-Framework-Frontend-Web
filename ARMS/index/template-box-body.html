@@ -489,7 +489,7 @@
         $(function() {
 
             var queryString = "";
-            $.getJSON("/api/elasticsearch/topbeat/search/request.json", function (reqdata) {
+            $.getJSON("request.json", function (reqdata) {
                 console.log(reqdata.query.bool.filter[0].bool.should[0].match["beat.hostname"]);
                 reqdata.query.bool.filter[0].bool.should[0].match["beat.hostname"] = "9eb75e7e6e3e";
                 //console.log(reqdata.query.bool.filter[0].bool.should[0].match["beat.hostname"]);
