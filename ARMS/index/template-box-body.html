@@ -518,7 +518,7 @@
                 jsonpCallback : 'undefined' === typeof jsonpCallback || null == jsonpCallback ? "callback" : jsonpCallback,
                 timeout : 7313,
                 global : true,
-                contentType : 'undefined' === typeof contentType || null == contentType ? 'application/json' : contentType,
+                contentType : 'undefined' === typeof contentType || null == contentType ? 'application/json; charset=UTF-8' : contentType,
                 async : 'undefined' === typeof async || null == async ? true : async,
                 cache : false,
                 success : function(data) {
