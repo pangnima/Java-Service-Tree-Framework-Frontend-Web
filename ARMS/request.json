@@ -1,4 +1,5 @@
 {
+
   "aggs": {
     "2": {
       "terms": {
@@ -33,7 +34,7 @@
             "should": [
               {
                 "match": {
-                  "beat.hostname": ""
+                  "beat.hostname": "9eb75e7e6e3e"
                 }
               }
             ],
