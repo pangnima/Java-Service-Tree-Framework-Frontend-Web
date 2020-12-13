@@ -11,13 +11,9 @@
     }
   },
   "size": 0,
-  "_source": {
-    "excludes": []
-  },
   "stored_fields": [
     "*"
   ],
-  "script_fields": {},
   "docvalue_fields": [
     {
       "field": "@timestamp",
@@ -26,7 +22,6 @@
   ],
   "query": {
     "bool": {
-      "must": [],
       "filter": [
         {
           "bool": {
@@ -49,9 +44,7 @@
             }
           }
         }
-      ],
-      "should": [],
-      "must_not": []
+      ]
     }
   }
 }
