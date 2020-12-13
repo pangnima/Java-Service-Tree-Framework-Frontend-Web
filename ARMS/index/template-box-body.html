@@ -488,13 +488,11 @@
 
         $(function() {
 
-            var queryString = "";
+            var queryString;
             $.getJSON("request.json", function (reqdata) {
                 console.log(reqdata.query.bool.filter[0].bool.should[0].match["beat.hostname"]);
                 reqdata.query.bool.filter[0].bool.should[0].match["beat.hostname"] = "9eb75e7e6e3e";
-                //console.log(reqdata.query.bool.filter[0].bool.should[0].match["beat.hostname"]);
 
-                //console.log(reqdata.query.bool.filter[0].bool.should[0]);
                 queryString = reqdata;
                 console.log(JSON.stringify(queryString));
             });
@@ -512,13 +510,13 @@
             $.ajax({
                 url : url,
                 type : type,
-                data : JSON.stringify(queryString),
+                data : queryString,
                 dataType : 'json',
                 jsonp : false,
                 jsonpCallback : 'undefined' === typeof jsonpCallback || null == jsonpCallback ? "callback" : jsonpCallback,
                 timeout : 7313,
                 global : true,
-                contentType : 'undefined' === typeof contentType || null == contentType ? 'application/json; charset=UTF-8' : contentType,
+                contentType : 'application/json',
                 async : 'undefined' === typeof async || null == async ? true : async,
                 cache : false,
                 success : function(data) {
