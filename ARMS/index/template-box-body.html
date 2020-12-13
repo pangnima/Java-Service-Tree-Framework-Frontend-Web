@@ -504,7 +504,7 @@
                 type = "get";
             }else{
                 url="/elasticsearch/topbeat-*/_search";
-                type = "post";
+                type = "get";
             }
 
             $.ajax({
@@ -515,6 +515,7 @@
                 jsonp : false,
                 jsonpCallback : 'undefined' === typeof jsonpCallback || null == jsonpCallback ? "callback" : jsonpCallback,
                 timeout : 7313,
+                crossDomain: true,
                 global : true,
                 contentType : 'application/json',
                 async : 'undefined' === typeof async || null == async ? true : async,
