@@ -485,72 +485,68 @@
         };
 
         var config;
-
         $(function() {
 
-            var queryString = null;
             $.getJSON("request.json", function (reqdata) {
                 console.log(reqdata.query.bool.filter[0].bool.should[0].match["beat.hostname"]);
                 reqdata.query.bool.filter[0].bool.should[0].match["beat.hostname"] = "9eb75e7e6e3e";
 
-                queryString = JSON.stringify(reqdata);
+                var queryString = JSON.stringify(reqdata);
                 console.log(queryString);
-            });
 
-            var url = "";
-            var type = "";
-            if($(location).attr('port') == 9999){
-                url = "/api/elasticsearch/topbeat/search/api.json";
-                type = "get";
-            }else{
-                url="/elasticsearch/topbeat-*/_search";
-                type = "get";
-            }
-
-            $.ajax({
-                url : url,
-                type : type,
-                data : queryString,
-                dataType : 'json',
-                jsonp : false,
-                jsonpCallback : 'undefined' === typeof jsonpCallback || null == jsonpCallback ? "callback" : jsonpCallback,
-                timeout : 7313,
-                crossDomain: true,
-                global : true,
-                contentType : 'application/json',
-                async : false,
-                cache : false,
-                success : function(data) {
-
-                    var chartLabels = [];
-                    var chartData = [];
-
-                    var filteredObj = data.aggregations[2].buckets;
-
-                    $.each(filteredObj, function(inx, obj){
-                        chartLabels.push(obj.key);
-                        chartData.push(obj.doc_count);
-                    });
-
-                    //console.log(chartLabels);
-                    //console.log(chartData);
-
-                    config = {
-                        type: 'radar',
-                        data: {
-                            labels: chartLabels,
-                            datasets: [{
-                                label: 'Topbeat Chart',
-                                data: chartData,
-                                backgroundColor: 'rgba(0, 119, 204, 0.3)'
-                            }]
-                        }
-                    }
-
-                    //console.log(config);
-                    window.myRadar = new Chart(document.getElementById('canvas'), config);
+                var url = "";
+                var type = "";
+                if($(location).attr('port') == 9999){
+                    url = "/api/elasticsearch/topbeat/search/api.json";
+                    type = "get";
+                }else{
+                    url="/elasticsearch/topbeat-*/_search";
+                    type = "post";
                 }
+
+                $.ajax({
+                    url : url,
+                    type : type,
+                    data : queryString,
+                    dataType : 'json',
+                    jsonp : false,
+                    jsonpCallback : 'undefined' === typeof jsonpCallback || null == jsonpCallback ? "callback" : jsonpCallback,
+                    timeout : 7313,
+                    crossDomain: true,
+                    global : true,
+                    contentType : 'application/json',
+                    async : false,
+                    cache : false,
+                    success : function(data) {
+
+                        var chartLabels = [];
+                        var chartData = [];
+
+                        var filteredObj = data.aggregations[2].buckets;
+
+                        $.each(filteredObj, function(inx, obj){
+                            chartLabels.push(obj.key);
+                            chartData.push(obj.doc_count);
+                        });
+
+                        config = {
+                            type: 'radar',
+                            data: {
+                                labels: chartLabels,
+                                datasets: [{
+                                    label: 'Topbeat Chart',
+                                    data: chartData,
+                                    backgroundColor: 'rgba(0, 119, 204, 0.3)'
+                                }]
+                            }
+                        }
+
+                        window.myRadar = new Chart(document.getElementById('canvas'), config);
+                    }
+                });
             });
+
+
 
         });
 
