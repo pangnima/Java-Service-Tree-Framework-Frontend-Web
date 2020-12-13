@@ -488,13 +488,13 @@
 
         $(function() {
 
-            var queryString;
+            var queryString = null;
             $.getJSON("request.json", function (reqdata) {
                 console.log(reqdata.query.bool.filter[0].bool.should[0].match["beat.hostname"]);
                 reqdata.query.bool.filter[0].bool.should[0].match["beat.hostname"] = "9eb75e7e6e3e";
 
-                queryString = reqdata;
-                console.log(JSON.stringify(queryString));
+                queryString = JSON.stringify(reqdata);
+                console.log(queryString);
             });
 
             var url = "";
