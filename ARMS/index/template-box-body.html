@@ -509,44 +509,41 @@
                 type = "post";
             }
 
-            $.ajax({
-                url : url,
-                type : type,
-                data : JSON.stringify(queryString),
-                dataType : 'json',
-                contentType : 'undefined' === typeof contentType || null == contentType ? 'application/json; charset=UTF-8' : contentType,
-                success : function(data) {
+            $.getJSON(url,
+            {
+                tags: "mount rainier",
+                tagmode: "any",
+                format: "json"
+            },
+            function(data) {
+                var chartLabels = [];
+                var chartData = [];
 
-                    var chartLabels = [];
-                    var chartData = [];
+                var filteredObj = data.aggregations[2].buckets;
 
-                    var filteredObj = data.aggregations[2].buckets;
+                $.each(filteredObj, function(inx, obj){
+                    chartLabels.push(obj.key);
+                    chartData.push(obj.doc_count);
+                });
 
-                    $.each(filteredObj, function(inx, obj){
-                        chartLabels.push(obj.key);
-                        chartData.push(obj.doc_count);
-                    });
+                //console.log(chartLabels);
+                //console.log(chartData);
 
-                    //console.log(chartLabels);
-                    //console.log(chartData);
-
-                    config = {
-                        type: 'radar',
-                        data: {
-                            labels: chartLabels,
-                            datasets: [{
-                                label: 'Topbeat Chart',
-                                data: chartData,
-                                backgroundColor: 'rgba(0, 119, 204, 0.3)'
-                            }]
-                        }
+                config = {
+                    type: 'radar',
+                    data: {
+                        labels: chartLabels,
+                        datasets: [{
+                            label: 'Topbeat Chart',
+                            data: chartData,
+                            backgroundColor: 'rgba(0, 119, 204, 0.3)'
+                        }]
                     }
-
-                    //console.log(config);
-                    window.myRadar = new Chart(document.getElementById('canvas'), config);
                 }
-            });
 
+                //console.log(config);
+                window.myRadar = new Chart(document.getElementById('canvas'), config);
+            });
         });
 
     </script>
