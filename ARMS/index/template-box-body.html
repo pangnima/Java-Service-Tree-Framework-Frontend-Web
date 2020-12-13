@@ -480,14 +480,10 @@
     </div>
 
     <script>
-        var randomScalingFactor = function() {
-            return Math.round(Math.random() * 100);
-        };
 
-        var config;
         $(function() {
 
-            $.getJSON("request.json", function (reqdata) {
+            $.getJSON("topbeatReqTemplate.json", function (reqdata) {
                 console.log(reqdata.query.bool.filter[0].bool.should[0].match["beat.hostname"]);
                 reqdata.query.bool.filter[0].bool.should[0].match["beat.hostname"] = "9eb75e7e6e3e";
 
@@ -529,7 +525,7 @@
                             chartData.push(obj.doc_count);
                         });
 
-                        config = {
+                        var config = {
                             type: 'radar',
                             data: {
                                 labels: chartLabels,
