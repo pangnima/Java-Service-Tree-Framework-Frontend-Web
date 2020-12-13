@@ -480,9 +480,11 @@
     </div>
 
     <script>
-
         $(function() {
+            topbeat();
+        });
 
+        function topbeat(){
             $.getJSON("topbeatReqTemplate.json", function (reqdata) {
                 console.log(reqdata.query.bool.filter[0].bool.should[0].match["beat.hostname"]);
                 reqdata.query.bool.filter[0].bool.should[0].match["beat.hostname"] = "9eb75e7e6e3e";
@@ -541,10 +543,7 @@
                     }
                 });
             });
-
-
-
-        });
+        }
 
     </script>
     <style>
