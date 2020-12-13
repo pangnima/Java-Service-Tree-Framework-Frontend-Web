@@ -77,6 +77,9 @@
     <!-- bootstrap wysihtml5 - text editor -->
     <link rel="stylesheet" href="../plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css">
 
+    <!-- daterange picker -->
+    <link rel="stylesheet" href="../bower_components/bootstrap-daterangepicker/daterangepicker.css">
+
     <!-- bootstrap wysihtml5 - text editor -->
     <link rel="stylesheet" href="./css/arms.css">
     <link rel="stylesheet" href="./css/arms-side.css">
@@ -205,13 +208,17 @@
 <script type="text/javascript" src='../dist/js/DataTables-1.10.16/extensions/Responsive/js/dataTables.responsive.js' charset="utf-8"></script>
 <!-- Style Setting -->
 
+<!-- date-range-picker -->
+<script src="../bower_components/moment/min/moment.min.js"></script>
+<script src="../bower_components/bootstrap-daterangepicker/daterangepicker.js"></script>
+
 <script>
     //<![CDATA[
     $(function () {
         includeLayout();
 
         $(".addressClick").click(function () {
-            $(this).parent().siblings().removeClass("active")
+            $(this).parent().siblings().removeClass("active");
             $(this).parent().addClass("active");
         });
     });

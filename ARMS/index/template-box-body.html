@@ -477,12 +477,26 @@
             // Code for the menu buttons
         </script>
     </div>
-    <div class="font12 col-md-12">&nbsp;
+    <div class="font12 col-md-12">
+        <div class="form-group">
+            <div class="input-group">
+                <div class="input-group-addon">
+                    <i class="fa fa-clock-o"></i>
+                </div>
+                <input type="text" class="form-control pull-right" id="reservationtime">
+            </div>
+            <!-- /.input group -->
+        </div>
     </div>
 
     <script>
         $(function() {
             topbeat("9eb75e7e6e3e");
+
+            //Date range picker
+            $('#reservation').daterangepicker()
+            //Date range picker with time picker
+            $('#reservationtime').daterangepicker({ timePicker: true, timePickerIncrement: 30, locale: { format: 'MM/DD/YYYY hh:mm A' }})
         });
 
         function topbeat(selectedNodeHost){
@@ -539,8 +553,7 @@
                                 }]
                             }
                         }
-
-                        window.myRadar = new Chart(document.getElementById('canvas'), config);
+                        new Chart(document.getElementById('canvas'), config);
                     }
                 });
             });
@@ -554,7 +567,7 @@
             -ms-user-select: none;
         }
     </style>
-    <div class="font12 col-md-6">
+    <div class="font12 col-md-6" id="topbeat">
         <canvas id="canvas"></canvas>
     </div>
 
