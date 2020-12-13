@@ -92,7 +92,7 @@
 
             function jsTreeClick(selectedNodeID) {
                 console.log(selectedNodeID);
-                topbeat();
+                topbeat(selectedNodeID);
             }
         </script>
         <script type="text/javascript">
@@ -485,10 +485,10 @@
             topbeat();
         });
 
-        function topbeat(){
+        function topbeat(selectedNodeHost){
             $.getJSON("topbeatReqTemplate.json", function (reqdata) {
                 console.log(reqdata.query.bool.filter[0].bool.should[0].match["beat.hostname"]);
-                reqdata.query.bool.filter[0].bool.should[0].match["beat.hostname"] = "9eb75e7e6e3e";
+                reqdata.query.bool.filter[0].bool.should[0].match["beat.hostname"] = selectedNodeHost;
 
                 var queryString = JSON.stringify(reqdata);
                 console.log(queryString);
