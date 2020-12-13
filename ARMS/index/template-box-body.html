@@ -509,13 +509,7 @@
                 type = "post";
             }
 
-            $.getJSON(url,
-            {
-                tags: "mount rainier",
-                tagmode: "any",
-                format: "json"
-            },
-            function(data) {
+            $.post(url, JSON.stringify(queryString), function(data, textStatus) {
                 var chartLabels = [];
                 var chartData = [];
 
@@ -543,7 +537,8 @@
 
                 //console.log(config);
                 window.myRadar = new Chart(document.getElementById('canvas'), config);
-            });
+            }, "json");
+
         });
 
     </script>
