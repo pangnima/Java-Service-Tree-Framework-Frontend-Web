@@ -496,10 +496,39 @@
             //Date range picker
             $('#reservation').daterangepicker()
             //Date range picker with time picker
-            $('#reservationtime').daterangepicker({ timePicker: true, timePickerIncrement: 30, locale: { format: 'MM/DD/YYYY hh:mm A' }})
+            $('#reservationtime').daterangepicker({ timePicker: true, timePickerIncrement: 30, locale: { format: 'YYYY-MM-DD H:mm:ss', separator: " ~ " }},
+                    function(start, end) {
+                        console.log(start.format('H'));
+                        var startHours = parseInt(start.format('H'));
+                        var startHoursStr;
+                        if(startHours < 10){
+                            startHoursStr = "0" + startHours;
+                        }else{
+                            startHoursStr = startHours;
+                        }
+                        console.log(start.format('YYYY-MM-DD') + "T" + startHoursStr + start.format(':mm:ss') + ".000Z");
+
+                        console.log(end.format('H'));
+                        var endHours = parseInt(end.format('H'));
+                        var endHoursStr;
+                        if(endHours < 10){
+                            endHoursStr = "0" + endHours;
+                        }else{
+                            endHoursStr = endHours;
+                        }
+                        console.log(end.format('YYYY-MM-DD') + "T" + endHoursStr + end.format(':mm:ss') + ".000Z");
+
+                        console.log("Callback has been called!" + start.format('YYYY-MM-DD H:mm:ss') + end.format('YYYY-MM-DD H:mm:ss'));
+                        startDate = start;
+                        endDate = end;
+
+                    }
+            )
+
         });
 
         function topbeat(selectedNodeHost){
+
             $.getJSON("topbeatReqTemplate.json", function (reqdata) {
                 console.log(reqdata.query.bool.filter[0].bool.should[0].match["beat.hostname"]);
                 reqdata.query.bool.filter[0].bool.should[0].match["beat.hostname"] = selectedNodeHost;
