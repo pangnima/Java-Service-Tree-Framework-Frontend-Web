@@ -18,7 +18,7 @@ function topbeat(selectedNodeHost){
     if(typeof selectedNodeHost == "undefined" || selectedNodeHost == null || selectedNodeHost == "")
         console.log("savedNodeHost = " + savedNodeHost);
     else
-        savedNodeHost = selectedNodeHost;
+        savedNodeHost = $.trim(selectedNodeHost);
 
     var start = $("#reservationtime").data().daterangepicker.startDate;
     console.log("start hour check = " + start.format('H'));
