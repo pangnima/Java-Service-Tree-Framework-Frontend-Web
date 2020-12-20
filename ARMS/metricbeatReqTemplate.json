@@ -1,0 +1,87 @@
+{
+  "aggs": {
+    "2": {
+      "date_histogram": {
+        "field": "@timestamp",
+        "fixed_interval": "30s",
+        "time_zone": "Asia/Seoul",
+        "min_doc_count": 1
+      },
+      "aggs": {
+        "1": {
+          "max": {
+            "field": "system.cpu.total.pct"
+          }
+        },
+        "3": {
+          "max": {
+            "field": "system.cpu.system.pct"
+          }
+        },
+        "4": {
+          "max": {
+            "field": "system.cpu.user.pct"
+          }
+        },
+        "5": {
+          "max": {
+            "field": "system.memory.actual.used.pct"
+          }
+        },
+        "6": {
+          "max": {
+            "field": "system.memory.used.pct"
+          }
+        }
+      }
+    }
+  },
+  "size": 0,
+  "_source": {
+    "excludes": []
+  },
+  "stored_fields": [
+    "*"
+  ],
+  "script_fields": {},
+  "docvalue_fields": [
+    {
+      "field": "@timestamp",
+      "format": "date_time"
+    },
+    {
+      "field": "system.process.cpu.start_time",
+      "format": "date_time"
+    }
+  ],
+  "query": {
+    "bool": {
+      "must": [],
+      "filter": [
+        {
+          "bool": {
+            "should": [
+              {
+                "match": {
+                  "agent.hostname": "9eb75e7e6e3e"
+                }
+              }
+            ],
+            "minimum_should_match": 1
+          }
+        },
+        {
+          "range": {
+            "@timestamp": {
+              "format": "strict_date_optional_time",
+              "gte": "2020-12-20T04:57:55.436Z",
+              "lte": "2020-12-20T05:12:55.436Z"
+            }
+          }
+        }
+      ],
+      "should": [],
+      "must_not": []
+    }
+  }
+}

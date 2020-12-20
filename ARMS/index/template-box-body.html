@@ -489,7 +489,6 @@
         </div>
     </div>
 
-    <script src="topbeatReqTemplate.js"></script>
     <style>
         canvas {
             -moz-user-select: none;
@@ -497,8 +496,28 @@
             -ms-user-select: none;
         }
     </style>
+    <script src="topbeatReqTemplate.js"></script>
     <div class="font12 col-md-6" id="topbeat">
-        <canvas id="canvas"></canvas>
+        <canvas id="topbeatCanvas"></canvas>
     </div>
 
+    <script src="metricbeatReqTemplate.js"></script>
+    <div class="font12 col-md-6" id="metricbeat">
+        <canvas id="metricbeatCanvas"></canvas>
+    </div>
+
+    <script>
+        var savedNodeHost;
+        $(function() {
+            //Date range picker
+            //$('#reservation').daterangepicker()
+            //Date range picker with time picker
+            $('#reservationtime').daterangepicker({ timePicker: true, timePickerIncrement: 30, locale: { format: 'YYYY-MM-DD H:mm:ss', separator: " ~ " }},
+                    function(start, end) {
+                    }
+            )
+            topbeat(null);
+            metricbeat(null);
+        });
+    </script>
 </div>

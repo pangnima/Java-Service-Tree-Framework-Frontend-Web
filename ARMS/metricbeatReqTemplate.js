@@ -1,5 +1,6 @@
-function topbeat(selectedNodeHost){
+function metricbeat(selectedNodeHost){
 
+    console.log("<== metricbeat ==> ");
     console.log("before savedNodeHost ==> " + savedNodeHost);
     if(typeof selectedNodeHost == "undefined" || selectedNodeHost == null || selectedNodeHost == "")
         console.log("savedNodeHost = " + savedNodeHost);
@@ -32,7 +33,7 @@ function topbeat(selectedNodeHost){
 
     console.log("after savedNodeHost ==> " + savedNodeHost);
 
-    $.getJSON("topbeatReqTemplate.json", function (reqdata) {
+    $.getJSON("metricbeatReqTemplate.json", function (reqdata) {
         console.log(reqdata.query.bool.filter[1].range["@timestamp"].gte);
         reqdata.query.bool.filter[1].range["@timestamp"].gte = searchStartStr;
         reqdata.query.bool.filter[1].range["@timestamp"].lte = searchEndStr;
@@ -44,10 +45,10 @@ function topbeat(selectedNodeHost){
         var url = "";
         var type = "";
         if($(location).attr('port') == 9999){
-            url = "/api/elasticsearch/topbeat/search/api.json";
+            url = "/api/elasticsearch/metricbeat/search/api.json";
             type = "get";
         }else{
-            url="/elasticsearch/topbeat-*/_search";
+            url="/elasticsearch/metricbeat-*/_search";
             type = "post";
         }
 
@@ -63,7 +64,7 @@ function topbeat(selectedNodeHost){
             cache : false,
             success : function(data) {
 
-                console.log("response data = " + JSON.stringify(data));
+                console.log("metricbeat response data = " + JSON.stringify(data));
                 var chartLabels = [];
                 var chartData = [];
 
@@ -75,17 +76,17 @@ function topbeat(selectedNodeHost){
                 });
 
                 var config = {
-                    type: 'radar',
+                    type: 'line',
                     data: {
                         labels: chartLabels,
                         datasets: [{
-                            label: 'Topbeat Chart',
+                            label: 'Metricbeat Chart',
                             data: chartData,
                             backgroundColor: 'rgba(0, 119, 204, 0.3)'
                         }]
                     }
                 }
-                new Chart(document.getElementById('topbeatCanvas'), config);
+                new Chart(document.getElementById('metricbeatCanvas'), config);
             }
         });
     });
