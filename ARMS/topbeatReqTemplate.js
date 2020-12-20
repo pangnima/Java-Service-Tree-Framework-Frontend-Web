@@ -72,7 +72,7 @@ function topbeat(selectedNodeHost){
             dataType : 'json',
             jsonp : false,
             jsonpCallback : 'undefined' === typeof jsonpCallback || null == jsonpCallback ? "callback" : jsonpCallback,
-            timeout : 7313,
+            timeout : 31313,
             crossDomain: true,
             global : true,
             contentType : 'application/json',
