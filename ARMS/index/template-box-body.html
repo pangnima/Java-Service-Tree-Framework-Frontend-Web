@@ -512,12 +512,14 @@
             //Date range picker
             //$('#reservation').daterangepicker()
             //Date range picker with time picker
-            $('#reservationtime').daterangepicker({ timePicker: true, timePickerIncrement: 30, locale: { format: 'YYYY-MM-DD H:mm:ss', separator: " ~ " }},
-                    function(start, end) {
-                    }
-            )
+            $('#reservationtime').daterangepicker({ timePicker: true, timePickerIncrement: 30, locale: { format: 'YYYY-MM-DD H:mm:ss', separator: " ~ " }});
             topbeat(null);
             metricbeat(null);
+
+            $("#reservationtime").change(function () {
+                topbeat(null);
+                metricbeat(null);
+            });
         });
     </script>
 </div>
