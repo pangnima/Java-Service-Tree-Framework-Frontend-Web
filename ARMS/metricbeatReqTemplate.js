@@ -78,6 +78,9 @@ function metricbeat(selectedNodeHost){
                     chartLabels.push(obj.key_as_string);
                     chartData1.push(obj[1].value);
                     chartData3.push(obj[3].value);
+                    chartData4.push(obj[4].value);
+                    chartData5.push(obj[5].value);
+                    chartData6.push(obj[6].value);
                 });
 
                 var config = {
@@ -91,6 +94,18 @@ function metricbeat(selectedNodeHost){
                         },{
                             label: 'Metricbeat Chart',
                             data: chartData3,
+                            backgroundColor: 'rgba(0, 119, 204, 0.3)'
+                        },{
+                            label: 'Metricbeat Chart',
+                            data: chartData4,
+                            backgroundColor: 'rgba(0, 119, 204, 0.3)'
+                        },{
+                            label: 'Metricbeat Chart',
+                            data: chartData5,
+                            backgroundColor: 'rgba(0, 119, 204, 0.3)'
+                        },{
+                            label: 'Metricbeat Chart',
+                            data: chartData6,
                             backgroundColor: 'rgba(0, 119, 204, 0.3)'
                         }]
                     }
