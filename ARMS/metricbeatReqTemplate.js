@@ -66,13 +66,18 @@ function metricbeat(selectedNodeHost){
 
                 console.log("metricbeat response data = " + JSON.stringify(data));
                 var chartLabels = [];
-                var chartData = [];
+                var chartData1 = [];
+                var chartData3 = [];
+                var chartData4 = [];
+                var chartData5 = [];
+                var chartData6 = [];
 
                 var filteredObj = data.aggregations[2].buckets;
 
                 $.each(filteredObj, function(inx, obj){
-                    chartLabels.push(obj.key);
-                    chartData.push(obj.doc_count);
+                    chartLabels.push(obj.key_as_string);
+                    chartData1.push(obj[1].value);
+                    chartData3.push(obj[3].value);
                 });
 
                 var config = {
@@ -81,7 +86,11 @@ function metricbeat(selectedNodeHost){
                         labels: chartLabels,
                         datasets: [{
                             label: 'Metricbeat Chart',
-                            data: chartData,
+                            data: chartData1,
+                            backgroundColor: 'rgba(0, 119, 204, 0.3)'
+                        },{
+                            label: 'Metricbeat Chart',
+                            data: chartData3,
                             backgroundColor: 'rgba(0, 119, 204, 0.3)'
                         }]
                     }
