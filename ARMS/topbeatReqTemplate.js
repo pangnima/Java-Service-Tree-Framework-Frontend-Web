@@ -70,15 +70,10 @@ function topbeat(selectedNodeHost){
             type : type,
             data : queryString,
             dataType : 'json',
-            jsonp : false,
-            jsonpCallback : 'undefined' === typeof jsonpCallback || null == jsonpCallback ? "callback" : jsonpCallback,
-            timeout : 31313,
-            crossDomain: true,
-            global : true,
             contentType : 'application/json',
-            async : false,
-            cache : false,
             success : function(data) {
+
+                console.log(JSON.stringify(data));
 
                 var chartLabels = [];
                 var chartData = [];
