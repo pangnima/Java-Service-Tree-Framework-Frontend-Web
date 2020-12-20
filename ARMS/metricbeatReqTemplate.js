@@ -88,23 +88,23 @@ function metricbeat(selectedNodeHost){
                     data: {
                         labels: chartLabels,
                         datasets: [{
-                            label: 'Metricbeat Chart',
+                            label: 'cpu.total.pct',
                             data: chartData1,
                             backgroundColor: 'rgba(0, 119, 204, 0.3)'
                         },{
-                            label: 'Metricbeat Chart',
+                            label: 'cpu.system.pct',
                             data: chartData3,
                             backgroundColor: 'rgba(0, 119, 204, 0.3)'
                         },{
-                            label: 'Metricbeat Chart',
+                            label: 'cpu.user.pct',
                             data: chartData4,
                             backgroundColor: 'rgba(0, 119, 204, 0.3)'
                         },{
-                            label: 'Metricbeat Chart',
+                            label: 'memory.actual.used.pct',
                             data: chartData5,
                             backgroundColor: 'rgba(0, 119, 204, 0.3)'
                         },{
-                            label: 'Metricbeat Chart',
+                            label: 'memory.use',
                             data: chartData6,
                             backgroundColor: 'rgba(0, 119, 204, 0.3)'
                         }]
