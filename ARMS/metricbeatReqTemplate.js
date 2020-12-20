@@ -37,7 +37,7 @@ function metricbeat(selectedNodeHost){
         console.log(reqdata.query.bool.filter[1].range["@timestamp"].gte);
         reqdata.query.bool.filter[1].range["@timestamp"].gte = searchStartStr;
         reqdata.query.bool.filter[1].range["@timestamp"].lte = searchEndStr;
-        reqdata.query.bool.filter[0].bool.should[0].match["beat.hostname"] = savedNodeHost;
+        reqdata.query.bool.filter[0].bool.should[0].match["agent.hostname"] = savedNodeHost;
 
         var queryString = JSON.stringify(reqdata);
         console.log(queryString);
