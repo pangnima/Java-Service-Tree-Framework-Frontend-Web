@@ -95,14 +95,6 @@ function metricbeat(selectedNodeHost){
                             label: 'cpu.user.pct',
                             data: chartData4,
                             backgroundColor: 'rgba(0, 119, 204, 0.3)'
-                        },{
-                            label: 'memory.actual.used.pct',
-                            data: chartData5,
-                            backgroundColor: 'rgba(0, 119, 204, 0.3)'
-                        },{
-                            label: 'memory.use',
-                            data: chartData6,
-                            backgroundColor: 'rgba(0, 119, 204, 0.3)'
                         }]
                     }
                 }
