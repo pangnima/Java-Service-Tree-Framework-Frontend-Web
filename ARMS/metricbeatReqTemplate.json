@@ -12,16 +12,6 @@
           "max": {
             "field": "system.cpu.total.pct"
           }
-        },
-        "3": {
-          "max": {
-            "field": "system.cpu.system.pct"
-          }
-        },
-        "4": {
-          "max": {
-            "field": "system.cpu.user.pct"
-          }
         }
       }
     }

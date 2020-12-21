@@ -67,16 +67,12 @@ function metricbeat(selectedNodeHost){
                 console.log("metricbeat response data = " + JSON.stringify(data));
                 var chartLabels = [];
                 var chartData1 = [];
-                var chartData3 = [];
-                var chartData4 = [];
 
                 var filteredObj = data.aggregations[2].buckets;
 
                 $.each(filteredObj, function(inx, obj){
                     chartLabels.push(obj.key_as_string);
                     chartData1.push(obj[1].value);
-                    chartData3.push(obj[3].value);
-                    chartData4.push(obj[4].value);
                 });
 
                 var config = {
@@ -86,14 +82,6 @@ function metricbeat(selectedNodeHost){
                         datasets: [{
                             label: 'cpu.total.pct',
                             data: chartData1,
-                            backgroundColor: 'rgba(0, 119, 204, 0.3)'
-                        },{
-                            label: 'cpu.system.pct',
-                            data: chartData3,
-                            backgroundColor: 'rgba(0, 119, 204, 0.3)'
-                        },{
-                            label: 'cpu.user.pct',
-                            data: chartData4,
                             backgroundColor: 'rgba(0, 119, 204, 0.3)'
                         }]
                     }
