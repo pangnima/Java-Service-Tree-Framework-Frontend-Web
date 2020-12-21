@@ -69,8 +69,6 @@ function metricbeat(selectedNodeHost){
                 var chartData1 = [];
                 var chartData3 = [];
                 var chartData4 = [];
-                var chartData5 = [];
-                var chartData6 = [];
 
                 var filteredObj = data.aggregations[2].buckets;
 
@@ -79,8 +77,6 @@ function metricbeat(selectedNodeHost){
                     chartData1.push(obj[1].value);
                     chartData3.push(obj[3].value);
                     chartData4.push(obj[4].value);
-                    chartData5.push(obj[5].value);
-                    chartData6.push(obj[6].value);
                 });
 
                 var config = {

@@ -22,16 +22,6 @@
           "max": {
             "field": "system.cpu.user.pct"
           }
-        },
-        "5": {
-          "max": {
-            "field": "system.memory.actual.used.pct"
-          }
-        },
-        "6": {
-          "max": {
-            "field": "system.memory.used.pct"
-          }
         }
       }
     }
