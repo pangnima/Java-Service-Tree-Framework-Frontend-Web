@@ -33,7 +33,7 @@ function metricbeat2(selectedNodeHost){
 
     console.log("after savedNodeHost ==> " + savedNodeHost);
 
-    $.getJSON("metricbeatReqTemplate.json", function (reqdata) {
+    $.getJSON("metricbeat2ReqTemplate.json", function (reqdata) {
         console.log(reqdata.query.bool.filter[1].range["@timestamp"].gte);
         reqdata.query.bool.filter[1].range["@timestamp"].gte = searchStartStr;
         reqdata.query.bool.filter[1].range["@timestamp"].lte = searchEndStr;
