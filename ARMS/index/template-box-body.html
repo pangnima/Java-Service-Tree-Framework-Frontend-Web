@@ -506,6 +506,11 @@
         <canvas id="metricbeatCanvas"></canvas>
     </div>
 
+    <script src="metricbeat2ReqTemplate.js"></script>
+    <div class="font12 col-md-12" id="metricbeat2">
+        <canvas id="metricbeat2Canvas"></canvas>
+    </div>
+
     <script>
         var savedNodeHost;
         $(function() {
@@ -515,10 +520,12 @@
             $('#reservationtime').daterangepicker({ timePicker: true, timePickerIncrement: 30, locale: { format: 'YYYY-MM-DD H:mm:ss', separator: " ~ " }});
             topbeat(null);
             metricbeat(null);
+            metricbeat2(null);
 
             $("#reservationtime").change(function () {
                 topbeat(null);
                 metricbeat(null);
+                metricbeat2(null);
             });
         });
     </script>
