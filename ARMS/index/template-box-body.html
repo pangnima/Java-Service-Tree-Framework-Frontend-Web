@@ -511,6 +511,11 @@
         <canvas id="metricbeat2Canvas"></canvas>
     </div>
 
+    <script src="packetbeatReqTemplate.js"></script>
+    <div class="font12 col-md-12" id="packetbeat">
+        <canvas id="packetbeatCanvas"></canvas>
+    </div>
+
     <script>
         var savedNodeHost;
         $(function() {
@@ -521,11 +526,13 @@
             topbeat(null);
             metricbeat(null);
             metricbeat2(null);
+            packetbeat(null);
 
             $("#reservationtime").change(function () {
                 topbeat(null);
                 metricbeat(null);
                 metricbeat2(null);
+                packetbeat(null);
             });
         });
     </script>
