@@ -10,12 +10,12 @@
       "aggs": {
         "5": {
           "max": {
-            "field": "memory.actual.used.pct"
+            "field": "system.memory.actual.used.pct"
           }
         },
         "6": {
           "max": {
-            "field": "memory.used.pct"
+            "field": "system.memory.used.pct"
           }
         }
       }
@@ -44,23 +44,14 @@
       "must": [],
       "filter": [
         {
-          "bool": {
-            "should": [
-              {
-                "match": {
-                  "agent.hostname": "9eb75e7e6e3e"
-                }
-              }
-            ],
-            "minimum_should_match": 1
-          }
+          "match_all": {}
         },
         {
           "range": {
             "@timestamp": {
               "format": "strict_date_optional_time",
-              "gte": "2020-12-20T04:57:55.436Z",
-              "lte": "2020-12-20T05:12:55.436Z"
+              "gte": "2020-12-26T03:43:24.153Z",
+              "lte": "2020-12-26T03:58:24.153Z"
             }
           }
         }
