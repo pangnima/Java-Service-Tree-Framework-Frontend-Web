@@ -29,29 +29,28 @@
     "*"
   ],
   "script_fields": {},
-  "docvalue_fields": [
-    {
-      "field": "@timestamp",
-      "format": "date_time"
-    },
-    {
-      "field": "system.process.cpu.start_time",
-      "format": "date_time"
-    }
-  ],
   "query": {
     "bool": {
       "must": [],
       "filter": [
         {
-          "match_all": {}
+          "bool": {
+            "should": [
+              {
+                "match": {
+                  "agent.hostname": "9eb75e7e6e3e"
+                }
+              }
+            ],
+            "minimum_should_match": 1
+          }
         },
         {
           "range": {
             "@timestamp": {
               "format": "strict_date_optional_time",
-              "gte": "2020-12-26T03:43:24.153Z",
-              "lte": "2020-12-26T03:58:24.153Z"
+              "gte": "2020-12-26T03:45:09.629Z",
+              "lte": "2020-12-26T04:00:09.629Z"
             }
           }
         }
