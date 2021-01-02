@@ -3,40 +3,6 @@
 </div>
 <div class="font12 col-md-3">
     <div id="mmenu">
-        <!--
-        <button type="button" id="add_folder">
-            <i class="fa fa-plus"></i>
-            add folder
-        </button>
-        <button type="button" id="add_default">
-            <i class="fa fa-plus"></i>
-            add file
-        </button>
-        <button type="button" id="rename">
-            <i class="fa fa-eraser"></i>
-            rename
-        </button>
-        <button type="button" id="remove">
-            <i class="fa fa-minus"></i>
-            remove
-        </button>
-        <button type="button" id="cut">
-            <i class="fa fa-cut"></i>
-            cut
-        </button>
-        <button type="button" id="copy">
-            <i class="fa fa-copy"></i>
-            copy
-        </button>
-        <button type="button" id="paste">
-            <i class="fa fa-paste"></i>
-            paste
-        </button>
-        <button type="button" id="refresh" title="refresh" onclick="$('#demo').jstree('refresh',-1);">
-            <i class="fa fa-search"></i>
-            refresh
-        </button>
-        -->
         <input type="text" id="text" placeholder="찾을 노드 이름 입력" data-tooltip="Press Enter To Node To Search" />
         <button type="button" id="search" title="Search">
             <i class="fa fa-search"></i>
@@ -477,63 +443,4 @@
             // Code for the menu buttons
         </script>
     </div>
-    <div class="font12 col-md-12">
-        <div class="form-group">
-            <div class="input-group">
-                <div class="input-group-addon">
-                    <i class="fa fa-clock-o"></i>
-                </div>
-                <input type="text" class="form-control pull-right" id="reservationtime">
-            </div>
-            <!-- /.input group -->
-        </div>
-    </div>
-
-    <style>
-        canvas {
-            -moz-user-select: none;
-            -webkit-user-select: none;
-            -ms-user-select: none;
-        }
-    </style>
-    <script src="topbeatReqTemplate.js"></script>
-    <div class="font12 col-md-12" id="topbeat">
-        <canvas id="topbeatCanvas"></canvas>
-    </div>
-
-    <script src="metricbeatReqTemplate.js"></script>
-    <div class="font12 col-md-12" id="metricbeat">
-        <canvas id="metricbeatCanvas"></canvas>
-    </div>
-
-    <script src="metricbeat2ReqTemplate.js"></script>
-    <div class="font12 col-md-12" id="metricbeat2">
-        <canvas id="metricbeat2Canvas"></canvas>
-    </div>
-
-    <script src="packetbeatReqTemplate.js"></script>
-    <div class="font12 col-md-12" id="packetbeat">
-        <canvas id="packetbeatCanvas"></canvas>
-    </div>
-
-    <script>
-        var savedNodeHost;
-        $(function() {
-            //Date range picker
-            //$('#reservation').daterangepicker()
-            //Date range picker with time picker
-            $('#reservationtime').daterangepicker({ timePicker: true, timePickerIncrement: 30, locale: { format: 'YYYY-MM-DD H:mm:ss', separator: " ~ " }});
-            topbeat(null);
-            metricbeat(null);
-            metricbeat2(null);
-            packetbeat(null);
-
-            $("#reservationtime").change(function () {
-                topbeat(null);
-                metricbeat(null);
-                metricbeat2(null);
-                packetbeat(null);
-            });
-        });
-    </script>
 </div>
