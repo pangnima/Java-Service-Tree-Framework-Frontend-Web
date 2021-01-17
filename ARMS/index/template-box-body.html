@@ -86,12 +86,12 @@
             console.log("host: "+$(location).attr('host'));
             console.log("pathname: "+$(location).attr('pathname'));
             console.log("search: "+$(location).attr('search'));
-
             console.log("hostname: "+$(location).attr('hostname'));
             console.log("port: "+$(location).attr('port'));
 
+            //operation enviorment setup and local development configuration
             if($(location).attr('port') == 9999){
-                console.log("csrf 우회");
+                console.log("csrf 우회 because local development");
             }else{
                 $.ajax({
                     async: false,
@@ -233,7 +233,6 @@
                             };
                         },
                         "success": function(n) {
-                            console.log(n);
                             storedJsonObj = JSON.parse(JSON.stringify(n));
                             jSuccess('access good');
                         }
@@ -426,39 +425,26 @@
             }).bind("select_node.jstree", function (event, data) {
                 // `data.rslt.obj` is the jquery extended node that was clicked
                 if ($.isFunction(jsTreeClick)) {
-                    console.log(data.rslt.obj[0]);
                     jsTreeClick(data.rslt.obj[0].getElementsByClassName('jstree-clicked')[0].innerText);
                 }
             }).bind("check_node.jstree", function (event, data) {
                 var check_node = $.trim(data.rslt.obj[0].innerText);
-                console.log(check_node);
-                console.log(storedJsonObj);
                 $.each(storedJsonObj, function(){
                     if(this["c_monitor_device_hostname"]== check_node){
-                        console.log(this);
                         herfStrArr.push(this);
                     }
                 });
-
-                console.log(herfStrArr);
-
             }).bind("uncheck_node.jstree", function (event, data) {
                 var check_node = $.trim(data.rslt.obj[0].innerText);
-                console.log(check_node);
-                console.log(storedJsonObj);
                 $.each(storedJsonObj, function(){
                     if(this["c_monitor_device_hostname"]== check_node){
-
                         $.each(herfStrArr, function(index, item){
                             if(item.c_monitor_device_hostname == check_node){
                                 herfStrArr.splice(index, 1);
-                                console.log(item.c_monitor_device_hostname);
                             }
                         });
-
                     }
                 });
-                console.log(herfStrArr);
             });
 
             $("#mmenu input, #mmenu button").click(function() {
@@ -497,7 +483,6 @@
     <script type="text/javascript">
         $(function() {
             $('#toGrafana').click(function(){
-                console.log(herfStrArr);
 
                 var theUrl = "";
                 if($(location).attr('port') == 9999){
@@ -515,8 +500,6 @@
                     theUrl = theUrl + "var-phostname=" + item.c_monitor_url_packetbeat + "&";
                     theUrl = theUrl + "var-hhostname=" + item.c_monitor_url_heartbeat + "&";
                     theUrl = theUrl + "var-ahostname=" + item.c_monitor_url_apm + "&";
-
-
                 });
 
                 window.open(theUrl, 'grafana');
