@@ -428,6 +428,12 @@
                     console.log(data.rslt.obj);
                     jsTreeClick(data.rslt.obj.attr("id"));
                 }
+            }).bind("check_node.jstree", function (event, data) {
+                var check_node = $.trim(data.rslt.obj[0].innerText);
+                console.log(check_node);
+            }).bind("uncheck_node.jstree", function (event, data) {
+                var check_node = $.trim(data.rslt.obj[0].innerText);
+                console.log(check_node);
             });
 
             $("#mmenu input, #mmenu button").click(function() {
