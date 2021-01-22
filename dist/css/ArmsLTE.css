@@ -755,10 +755,10 @@ a:focus {
 }
 .control-sidebar-bg,
 .control-sidebar {
-    background-color: #ffffff;
+    background-color: #0747a6;
     top: 0;
     right: 0;
-    width: 100%;
+    width: 50%;
     -webkit-transition: right 0.3s ease-in-out;
     -o-transition: right 0.3s ease-in-out;
     transition: right 0.3s ease-in-out;
@@ -767,6 +767,26 @@ a:focus {
     position: absolute;
     padding-top: 50px;
     box-shadow: 0 6px 4px -2px rgba(0, 0, 0, 0.4);
+}
+
+.leftcontrol-sidebar-bg {
+    position: fixed;
+    z-index: 100;
+    bottom: 0;
+}
+.leftcontrol-sidebar-bg,
+.leftcontrol-sidebar {
+    background-color: #0747a6;
+    top: 0;
+    left: 0;
+    width: 50%;
+    -webkit-transition: right 0.3s ease-in-out;
+    -o-transition: right 0.3s ease-in-out;
+    transition: right 0.3s ease-in-out;
+}
+.leftcontrol-sidebar {
+    position: absolute;
+    padding-top: 50px;
 }
 @media (max-width: 767px) {
     .control-sidebar {
