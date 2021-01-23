@@ -2342,6 +2342,16 @@ the class .animated-dropdown-menu to the .dropdown-menu ul (or ol)*/
     background-color: #3c8dbc;
     border-color: #367fa9;
 }
+.btn-aui {
+    background-color: #0747a6;
+    border-color: #367fa9;
+    color: #deebff;
+}
+.btn-aui:hover,
+.btn-aui:active,
+.btn-aui.hover {
+    color: #ffffff;
+}
 .btn-primary:hover,
 .btn-primary:active,
 .btn-primary.hover {
