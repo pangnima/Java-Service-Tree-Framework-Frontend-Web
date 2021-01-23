@@ -83,6 +83,14 @@ body {
     font-family: 'Nanum Gothic';
     font-size: 13px;
 }
+.boxwhite{
+    background-color: #ffffff;
+    position: relative;
+    border-radius: 3px;
+    border-top: 3px solid #3c8dbc;
+    margin-bottom: 20px;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+}
 .contentsTail{
     margin-left: 10px;
 }
@@ -119,9 +127,6 @@ body {
     margin: 0 auto;
     min-height: 100%;
     position: relative;
-}
-.layout-boxed {
-
 }
 /*
 * Content Wrapper - contains the main content
@@ -1813,6 +1818,19 @@ the class .animated-dropdown-menu to the .dropdown-menu ul (or ol)*/
     display: block;
     padding: 10px;
     position: relative;
+}
+.box-header .box-title {
+    display: inline-block;
+    font-size: 18px;
+    margin: 0;
+    line-height: 1;
+}
+.box-header .arms-title {
+    display: inline-block;
+    font-size: 14px;
+    margin: 0;
+    line-height: 1;
+    font-weight: bold;
 }
 .box-header.with-border {
     border-bottom: 1px solid #f4f4f4;
