@@ -216,7 +216,30 @@
         <!-- /.box-header -->
 
         <div class="box-body">
-            챠트 설명<br><br><br><br><br><br><br><br><br><br><br><br><br>
+            <ul class="list-unstyled font13 lineh165">
+                <li>Y축
+                    <ul>
+                        <li>Total Heap Size = S0C + S1C + EC + OC 이다.</li>
+                        <ul>
+                            <li>S0C :: Current survivor space 0 capacity (KB)</li>
+                            <li>S1C :: Current survivor space 1 capacity (KB)</li>
+                            <li>EC :: Current eden space capacity (KB)</li>
+                            <li>OC :: Current old space capacity (KB)</li>
+                        </ul>
+                        <li>Total Heap size 계산은 JVM 내부 메모리 관리를 위해서 Code Cache라는 이름으로 50Mb 정도의 공간을 추가로 사용한다.</li>
+                        <li>즉, 전체 heap 크기는 아래와 같이 계산된다.</li>
+                        <ul>
+                            <li>초기 크기 = -Xms + -XX:PermSize + ~50Mb</li>
+                            <li>최대 크기 = -Xmx + -XX:MaxPermSize + ~50Mb</li>
+                        </ul>
+                    </ul>
+                </li>
+                <li>X축
+                    <ul>
+                        <li><strong>이벤트 발생 시간</strong>을 의미합니다.</li>
+                    </ul>
+                </li>
+            </ul>
         </div>
     </div>
 </div>
@@ -242,7 +265,29 @@
         <!-- /.box-header -->
 
         <div class="box-body">
-            챠트 설명<br><br><br><br><br><br><br><br><br><br><br><br><br>
+            <ul class="list-unstyled font13 lineh165">
+                <li>Y축
+                    <ul>
+                        <li>Used Heap Size = S0U + S1U + EU + OU 이다.</li>
+                        <ul>
+                            <li>S0U :: Survivor space 0 utilization (KB)</li>
+                            <li>S1U :: Survivor space 1 utilization (KB)</li>
+                            <li>EU :: Eden space utilization (KB)</li>
+                            <li>OU :: Old space utilization (KB)</li>
+                        </ul>
+                        <li>즉 Used Heap의 의미는 현재 Java 객체가 차지하는 메모리 양입니다</li>
+                        <li>Working Set은 Heap에 살아있는 객체들의 총량을 나타낸다.</li>
+                        <li>JVM의 관점에서 Used Memory는 Working Set과 Garabage이고 Free Memory는 (현재 Heap 크기 - Used Memory) 이다.</li>
+                        <li>만약, -Xms < -Xmx 이고 Used Memory와 현재 힙 크키가 같으면, JVM은 full gc를 한 후에 힙을 키운다.</li>
+                        <li>그러나 -Xms와 -Xmx가 같다면 힙은 더이상 커지지 않는다.</li>
+                    </ul>
+                </li>
+                <li>X축
+                    <ul>
+                        <li><strong>이벤트 발생 시간</strong>을 의미합니다.</li>
+                    </ul>
+                </li>
+            </ul>
         </div>
     </div>
 </div>
@@ -268,7 +313,22 @@
         <!-- /.box-header -->
 
         <div class="box-body">
-            챠트 설명<br><br><br><br><br><br><br><br><br><br><br><br><br>
+            <ul class="list-unstyled font13 lineh165">
+                <li>Y축
+                    <ul>
+                        <li>각개의 Service 개수를 표시합니다.</li>
+                        <li>Service는 수집된 데이터의 Hash값에 의존하지 않습니다.</li>
+                        <li>Service는 수집된 데이터의 Service Name의 고유값에 따라 변동됩니다.</li>
+                        <li>따라서, Service Monitor Count는 클러스터 기반의 서비스 인스턴스 개수를 확인하는 용도이며,</li>
+                        <li>HA 구성의 서비스를 모니터링 하거나, 단일 Standalone 서비스라면 Heartbeat 용도의 모니터링 데이터이다.</li>
+                    </ul>
+                </li>
+                <li>X축
+                    <ul>
+                        <li><strong>이벤트 발생 시간</strong>을 의미합니다.</li>
+                    </ul>
+                </li>
+            </ul>
         </div>
     </div>
 </div>
@@ -294,7 +354,27 @@
         <!-- /.box-header -->
 
         <div class="box-body">
-            챠트 설명<br><br><br><br><br><br><br><br><br><br><br><br><br>
+            <ul class="list-unstyled font13 lineh165">
+                <li>Y축
+                    <ul>
+                        <li>topbeat는 이름으로 알 수 있듯이, </li>
+                        <li>현재 서버의 동작중인 프로세스당 cpu, memory, disk 와 같은 리소스의 점유율 데이터 매트릭스 입니다.</li>
+                        <li>aRMS는 데이터 수집 상태를 표시하기때문에</li>
+                        <li>하기는 HeartBeat를 통해 확인할 수 있는 데이터를 yml에서 추출하여 표기합니다.</li>
+                        <ul>
+                            <li>system: 전체적인 사용 상태를 수집합니다(system load, cpu useage, memory useage, swap useage)</li>
+                            <li>process: 프로세스별 분석데이터를 수집합니다. (process name, parent pid, state, pid, cpu useage, memory useage)</li>
+                            <li>filesystem: 파일시스템 분석데이터를 수집합니다.(마운트된 디스크의 총량, 사용량, 각 디스크의 이름, 마운트위치 등)</li>
+                            <li>cpu_per_core: core별 cpu 사용량을 수집합니다. 기본값은 false(사용안함) 입니다.</li>
+                        </ul>
+                    </ul>
+                </li>
+                <li>X축
+                    <ul>
+                        <li><strong>이벤트 발생 시간</strong>을 의미합니다.</li>
+                    </ul>
+                </li>
+            </ul>
         </div>
     </div>
 </div>
@@ -320,7 +400,32 @@
         <!-- /.box-header -->
 
         <div class="box-body">
-            챠트 설명<br><br><br><br><br><br><br><br><br><br><br><br><br>
+            <ul class="list-unstyled font13 lineh165">
+                <li>Y축
+                    <ul>
+                        <li>MetricBeat는 TopBeat와 달리 status를 확장한 서버의 CPU, 메모리 부하율 수집이 가능하고,</li>
+                        <li>그 외에 네트워크와 io 및 프로세스 로드율을 분석 할 수 있습니다.</li>
+                        <li>aRMS는 MetricBeat의 데이터 수집 상태만을 표시하기때문에</li>
+                        <li>하기는 MetricBeat를 통해 확인할 수 있는 데이터를 yml에서 추출하여 표기하였습니다.</li>
+                        <ul>
+                            <li>CPU stats - cpu</li>
+                            <li>System Load stats - load</li>
+                            <li>Per CPU core stats - core</li>
+                            <li>IO stats - diskio</li>
+                            <li>Per filesystem stats - filesystem</li>
+                            <li>File system summary stats - fsstat</li>
+                            <li>Memory stats - memory</li>
+                            <li>Network stats - network</li>
+                            <li>Per process stats - process</li>
+                        </ul>
+                    </ul>
+                </li>
+                <li>X축
+                    <ul>
+                        <li><strong>이벤트 발생 시간</strong>을 의미합니다.</li>
+                    </ul>
+                </li>
+            </ul>
         </div>
     </div>
 </div>
