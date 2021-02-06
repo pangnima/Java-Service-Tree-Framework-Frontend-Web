@@ -451,7 +451,26 @@
         <!-- /.box-header -->
 
         <div class="box-body">
-            챠트 설명<br><br><br><br><br><br><br><br><br><br><br><br><br>
+            <ul class="list-unstyled font13 lineh165">
+                <li>Y축
+                    <ul>
+                        <li>Filebeat는 로그 데이터를 전달하고 중앙화하기 위한 경량의 Producer입니다.</li>
+                        <li>Host의 var 폴더 밑 Log를 지정하여 데이터를 수집하거나</li>
+                        <li>특정 Daemon의 Service Log 데이터를 수집할 수도 있겠습니다.</li>
+                        <li>하기는 FileBeat를 통해 확인할 수 있는 데이터를 yml에서 추출하여 표기하였습니다.</li>
+                        <ul>
+                            <li>Paths - [ Log 파일의 위치 : 패턴 ]</li>
+                        </ul>
+                        <li>FileBeat는 특별한 설정을 할게 없으나, 파일의 위치를 지정한만큼</li>
+                        <li>파일 내용이 모두 수집되기 때문에 주의를 기울일 필요가 있겠습니다.</li>
+                    </ul>
+                </li>
+                <li>X축
+                    <ul>
+                        <li><strong>이벤트 발생 시간</strong>을 의미합니다.</li>
+                    </ul>
+                </li>
+            </ul>
         </div>
     </div>
 </div>
@@ -477,7 +496,28 @@
         <!-- /.box-header -->
 
         <div class="box-body">
-            챠트 설명<br><br><br><br><br><br><br><br><br><br><br><br><br>
+            <ul class="list-unstyled font13 lineh165">
+                <li>Y축
+                    <ul>
+                        <li>Heartbeat는 네트워크 내부 또는 외부에서 사용할 수 있습니다.</li>
+                        <li>원하는 HTTP, TCP 또는 ICMP 엔드포인트에 대한 네트워크 액세스만 있으면 되며,</li>
+                        <li>모니터링할 URL 목록을 Heartbeat에 의해 데이터가 수집됩니다.</li>
+                        <li>Heartbeat는 정기적으로 확인 작업을 수행하여</li>
+                        <li>엔드포인트가 가동 중인지 또는 중단되었는지 확인 할 수 있습니다.</li>
+                        <li>하기는 HeartBeat를 통해 확인할 수 있는 데이터를 yml에서 추출하여 표기하였습니다.</li>
+                        <ul>
+                            <li>urls - [ 모니터링 할 엔드포인트 url ]</li>
+                            <li>schedule - 일정 시간 반복 주기 설정</li>
+                        </ul>
+                        <li>파일 내용이 모두 수집되기 때문에 주의를 기울일 필요가 있겠습니다.</li>
+                    </ul>
+                </li>
+                <li>X축
+                    <ul>
+                        <li><strong>이벤트 발생 시간</strong>을 의미합니다.</li>
+                    </ul>
+                </li>
+            </ul>
         </div>
     </div>
 </div>
@@ -503,7 +543,28 @@
         <!-- /.box-header -->
 
         <div class="box-body">
-            챠트 설명<br><br><br><br><br><br><br><br><br><br><br><br><br>
+            <ul class="list-unstyled font13 lineh165">
+                <li>Y축
+                    <ul>
+                        <li>PacketBeat는 HTTP 같은 네트워크 프로토콜로부터</li>
+                        <li>애플리케이션 지연 시간 및 오류, 응답 시간, SLA 성능, 사용자 액세스 패턴 및 추이를 수집합니다.</li>
+                        <li>이러한 데이터에 접근하여 네트워크 트래픽의 흐름이 어떤지 파악할 수 있습니다.</li>
+                        <li>하기는 PacketBeat를 통해 확인할 수 있는 데이터를 yml에서 추출하여 표기하였습니다.</li>
+                        <ul>
+                            <li>protocols - [ 모니터링 타입 리스트 ]</li>
+                            <li>ports - [ 모니터링 포트 리스트 ]</li>
+                        </ul>
+                        <li>패킷 수집 방식을 기본 pcap에서 af_packet 으로 변경이 가능합니다.</li>
+                        <li>이 변경은 리눅스 환경에서만 가능하고, CPU Usage를 좀 줄일 수 있다고 하지만</li>
+                        <li>트래픽이 많은 서비스의 경우는 크게 효과를 보지는 못하는것 같습니다.</li>
+                    </ul>
+                </li>
+                <li>X축
+                    <ul>
+                        <li><strong>이벤트 발생 시간</strong>을 의미합니다.</li>
+                    </ul>
+                </li>
+            </ul>
         </div>
     </div>
 </div>
@@ -529,7 +590,28 @@
         <!-- /.box-header -->
 
         <div class="box-body">
-            챠트 설명<br><br><br><br><br><br><br><br><br><br><br><br><br>
+            <ul class="list-unstyled font13 lineh165">
+                <li>Y축
+                    <ul>
+                        <li>Elastic APM은 애플리케이션 성능 모니터링은 메트릭과 로그 사이의 간격을 이어줍니다.</li>
+                        <li>로그와 메트릭이 인프라와 구성 요소를 처리하면서 보다 교차적인 경향이 있는 반면,</li>
+                        <li>APM은 애플리케이션에 중점을 둠으로써 애플리케이션 레이어를 모니터링할 수 있게 해줍니다.</li>
+                        <li>모니터링에 APM을 추가하면, ( aRMS는 2가지의 APM을 사용 할 수 있습니다 )</li>
+                        <ul>
+                            <li>서비스가 어떤 작업에 시간을 소모하는지, 왜 작동이 중단되는지를 이해할 수 있습니다.</li>
+                            <li>서비스들이 어떻게 서로 상호작용하는지를 알게 되고, 병목 현상을 시각화할 수 있습니다.</li>
+                            <li>성능 병목 현상과 오류를 사전에 발견하고 수정할 수 있습니다.</li>
+                            <li>개발팀의 개발 품질을 측정하며, 각종 테스트를 수행하며 장애 상황을 미리 예측 할 수 있겠습니다.</li>
+                            <li>또한 브라우저에서 최종 사용자 경험을 추적할 수 있습니다.</li>
+                        </ul>
+                    </ul>
+                </li>
+                <li>X축
+                    <ul>
+                        <li><strong>이벤트 발생 시간</strong>을 의미합니다.</li>
+                    </ul>
+                </li>
+            </ul>
         </div>
     </div>
 </div>
