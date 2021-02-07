@@ -1,4 +1,4 @@
-<div class="font11 col-md-7">
+<div class="font11 col-md-6">
     <div class="boxwhite box-primary">
         <div class="box-header with-border">
             <h3 class="arms-title">aRMS 아키텍쳐 컨셉</h3>
@@ -11,7 +11,7 @@
     </div>
 </div>
 
-<div class="font11 col-md-5">
+<div class="font11 col-md-6">
     <div class="boxwhite box-primary">
         <div class="box-header with-border">
             <h3 class="arms-title">컨셉 설명</h3>
@@ -19,7 +19,37 @@
         <!-- /.box-header -->
 
         <div class="box-body">
-            챠트 설명
+            <ul class="list-unstyled font13 lineh165">
+                <li>Web Server :: Apache, Nginx...
+                    <ul>
+                        <li>aRMS 모니터링은 Front와 Backend가 분리된 구조로 동작합니다.</li>
+                        <li>따라서, Web용 Front Code는 커스터마이징이 가능합니다.</li>
+                    </ul>
+                </li>
+                <br>
+                <li>Docker Swarm :: aRMS, Monitoring ...
+                    <ul>
+                        <li>aRMS 모니터링의 Backend는 Docker Swarm 서비스로 구성됩니다.</li>
+                        <li>따라서, Swarm 내부 서비스간 통신은 자동으로 설정됩니다.</li>
+                    </ul>
+                </li>
+                <br>
+                <li>Agent Service :: 모니터링 대상 어플리케이션 ...
+                    <ul>
+                        <li>모니터링을 할 어플리케이션에 에이전트를 설치 후 실행합니다.</li>
+                    </ul>
+                </li>
+                <br>
+                <li>운용 서버 최소 스펙
+                    <ul>
+                        <li>모니터링 시스템은 클러스터를 지원합니다.</li>
+                        <li>최소 12개의 CPU Thread가 필요합니다.</li>
+                        <li>최소 16GB 의 Memory가 필요합니다.</li>
+                        <li>데이터 저장을 위한 NFS Server ( 최소 200기가 : 1주일분 )가 필요합니다.</li>
+                    </ul>
+                </li>
+                <br>
+            </ul>
         </div>
     </div>
 </div>
