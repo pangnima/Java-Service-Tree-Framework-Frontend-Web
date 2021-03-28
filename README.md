@@ -1,9 +1,9 @@
 ---project setting command ---
 1. npm install bower -g
-1. npm install -g grunt-cli
-2. npm install grunt --save-dev
-3. npm install grunt-contrib-concat --save-dev
-4. npm install grunt-serve --save-dev
+2. npm install -g grunt-cli
+3. npm install grunt --save-dev
+4. npm install grunt-contrib-concat --save-dev
+5. npm install grunt-serve --save-dev
 
 npm install grunt-contrib-less --save-dev
 npm install grunt-contrib-watch --save-dev
