@@ -62,9 +62,39 @@
 
     <script type="text/javascript">
         function jstreeDataTableReload() {
+
+            console.log("href: "+$(location).attr('href'));
+            console.log("protocol: "+$(location).attr('protocol'));
+            console.log("host: "+$(location).attr('host'));
+            console.log("pathname: "+$(location).attr('pathname'));
+            console.log("search: "+$(location).attr('search'));
+            console.log("hostname: "+$(location).attr('hostname'));
+            console.log("port: "+$(location).attr('port'));
+
+            var isDevelopingToRoute = "";
+
+            //operation enviorment setup and local development configuration
+            if($(location).attr('port') == 9999){
+                console.log("csrf 우회 because local development");
+                isDevelopingToRoute = "http://localhost:8082"
+            }else{
+                $.ajax({
+                    async: false,
+                    type: 'GET',
+                    url: "/api/jsTreeServiceFramework/security/csrf.do",
+                    success: function(r) {
+                        var token = r._csrf_token;
+                        var header = r._csrf_headerName;
+                        $(document).ajaxSend(function(e, xhr, options) {
+                            xhr.setRequestHeader(header, token);
+                        });
+                    }
+                });
+            }
+
             $('#jstreeTable').dataTable({
                 "ajax": {
-                    "url": "/com/ext/jstree/springHibernate/core/getMonitor.do",
+                    "url": isDevelopingToRoute + "/com/ext/jstree/springHibernate/core/getMonitor.do",
                     "dataSrc": ""
                 },
                 "destroy": true,
@@ -94,18 +124,34 @@
     <script type="text/javascript">
         function jsTreeBuild(){
 
-            $.ajax({
-                async: false,
-                type: 'GET',
-                url: "/api/jsTreeServiceFramework/security/csrf.do",
-                success: function(r) {
-                    var token = r._csrf_token;
-                    var header = r._csrf_headerName;
-                    $(document).ajaxSend(function(e, xhr, options) {
-                        xhr.setRequestHeader(header, token);
-                    });
-                }
-            });
+            console.log("href: "+$(location).attr('href'));
+            console.log("protocol: "+$(location).attr('protocol'));
+            console.log("host: "+$(location).attr('host'));
+            console.log("pathname: "+$(location).attr('pathname'));
+            console.log("search: "+$(location).attr('search'));
+            console.log("hostname: "+$(location).attr('hostname'));
+            console.log("port: "+$(location).attr('port'));
+
+            var isDevelopingToRoute = "";
+
+            //operation enviorment setup and local development configuration
+            if($(location).attr('port') == 9999){
+                console.log("csrf 우회 because local development");
+                isDevelopingToRoute = "http://localhost:8082"
+            }else{
+                $.ajax({
+                    async: false,
+                    type: 'GET',
+                    url: "/api/jsTreeServiceFramework/security/csrf.do",
+                    success: function(r) {
+                        var token = r._csrf_token;
+                        var header = r._csrf_headerName;
+                        $(document).ajaxSend(function(e, xhr, options) {
+                            xhr.setRequestHeader(header, token);
+                        });
+                    }
+                });
+            }
 
             $("#demo").bind(
                     "before.jstree",
@@ -223,7 +269,7 @@
                     // All the options are almost the same as jQuery's AJAX (read the docs)
                     "ajax": {
                         // the URL to fetch the data
-                        "url": "/com/ext/jstree/springHibernate/core/getChildNode.do",
+                        "url": isDevelopingToRoute + "/com/ext/jstree/springHibernate/core/getChildNode.do",
                         // the `data` function is executed in the instance's scope
                         // the parameter is the node being loaded
                         // (may be -1, 0, or undefined when loading the root nodes)
