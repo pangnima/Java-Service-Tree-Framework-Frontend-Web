@@ -5,6 +5,7 @@
 .sass-cache/
 /nbproject/
 /nbproject/private/
+/bower_components/
 /node_modules/
 ad.js
 TODO
