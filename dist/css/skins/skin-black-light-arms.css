@@ -189,3 +189,8 @@
     .skin-black-light.sidebar-mini.sidebar-collapse .sidebar-menu > li > .treeview-menu {
     }
 }
+
+.noneMarginTopDescription {
+    display: block;
+    margin-left: 50px;
+}
