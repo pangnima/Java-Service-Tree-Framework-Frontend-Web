@@ -194,3 +194,20 @@
     display: block;
     margin-left: 50px;
 }
+
+.icheckbox_flat-blue, .iradio_flat-blue {
+    display: inline-block;
+    *display: inline;
+    vertical-align: middle;
+    margin: 0;
+    padding: 0;
+    width: 20px;
+    height: 20px;
+    background: url(../../img/ARMS/blue.png) no-repeat;
+    border: none;
+    cursor: pointer;
+}
+
+.icheckbox_flat-blue {
+    background-position: 0 0;
+}
