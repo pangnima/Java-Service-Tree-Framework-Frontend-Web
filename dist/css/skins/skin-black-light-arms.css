@@ -237,6 +237,6 @@
 
 .users-list>li .userimg {
     border-radius: 50%;
-    max-width: 60px;
+    width: 60px;
     height: 60px;
 }
