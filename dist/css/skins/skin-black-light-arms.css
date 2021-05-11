@@ -211,3 +211,32 @@
 .icheckbox_flat-blue {
     background-position: 0 0;
 }
+
+.custom-widget-user .custom-widget-user-header {
+    padding: 20px;
+    height: 120px;
+    border-top-right-radius: 3px;
+    border-top-left-radius: 3px;
+}
+.custom-widget-user-username {
+    margin-top: 0;
+    margin-bottom: 5px;
+    font-size: 15px;
+    font-weight: bold;
+    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+}
+.custom-widget-user-desc {
+    margin-top: 0;
+    font-size: 13px;
+}
+.custom-description-block {
+    display: block;
+    margin: 16px 0;
+    text-align: left;
+}
+
+.users-list>li .userimg {
+    border-radius: 50%;
+    max-width: 60px;
+    height: 60px;
+}
