@@ -240,3 +240,48 @@
     width: 60px;
     height: 60px;
 }
+
+.custom-box-title {
+    display: inline-block;
+    font-size: 12px;
+    margin: 0;
+    line-height: 1;
+}
+
+.custom-box-footer {
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 3px;
+    border-bottom-left-radius: 3px;
+    border-top: 1px solid #f4f4f4;
+    padding: 80px 10px 10px 10px;
+    background-color: #ffffff;
+}
+
+.custom-box-title {
+    display: inline-block;
+    font-size: 13px;
+    margin: 0;
+    line-height: 1;
+}
+
+.custom-mailbox-read-info {
+    padding: 10px;
+}
+
+.custom-mailbox-read-info h3 {
+    font-size: 15px;
+    font-weight: bold;
+    margin: 0;
+}
+
+.custom-mailbox-read-info h5 {
+    font-size: 12px;
+    margin: 0;
+    padding: 5px 0 0 0;
+}
+
+.custom-mailbox-read-time {
+    color: #999;
+    font-size: 12px;
+}
