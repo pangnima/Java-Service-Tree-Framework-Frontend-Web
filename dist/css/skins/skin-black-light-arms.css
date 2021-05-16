@@ -285,3 +285,13 @@
     color: #999;
     font-size: 12px;
 }
+
+.control-sidebar-menu > li > a > .custom-control-sidebar-subheading {
+    margin-top: 0;
+}
+
+.custom-control-sidebar-subheading {
+    display: block;
+    font-weight: bold;
+    font-size: 12px;
+}
