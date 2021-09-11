@@ -4282,6 +4282,7 @@ table.text-center th {
 .fc-widget-content:first-of-type {
     border-left: 0;
     border-right: 0;
+    font-size: 13px;
 }
 .fc-widget-header:last-of-type,
 .fc-widget-content:last-of-type {
