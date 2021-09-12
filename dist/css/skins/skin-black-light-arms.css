@@ -311,3 +311,31 @@
     position: absolute;
     bottom: 40px;
 }
+
+.progress-description,
+.custom-info-box-text {
+    display: block;
+    font-size: 13px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.progress-description,
+.custom-info-box-text-header {
+    display: block;
+    font-size: 12px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.custom-progress-description{
+    display: block;
+    padding-top: 6px;
+    font-size: 12px;
+    font-weight: bold;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
