@@ -137,7 +137,7 @@ body {
   transition: transform 0.3s ease-in-out, margin 0.3s ease-in-out;
   margin-left: 230px;
   z-index: 820;
-  background-color: #f5f7f7;
+  background-color: #D2D6DE;
 }
 .layout-top-nav .content-wrapper,
 .layout-top-nav .main-footer {
@@ -167,7 +167,7 @@ body {
 .content-wrapper {
   min-height: 100%;
   z-index: 800;
-  background-color: #f5f7f7;
+  background-color: #D2D6DE;
 }
 .main-footer {
   color: #444;
@@ -217,7 +217,7 @@ body {
   min-height: 250px;
   margin-right: 5px;
   margin-left: auto;
-  background-color: #f5f7f7;
+  background-color: #D2D6DE;
   -webkit-box-shadow: 2px 2px 2px 0px rgba(0,0,0,0.25);
   -moz-box-shadow: 2px 2px 2px 0px rgba(0,0,0,0.25);
   box-shadow: 2px 2px 2px 0px rgba(0,0,0,0.25);
