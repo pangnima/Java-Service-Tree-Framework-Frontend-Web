@@ -10,7 +10,8 @@
 .login-text{
   margin-top: 20px;
   margin-right: 5px;
-  color: #444444;
+  color: #c1c1c1;
+  font-weight: 900;
 }
 .copyrightLayer{
   z-index: 1;
@@ -19,7 +20,7 @@
 }
 @media (min-width: 768px) {
   .asideWrapper {
-    background-color: #D2D6DE;
+    background-color: #bbbbbb;
     position: absolute;
     margin-top: 100px;
     top: 0;
@@ -32,14 +33,16 @@
 .skin-black-light .main-header {
 }
 .skin-black-light .main-header .navbar-toggle {
-  color: #333;
+  color: #c1c1c1;
 }
 .skin-black-light .main-header .navbar-brand {
-  color: #333;
+  color: #c1c1c1;
 }
 .skin-black-light .main-header .navbar {
-  background-color: #ffffff;
-  box-shadow: 0 6px 4px -2px rgba(0, 0, 0, 0.4);
+  background-color: #666666;
+  box-shadow: 0px 6px 4px -2px rgba(0, 0, 0, 0.8);
+  -webkit-box-shadow: 0px 6px 4px -2px rgba(0, 0, 0, 0.8);
+  -moz-box-shadow:    0px 6px 4px -2px rgba(0, 0, 0, 0.8);
 }
 .skin-black-light .main-header .navbar .nav > li > a {
   color: #333333;
@@ -71,16 +74,16 @@
   border-right-width: 0;
 }
 .skin-black-light .main-header > .logo {
-  background-color: #ffffff;
-  color: #333333;
+  background-color: #666666;
+  color: #c1c1c1;
   border-bottom: 0 solid transparent;
 }
 .skin-black-light .main-header > .logo:hover {
-  background-color: #fcfcfc;
+  color: #ffffff;
 }
 @media (max-width: 767px) {
   .skin-black-light .main-header > .logo {
-    color: #ffffff;
+    color: #c1c1c1;
     border-bottom: 0 solid transparent;
     border-right: none;
   }
@@ -96,10 +99,10 @@
 .skin-black-light .wrapper,
 .skin-black-light .main-sidebar,
 .skin-black-light .left-side {
-  background-color: #ffffff;
+  background-color: #bbbbbb;
 }
 .skin-black-light .main-sidebar {
-  background-color: #ffffff;
+  background-color: #666666;
 }
 .skin-black-light .user-panel > .info,
 .skin-black-light .user-panel > .info > a {
@@ -118,7 +121,7 @@
 }
 .skin-black-light .sidebar-menu > li:hover > a,
 .skin-black-light .sidebar-menu > li.active > a {
-  color: #000000;
+  color: #c1c1c1;
 }
 .skin-black-light .sidebar-menu > li.active {
   border-left-color: #ffffff;
@@ -135,11 +138,11 @@
   text-decoration: none;
 }
 .skin-black-light .sidebar-menu .treeview-menu > li > a {
-  color: #777777;
+  color: #c1c1c1;
 }
 .skin-black-light .sidebar-menu .treeview-menu > li.active > a,
 .skin-black-light .sidebar-menu .treeview-menu > li > a:hover {
-  color: #000000;
+  color: #ffffff;
 }
 .skin-black-light .sidebar-menu .treeview-menu > li.active > a {
   font-weight: 600;

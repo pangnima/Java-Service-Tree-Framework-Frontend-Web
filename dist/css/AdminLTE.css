@@ -63,6 +63,8 @@ body {
   overflow-y: auto;
 }
 .www313cokrbody {
+  color: #4b4b4b;
+  background-color: #666666;
   margin-top: 100px;
 }
 /* Font */
@@ -167,7 +169,7 @@ body {
 .content-wrapper {
   min-height: 100%;
   z-index: 800;
-  background-color: #D2D6DE;
+  background-color: #bbbbbb;
 }
 .main-footer {
   color: #444;
@@ -218,9 +220,9 @@ body {
   margin-right: 5px;
   margin-left: auto;
   background-color: #D2D6DE;
-  -webkit-box-shadow: 2px 2px 2px 0px rgba(0,0,0,0.25);
-  -moz-box-shadow: 2px 2px 2px 0px rgba(0,0,0,0.25);
-  box-shadow: 2px 2px 2px 0px rgba(0,0,0,0.25);
+  -webkit-box-shadow: 3px 3px 3px 0px rgba(0,0,0,0.25);
+  -moz-box-shadow: 3px 3px 3px 0px rgba(0,0,0,0.25);
+  box-shadow: 3px 3px 3px 0px rgba(0,0,0,0.25);
   z-index: 1;
   position: relative;
 }
@@ -494,9 +496,9 @@ a:focus {
   min-height: 100%;
   width: 230px;
   z-index: 810;
-  -webkit-box-shadow: 4px 0px 7px 0px rgba(0, 0, 0, 0.4);
-  -moz-box-shadow:    4px 0px 7px 0px rgba(0, 0, 0, 0.4);
-  box-shadow:         4px 0px 7px 0px rgba(0, 0, 0, 0.4);
+  -webkit-box-shadow: 4px 0px 7px 0px rgba(0, 0, 0, 0.8);
+  -moz-box-shadow:    4px 0px 7px 0px rgba(0, 0, 0, 0.8);
+  box-shadow:         4px 0px 7px 0px rgba(0, 0, 0, 0.8);
 }
 @media (max-width: 767px) {
   .main-sidebar {
@@ -758,7 +760,7 @@ a:focus {
 }
 .control-sidebar-bg,
 .control-sidebar {
-  background-color: #ffffff;
+  background-color: #666666;
   top: 0;
   right: 0;
   width: 100%;
@@ -769,7 +771,9 @@ a:focus {
 .control-sidebar {
   position: absolute;
   padding-top: 50px;
-  box-shadow: 0 6px 4px -2px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 6px 4px -2px rgba(0, 0, 0, 0.8);
+  -webkit-box-shadow: 0 6px 4px -2px rgba(0, 0, 0, 0.8);
+  -moz-box-shadow:    0 6px 4px -2px rgba(0, 0, 0, 0.8);
 }
 @media (max-width: 767px) {
   .control-sidebar {
@@ -4885,8 +4889,8 @@ table.text-center th {
   clear: both;
 }
 .user-block img {
-  width: 40px;
-  height: 40px;
+  width: 80px;
+  height: 80px;
   float: left;
 }
 .user-block .username,

@@ -19,6 +19,7 @@ npm install grunt-notify --save-dev
 npm install grunt-text-replace --save-dev
 npm install grunt-contrib-connect --save-dev
 
+bower update
 
 Introduction
 ============
