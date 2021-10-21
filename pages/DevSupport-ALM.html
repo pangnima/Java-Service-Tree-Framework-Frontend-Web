@@ -219,12 +219,23 @@
             });
         });
     }
-    function funLoad(){
-        var Cheight = $(document).height() - 100;
-        $('.asideWrapper').css({'height':Cheight+'px'});
+
+    $(window).on({
+        resize: function () {
+            setHeightToAsideWrapper();
+        },
+        scroll: function () {
+            setHeightToAsideWrapper();
+        }
+    });
+    function setHeightToAsideWrapper() {
+        if ( $( window ).outerWidth() > 767 ) {
+            var Cheight = $(document).height() - 100;
+            $('.asideWrapper').css({'height':Cheight+'px'});
+        }else{
+            $('.asideWrapper').css({'height':'100%'});
+        }
     }
-    window.onload = funLoad;
-    window.onresize = funLoad;
     //]]>
 </script>
 </body>
