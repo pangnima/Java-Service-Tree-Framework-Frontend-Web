@@ -90,36 +90,39 @@
 
     <script type="text/javascript">
         //<![CDATA[
-        var SUCCESS = 'success';
+        console.log("href: "+$(location).attr('href'));
+        console.log("protocol: "+$(location).attr('protocol'));
+        console.log("host: "+$(location).attr('host'));
+        console.log("pathname: "+$(location).attr('pathname'));
+        console.log("search: "+$(location).attr('search'));
+        console.log("hostname: "+$(location).attr('hostname'));
+        console.log("port: "+$(location).attr('port'));
 
-        var onlineListStore = null;
-        var messageStore = null;
-        var editor = null;
-        var onlineListGrid = null;
-        var messageGrid = null;
-        var sendBox = null;
-        var viewport = null;
-        var loginWindow = null;
+        var authRoute = "/auth-anon";
 
-        function showErrorBox(title, message, target) {
-            console.log("showErrorBox");
-            console.log(title + message + target);
-        }
-
-        function addMessage(name, time, message) {
-            console.log("addMessage");
-            console.log(name + time + message);
-        }
-
-        function updateOnlineList(onlineList) {
-            console.log("updateOnlineList");
-            console.log(onlineList.length);
+        //operation enviorment setup and local development configuration
+        if($(location).attr('port') == 9999){
+            console.log("csrf 우회 because local development");
+            authRoute = "/auth-anon";
+        }else{
+            $.ajax({
+                async: false,
+                type: 'GET',
+                url: authRoute + "/api/jsTreeServiceFramework/security/csrf.do",
+                success: function(r) {
+                    var token = r._csrf_token;
+                    var header = r._csrf_headerName;
+                    $(document).ajaxSend(function(e, xhr, options) {
+                        xhr.setRequestHeader(header, token);
+                    });
+                }
+            });
         }
 
         function jstreeDataTableReload() {
             var jstreeDataTable = $('#jstreeTable').dataTable({
                 "ajax": {
-                    "url": "/com/ext/jstree/springiBatis/core/monitor/list.do",
+                    "url": authRoute + "/com/ext/jstree/springiBatis/core/monitor/list.do",
                     "dataSrc": "rows"
                 },
                 "processing": true,
@@ -165,18 +168,34 @@
         //<![CDATA[
         function jsTreeBuild(){
 
-            $.ajax({
-                async: false,
-                type: 'GET',
-                url: "/api/jsTreeServiceFramework/security/csrf.do",
-                success: function(r) {
-                    var token = r._csrf_token;
-                    var header = r._csrf_headerName;
-                    $(document).ajaxSend(function(e, xhr, options) {
-                        xhr.setRequestHeader(header, token);
-                    });
-                }
-            });
+            console.log("href: "+$(location).attr('href'));
+            console.log("protocol: "+$(location).attr('protocol'));
+            console.log("host: "+$(location).attr('host'));
+            console.log("pathname: "+$(location).attr('pathname'));
+            console.log("search: "+$(location).attr('search'));
+            console.log("hostname: "+$(location).attr('hostname'));
+            console.log("port: "+$(location).attr('port'));
+
+            var authRoute = "/auth-anon";
+
+            //operation enviorment setup and local development configuration
+            if($(location).attr('port') == 9999){
+                console.log("csrf 우회 because local development");
+                authRoute = "/auth-anon";
+            }else{
+                $.ajax({
+                    async: false,
+                    type: 'GET',
+                    url: authRoute + "/api/jsTreeServiceFramework/security/csrf.do",
+                    success: function(r) {
+                        var token = r._csrf_token;
+                        var header = r._csrf_headerName;
+                        $(document).ajaxSend(function(e, xhr, options) {
+                            xhr.setRequestHeader(header, token);
+                        });
+                    }
+                });
+            }
 
             $("#demo").bind(
                     "before.jstree",
@@ -294,7 +313,7 @@
                     // All the options are almost the same as jQuery's AJAX (read the docs)
                     "ajax": {
                         // the URL to fetch the data
-                        "url": "/com/ext/jstree/springiBatis/core/getChildNode.do",
+                        "url": authRoute + "/com/ext/jstree/springiBatis/core/getChildNode.do",
                         // the `data` function is executed in the instance's scope
                         // the parameter is the node being loaded
                         // (may be -1, 0, or undefined when loading the root nodes)
@@ -314,7 +333,7 @@
                     // As this has been a common question - async search
                     // Same as above - the `ajax` config option is actually jQuery's AJAX object
                     "ajax": {
-                        "url": "/com/ext/jstree/springiBatis/core/searchNode.do",
+                        "url": authRoute + "/com/ext/jstree/springiBatis/core/searchNode.do",
                         // You get the search string as a parameter
                         "data": function(str) {
                             return {
@@ -385,7 +404,7 @@
                     "initially_open": ["node_2", "node_3"]
                 }
             }).bind("create.jstree", function(e, data) {
-                $.post("/com/ext/jstree/springiBatis/core/addNode.do", {
+                $.post(authRoute + "/com/ext/jstree/springiBatis/core/addNode.do", {
                     "ref": data.rslt.parent.attr("id").replace("node_", "").replace("copy_", ""),
                     "c_position": data.rslt.position,
                     "c_title": data.rslt.name,
@@ -410,7 +429,7 @@
                     $.ajax({
                         async: false,
                         type: 'POST',
-                        url: "/com/ext/jstree/springiBatis/core/removeNode.do",
+                        url: authRoute + "/com/ext/jstree/springiBatis/core/removeNode.do",
                         data: {
                             "c_id": this.id.replace("node_", "").replace("copy_", "")
                         },
@@ -427,7 +446,7 @@
                     });
                 });
             }).bind("rename.jstree", function(e, data) {
-                $.post("/com/ext/jstree/springiBatis/core/alterNode.do", {
+                $.post(authRoute + "/com/ext/jstree/springiBatis/core/alterNode.do", {
                     "c_id": data.rslt.obj.attr("id").replace("node_", "").replace("copy_", ""),
                     "c_title": data.rslt.new_name,
                     "c_type": data.rslt.obj.attr("rel")
@@ -445,7 +464,7 @@
                     jsTreeBuild();
                 });
             }).bind("set_type.jstree", function(e, data) {
-                $.post("/com/ext/jstree/springiBatis/core/alterNodeType.do", {
+                $.post(authRoute + "/com/ext/jstree/springiBatis/core/alterNodeType.do", {
                     "c_id": data.rslt.obj.attr("id").replace("node_", "").replace("copy_", ""),
                     "c_title": data.rslt.new_name,
                     "c_type": data.rslt.obj.attr("rel")
@@ -464,7 +483,7 @@
                     $.ajax({
                         async: false,
                         type: 'POST',
-                        url: "/com/ext/jstree/springiBatis/core/moveNode.do",
+                        url: authRoute + "/com/ext/jstree/springiBatis/core/moveNode.do",
                         data: {
                             "c_id": $(this).attr("id").replace("node_", "").replace("copy_", ""),
                             "ref": data.rslt.cr === -1 ? 1 : data.rslt.np.attr("id").replace("node_", "").replace("copy_", ""),

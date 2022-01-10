@@ -113,9 +113,39 @@
         }
 
         function jstreeDataTableReload() {
+
+            console.log("href: "+$(location).attr('href'));
+            console.log("protocol: "+$(location).attr('protocol'));
+            console.log("host: "+$(location).attr('host'));
+            console.log("pathname: "+$(location).attr('pathname'));
+            console.log("search: "+$(location).attr('search'));
+            console.log("hostname: "+$(location).attr('hostname'));
+            console.log("port: "+$(location).attr('port'));
+
+            var isDevelopingToRoute = "/auth-anon";
+
+            //operation enviorment setup and local development configuration
+            if($(location).attr('port') == 9999){
+                console.log("csrf 우회 because local development");
+                isDevelopingToRoute = "/auth-anon";
+            }else{
+                $.ajax({
+                    async: false,
+                    type: 'GET',
+                    url: "/api/jsTreeServiceFramework/security/csrf.do",
+                    success: function(r) {
+                        var token = r._csrf_token;
+                        var header = r._csrf_headerName;
+                        $(document).ajaxSend(function(e, xhr, options) {
+                            xhr.setRequestHeader(header, token);
+                        });
+                    }
+                });
+            }
+
             var jstreeDataTable = $('#jstreeTable').dataTable({
                 "ajax": {
-                    "url": "/com/ext/jstree/strutsiBatis/core/monitor/list.action",
+                    "url": isDevelopingToRoute + "/com/ext/jstree/strutsiBatis/core/monitor/list.action",
                     "dataSrc": "rows"
                 },
                 "processing": true,
@@ -161,10 +191,39 @@
         //<![CDATA[
         function jsTreeBuild(){
 
+            console.log("href: "+$(location).attr('href'));
+            console.log("protocol: "+$(location).attr('protocol'));
+            console.log("host: "+$(location).attr('host'));
+            console.log("pathname: "+$(location).attr('pathname'));
+            console.log("search: "+$(location).attr('search'));
+            console.log("hostname: "+$(location).attr('hostname'));
+            console.log("port: "+$(location).attr('port'));
+
+            var isDevelopingToRoute = "/auth-anon";
+
+            //operation enviorment setup and local development configuration
+            if($(location).attr('port') == 9999){
+                console.log("csrf 우회 because local development");
+                isDevelopingToRoute = "/auth-anon";
+            }else{
+                $.ajax({
+                    async: false,
+                    type: 'GET',
+                    url: "/api/jsTreeServiceFramework/security/csrf.do",
+                    success: function(r) {
+                        var token = r._csrf_token;
+                        var header = r._csrf_headerName;
+                        $(document).ajaxSend(function(e, xhr, options) {
+                            xhr.setRequestHeader(header, token);
+                        });
+                    }
+                });
+            }
+
             $.ajax({
                 async: false,
                 type: 'GET',
-                url: "/api/jsTreeServiceFramework/security/csrf.do",
+                url: isDevelopingToRoute + "/api/jsTreeServiceFramework/security/csrf.do",
                 success: function(r) {
                     var token = r._csrf_token;
                     var header = r._csrf_headerName;
@@ -290,7 +349,7 @@
                     // All the options are almost the same as jQuery's AJAX (read the docs)
                     "ajax": {
                         // the URL to fetch the data
-                        "url": "/com/ext/jstree/strutsiBatis/core/getChildNode.action",
+                        "url": isDevelopingToRoute + "/com/ext/jstree/strutsiBatis/core/getChildNode.action",
                         // the `data` function is executed in the instance's scope
                         // the parameter is the node being loaded
                         // (may be -1, 0, or undefined when loading the root nodes)
@@ -310,7 +369,7 @@
                     // As this has been a common question - async search
                     // Same as above - the `ajax` config option is actually jQuery's AJAX object
                     "ajax": {
-                        "url": "/com/ext/jstree/strutsiBatis/core/searchNode.action",
+                        "url": isDevelopingToRoute + "/com/ext/jstree/strutsiBatis/core/searchNode.action",
                         // You get the search string as a parameter
                         "data": function(str) {
                             return {
@@ -381,7 +440,7 @@
                     "initially_open": ["node_2", "node_3"]
                 }
             }).bind("create.jstree", function(e, data) {
-                $.post("/com/ext/jstree/strutsiBatis/core/addNode.action", {
+                $.post(isDevelopingToRoute + "/com/ext/jstree/strutsiBatis/core/addNode.action", {
                     "ref": data.rslt.parent.attr("id").replace("node_", "").replace("copy_", ""),
                     "c_position": data.rslt.position,
                     "c_title": data.rslt.name,
@@ -406,7 +465,7 @@
                     $.ajax({
                         async: false,
                         type: 'POST',
-                        url: "/com/ext/jstree/strutsiBatis/core/removeNode.action",
+                        url: isDevelopingToRoute + "/com/ext/jstree/strutsiBatis/core/removeNode.action",
                         data: {
                             "c_id": this.id.replace("node_", "").replace("copy_", "")
                         },
@@ -423,7 +482,7 @@
                     });
                 });
             }).bind("rename.jstree", function(e, data) {
-                $.post("/com/ext/jstree/strutsiBatis/core/alterNode.action", {
+                $.post(isDevelopingToRoute + "/com/ext/jstree/strutsiBatis/core/alterNode.action", {
                     "c_id": data.rslt.obj.attr("id").replace("node_", "").replace("copy_", ""),
                     "c_title": data.rslt.new_name,
                     "c_type": data.rslt.obj.attr("rel")
@@ -441,7 +500,7 @@
                     jsTreeBuild();
                 });
             }).bind("set_type.jstree", function(e, data) {
-                $.post("/com/ext/jstree/strutsiBatis/core/alterNodeType.action", {
+                $.post(isDevelopingToRoute + "/com/ext/jstree/strutsiBatis/core/alterNodeType.action", {
                     "c_id": data.rslt.obj.attr("id").replace("node_", "").replace("copy_", ""),
                     "c_title": data.rslt.new_name,
                     "c_type": data.rslt.obj.attr("rel")
@@ -460,7 +519,7 @@
                     $.ajax({
                         async: false,
                         type: 'POST',
-                        url: "/com/ext/jstree/strutsiBatis/core/moveNode.action",
+                        url: isDevelopingToRoute + "/com/ext/jstree/strutsiBatis/core/moveNode.action",
                         data: {
                             "c_id": $(this).attr("id").replace("node_", "").replace("copy_", ""),
                             "ref": data.rslt.cr === -1 ? 1 : data.rslt.np.attr("id").replace("node_", "").replace("copy_", ""),

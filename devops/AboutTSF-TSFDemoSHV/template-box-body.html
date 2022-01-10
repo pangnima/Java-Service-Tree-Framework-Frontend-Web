@@ -71,12 +71,12 @@
             console.log("hostname: "+$(location).attr('hostname'));
             console.log("port: "+$(location).attr('port'));
 
-            var isDevelopingToRoute = "";
+            var isDevelopingToRoute = "/auth-anon";
 
             //operation enviorment setup and local development configuration
             if($(location).attr('port') == 9999){
                 console.log("csrf 우회 because local development");
-                isDevelopingToRoute = "http://localhost:8082"
+                isDevelopingToRoute = "/auth-anon";
             }else{
                 $.ajax({
                     async: false,
@@ -132,12 +132,12 @@
             console.log("hostname: "+$(location).attr('hostname'));
             console.log("port: "+$(location).attr('port'));
 
-            var isDevelopingToRoute = "";
+            var isDevelopingToRoute = "/auth-anon";
 
             //operation enviorment setup and local development configuration
             if($(location).attr('port') == 9999){
                 console.log("csrf 우회 because local development");
-                isDevelopingToRoute = "http://localhost:8082"
+                isDevelopingToRoute = "/auth-anon"
             }else{
                 $.ajax({
                     async: false,

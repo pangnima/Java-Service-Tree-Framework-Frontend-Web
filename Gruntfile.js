@@ -8,8 +8,24 @@ module.exports = function (grunt) { // jshint ignore:line
       server: {
         options: {
           port:9999,
-          hostname: '*'
-        }
+          hostname: '0.0.0.0',
+          middleware: function (connect, options, defaultMiddleware) {
+            var proxy = require('grunt-connect-proxy/lib/utils').proxyRequest;
+            return [
+              // Include the proxy first
+              proxy
+            ].concat(defaultMiddleware);
+          }
+        },
+        proxies: [
+          {
+            context: ['/auth-anon','/auth-user','/auth-admin','/auth-check','/sso','/dwr','/logout'],
+            host: 'localhost',
+            port: 13131,
+            https: false,
+            changeOrigin: true
+          }
+        ]
       },
     },
     watch : {
@@ -320,5 +336,14 @@ module.exports = function (grunt) { // jshint ignore:line
 
   //313devgrp
   grunt.loadNpmTasks('grunt-contrib-connect');
-  grunt.registerTask('server', ['connect:server:keepalive']);
+  grunt.loadNpmTasks('grunt-connect-proxy');
+  grunt.loadNpmTasks('configureProxies:server');
+  grunt.loadNpmTasks('grunt-contrib-compass');
+  //grunt.registerTask('server', ['connect:server:keepalive']);
+  grunt.registerTask('server', function (target) {
+    grunt.task.run([
+      'configureProxies:server',
+      'connect:server:keepalive'
+    ]);
+  });
 };

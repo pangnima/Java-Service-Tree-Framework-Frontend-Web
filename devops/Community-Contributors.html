@@ -129,7 +129,7 @@
                 <div class="col-md-12">
                     <!-- Box Comment -->
                     <div class="box box-widget">
-                        <div class="box-header with-border" data-include="Community-Contributors/template-box-header.html">
+                        <div class="box-header with-border" data-include="Community-Contributors/template-box-header.html" style="border-bottom: 1px dotted #bbbbbb;">
                         </div>
                         <!-- /.box-header -->
                         <div class="box-body" data-include="Community-Contributors/template-box-body.html">
@@ -162,6 +162,16 @@
     <aside class="control-sidebar"></aside>
 </div>
 <!-- /.control-sidebar -->
+
+<div id="topicon" style="opacity: 1;"><img src="../dist/img/topicon.gif" alt="맨위로"></div>
+<!--div id="quickbanner">
+	<div class="quickbox">
+		<strong><img src="../dist/img/quickbanner.png" alt="퀵메뉴"></strong>
+		<ul class="cf">
+		</ul>
+		<a href="#" alt="맨위로"></a>
+	</div>
+</div-->
 
 <!-- jQuery 3 -->
 <script src="../bower_components/jquery/dist/jquery.min.js"></script>
@@ -198,6 +208,8 @@
 <script src="../dist/js/adminlte.min.js"></script>
 <!-- AdminLTE for demo purposes -->
 <script src="../dist/js/demo.js"></script>
+<!-- topbar progress -->
+<script src="../dist/js/topbar.js"></script>
 
 <script>
     //<![CDATA[
@@ -208,7 +220,10 @@
             $(this).parent().siblings().removeClass("active")
             $(this).parent().addClass("active");
         });
+
+        setSideMenu();
     });
+
     function includeLayout() {
         var includeArea = $('[data-include]');
         var self, url;
@@ -229,6 +244,7 @@
             setHeightToAsideWrapper();
         }
     });
+
     function setHeightToAsideWrapper() {
         if ( $( window ).outerWidth() > 767 ) {
             var Cheight = $(document).height() - 100;
@@ -237,7 +253,95 @@
             $('.asideWrapper').css({'height':'100%'});
         }
     }
+
+    function setSideMenu() {
+        setTimeout(function(){
+            $('.Community').css({'color':'antiquewhite'});
+            $('.Contributors').css({'color':'antiquewhite'});
+        },1000);
+    }
+
+    function resetToDefaults() {
+            topbar.config({
+                autoRun      : true,
+                barThickness : 3,
+                barColors    : {
+                    '0'      : 'rgba(26,  188, 156, .9)',
+                    '.25'    : 'rgba(52,  152, 219, .9)',
+                    '.50'    : 'rgba(241, 196, 15,  .9)',
+                    '.75'    : 'rgba(230, 126, 34,  .9)',
+                    '1.0'    : 'rgba(211, 84,  0,   .9)'
+                },
+                shadowBlur   : 10,
+                shadowColor  : 'rgba(0,   0,   0,   .6)'
+             })
+          }
+
+        // Page load
+        resetToDefaults();
+        topbar.show();
+        setTimeout(function() {
+            $('.container').fadeIn('slow')
+            topbar.hide()
+        }, 1500);
+
+        /*맨위로 아이콘*/
+        $(function(){
+        	$( window ).scroll( function() {
+        		if($(this).scrollTop()>200){
+        			$('#topicon').css({opacity:1});
+        		}else{
+        			$('#topicon').css({opacity:0});
+        		}
+        	});
+
+        	$( '#topicon' ).click( function() {
+        		$('html, body').animate({scrollTop:0},400);
+        		return false;
+        	});
+
+        });
+
+        /*우측 배너 */
+        function rightQuickBanner(){
+        	var liname=['contents of list', 'and then some'];
+        	var alink=['/sample1.html','sample2.jsp'];
+
+        	$('#quickbanner li').remove('li');
+
+        	for(var i=0;i<6;i++){
+        		$('#quickbanner ul').append('<li><a href="'+alink[i]+'">'+liname[i]+'</a></li>');
+        	}
+
+        	var qH=parseInt($('#quickbanner').css('top'));
+        	var qHv=qH-183;
+
+        	$('#quickbanner li').eq(2).addClass('on');
+
+        	$(window).on('scroll',function(){
+        		var ty=$(window).scrollTop();
+        		if(ty>qHv){
+        			$('#quickbanner').css({'position':'fixed','top':'183px'});
+        		}else{
+        			$('#quickbanner').css({'position':'absolute','top':qH+'px'});
+        		}
+        	});
+
+        	//현재 위치 메뉴 설정
+        	var newURL = window.location.pathname;
+        	var getmenu=[];
+
+        	for(var j=0;j<9;j++){
+        		getmenu[j]=newURL.indexOf(alink[j]);
+
+        		if(getmenu[j] != -1){ //-1은 양수를 찾는 도중 동일한 값이 아닐 경우 무조건 -1이 해당 변수에 담김. !=-1 는 -1이 아닌 경우 class 'on'하라
+        			$('#quickbanner li').removeClass('on')
+        			$('#quickbanner li').eq(j).addClass('on');
+        		}
+        	}
+        }
     //]]>
 </script>
+
 </body>
 </html>

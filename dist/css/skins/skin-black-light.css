@@ -123,7 +123,6 @@
   font-weight: 600;
   background-color: #666666;
   top: 2px;
-  right: -3px;
 }
 .skin-black-light .sidebar-menu > li:hover > a,
 .skin-black-light .sidebar-menu > li.active > a {
@@ -197,4 +196,204 @@
     -moz-box-shadow: 3px 4px 3px 0px rgba(0,0,0,0.80);
     box-shadow: 3px 4px 3px 0px rgb(0 0 0 / 80%);
   }
+}
+
+/* 맨위로 아이콘 */
+#topicon{
+  width:36px;height:35px;
+  position:fixed;right:1%;bottom:15px;
+  z-index:200;
+  transition:0.3s;
+  cursor:pointer;
+  opacity:0;
+  border-radius:50%;
+  overflow:hidden;
+  padding-left:-1px;
+  animation: doongdoong 1.3s linear infinite;
+}
+@keyframes doongdoong{
+  0%{bottom:15px;}
+  50%{bottom:10px;}
+  100%{bottom:15px;}
+}
+
+
+/* 우측배너 */
+#quickbanner{
+  position:absolute;right:0px;top:183px;
+  z-index:10;
+}
+#quickbanner .quickbox{position:relative;}
+#quickbanner ul{
+  padding-left:14px;
+}
+#quickbanner li{
+  width:96px;
+  padding:5px 0 5px 10px;
+  border-left:1px solid #d5c7c6;
+  position:relative;
+  cursor:pointer;
+}
+#quickbanner li a{
+  display:block;
+  font-size:11.5px;
+  color:#979190;
+  text-align:left;
+  position:relative;
+}
+#quickbanner li:last-child{
+  padding:5px 0 25px 10px;
+}
+#quickbanner .quickbox > a{
+  display:block;
+  width:96px;height:25px;
+  background:url('/images/quicktop.png') 0 0 no-repeat;
+  position:absolute;
+  left:14px;bottom:-8px;
+}
+#quickbanner .quickbox > a:hover{
+  background:url('/images/quicktop_on.png') 0 0 no-repeat;
+}
+#quickbanner li.on a,#quickbanner li a:hover{
+  color:#f1592a;
+}
+#quickbanner li.on:before,#quickbanner li a:hover:before{
+  content:"";display:block;clear:both;
+  width:3px;height:9px;
+  background:#f1592a;
+  position:absolute;
+  left:-1px;top:9px;
+}
+#quickbanner li a:hover:before{
+  left:-11px;top:4px;
+}
+
+.custom-widget-user .custom-widget-user-header {
+  padding: 20px;
+  height: 120px;
+  border-top-right-radius: 3px;
+  border-top-left-radius: 3px;
+}
+.custom-widget-user-username {
+  margin-top: 0;
+  margin-bottom: 5px;
+  font-size: 15px;
+  font-weight: bold;
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+}
+.custom-widget-user-desc {
+  margin-top: 0;
+  font-size: 13px;
+}
+.custom-description-block {
+  display: block;
+  margin: 16px 0;
+  text-align: left;
+}
+
+.users-list>li .userimg {
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+}
+
+.custom-box-title-id {
+  background-color: #f7f7f7;
+  font-size: 16px;
+  font-weight: 900;
+  text-align: center;
+  padding: 7px 10px;
+  margin-top: 0;
+}
+
+.custom-box-footer {
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 3px;
+  border-bottom-left-radius: 3px;
+  border-top: 1px solid #f4f4f4;
+  padding: 80px 10px 10px 10px;
+  background-color: #ffffff;
+}
+
+.custom-box-title {
+  display: inline-block;
+  font-size: 13px;
+  margin: 0;
+  line-height: 1;
+}
+
+.custom-mailbox-read-info {
+  padding: 10px;
+}
+
+.custom-mailbox-read-info h3 {
+  font-size: 15px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.custom-mailbox-read-info h5 {
+  font-size: 12px;
+  margin: 0;
+  padding: 5px 0 0 0;
+}
+
+.custom-mailbox-read-time {
+  color: #999;
+  font-size: 12px;
+}
+
+.control-sidebar-menu > li > a > .custom-control-sidebar-subheading {
+  margin-top: 0;
+}
+
+.custom-control-sidebar-subheading {
+  display: block;
+  font-weight: bold;
+  font-size: 12px;
+}
+
+.custom-timeline-header {
+  margin: 0;
+  color: #555;
+  border-bottom: 1px solid #f4f4f4;
+  padding: 10px;
+  font-size: 14px;
+  line-height: 1.1;
+}
+
+.admin-sidebar {
+  width: 100%;
+  background: #1d1df1;
+  position: absolute;
+  bottom: 40px;
+}
+
+.progress-description,
+.custom-info-box-text {
+  display: block;
+  font-size: 13px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.progress-description,
+.custom-info-box-text-header {
+  display: block;
+  font-size: 12px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.custom-progress-description{
+  display: block;
+  padding-top: 6px;
+  font-size: 12px;
+  font-weight: bold;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
