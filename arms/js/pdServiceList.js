@@ -1,9 +1,9 @@
 $(function() {
     jstreeDataTableReload();
 
+    //datatable 좌상단 datarow combobox style
     $('.dataTables_length').find('select:eq(0)').addClass("darkBack");
     $('.dataTables_length').find('select:eq(0)').css('min-height','30px');
-    //min-height: 30px;
 });
 
 $(function () {

@@ -3,7 +3,7 @@
         <header>
             <h4>
                 <span class="font13" style="font-weight: bold;">
-                    <i class="fa fa-sort-amount-asc"></i> 연결된 Jira 조회
+                    <i class="fa fa-sort-amount-asc"></i> 제품(서비스) 조회
                 </span>
             </h4>
             <div class="actions">
@@ -26,7 +26,7 @@
                         </div>
                     </form>
                 </div>
-                <div id="demo" style="padding-top: 5px;" class="darkBack"></div>
+                <div id="pdService" style="padding-top: 5px;" class="darkBack"></div>
                 <div style="margin-top: 10px;" class="darkBack">
                     설명
                 </div>
@@ -35,7 +35,81 @@
     </section>
 </div>
 
-<div class="col-lg-8">
+<div class="col-lg-4">
+    <section class="widget">
+        <header>
+            <h4>
+                <span class="font13" style="font-weight: bold;">
+                    <i class="fa fa-sort-amount-asc"></i> 제품(서비스) 버전(Version) 조회
+                </span>
+            </h4>
+            <div class="actions">
+                <button class="btn btn-transparent btn-xs" onclick="$('#demo').jstree('open_all');">Show All
+                    <i class="fa fa-arrow-down"></i>
+                </button>
+            </div>
+        </header>
+        <div class="body">
+            <div class="wrapper">
+                <div id="mmenu" style="padding-bottom: 5px;">
+                    <form class="form-search no-margin" role="form">
+                        <div class="input-group">
+                            <input type="search" id="text" class="form-control searchDarkBack" style="color: #f8f8f8;" placeholder="찾을 노드 이름 입력" data-tooltip="Press Enter To Node To Search">
+                            <span class="input-group-btn">
+                                <button type="button" id="search" title="Search" class="btn btn-default btn-sm">
+                                    Search
+                                </button>
+                            </span>
+                        </div>
+                    </form>
+                </div>
+                <div id="Version" style="padding-top: 5px;" class="darkBack"></div>
+                <div style="margin-top: 10px;" class="darkBack">
+                    설명
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+
+<div class="col-lg-4">
+    <section class="widget">
+        <header>
+            <h4>
+                <span class="font13" style="font-weight: bold;">
+                    <i class="fa fa-sort-amount-asc"></i> JIRA 조회
+                </span>
+            </h4>
+            <div class="actions">
+                <button class="btn btn-transparent btn-xs" onclick="$('#demo').jstree('open_all');">Show All
+                    <i class="fa fa-arrow-down"></i>
+                </button>
+            </div>
+        </header>
+        <div class="body">
+            <div class="wrapper">
+                <div id="mmenu" style="padding-bottom: 5px;">
+                    <form class="form-search no-margin" role="form">
+                        <div class="input-group">
+                            <input type="search" id="text" class="form-control searchDarkBack" style="color: #f8f8f8;" placeholder="찾을 노드 이름 입력" data-tooltip="Press Enter To Node To Search">
+                            <span class="input-group-btn">
+                                <button type="button" id="search" title="Search" class="btn btn-default btn-sm">
+                                    Search
+                                </button>
+                            </span>
+                        </div>
+                    </form>
+                </div>
+                <div id="jira" style="padding-top: 5px;" class="darkBack"></div>
+                <div style="margin-top: 10px;" class="darkBack">
+                    설명
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+
+<div class="col-lg-12">
     <section class="widget">
         <header>
             <h4>
