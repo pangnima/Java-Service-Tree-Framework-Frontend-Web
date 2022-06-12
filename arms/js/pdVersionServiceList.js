@@ -1,8 +1,8 @@
-// --- 사이드 메뉴 -- //
 $(function () {
     setSideMenu();
 });
 
+// --- 사이드 메뉴 설정 --- //
 function setSideMenu() {
     setTimeout(function(){
         $('#sidebar_menu_product').attr("class","accordion-toggle active");
@@ -19,15 +19,16 @@ function setSideMenu() {
     },1000);
 }
 
+// --- jstree 테이블 설정 --- //
 $(function() {
     jsTreeBuild();
 });
 
 function jsTreeClick(selectedNodeID) {
     console.log(selectedNodeID);
+    $('.dataTables_filter input').val(selectedNodeID).keyup();
 }
 
-// --- jstree 설정 -- //
 function jsTreeBuild(){
 
     console.log("href: "+$(location).attr('href'));
@@ -380,14 +381,15 @@ function jsTreeBuild(){
     });
 }
 
+// --- 데이터 테이블 설정 --- //
 $(function() {
     jstreeDataTableReload();
+
     //datatable 좌상단 datarow combobox style
     $('.dataTables_length').find('select:eq(0)').addClass("darkBack");
     $('.dataTables_length').find('select:eq(0)').css('min-height','30px');
 });
 
-// --- 데이터 테이블 설정 --- //
 function jstreeDataTableReload() {
 
     console.log("href: "+$(location).attr('href'));
@@ -402,7 +404,7 @@ function jstreeDataTableReload() {
 
     var tempDataTable = $('#jstreeTable').DataTable({
         "ajax": {
-            "url": isDevelopingToRoute + "/api/arms/pdService/getMonitor.do",
+            "url": isDevelopingToRoute + "/api/arms/pdVersionService/getMonitor.do",
             "dataSrc": ""
         },
         "destroy": true,
@@ -417,7 +419,8 @@ function jstreeDataTableReload() {
             { "data": "c_right" },
             { "data": "c_level" },
             { "data": "c_title" },
-            { "data": "c_type" }
+            { "data": "c_type" },
+            { "data": "c_pdservice_link" }
         ]
     });
 
