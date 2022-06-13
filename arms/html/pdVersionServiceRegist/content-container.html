@@ -45,47 +45,7 @@
                 </h5>
             </header>
             <div class="body">
-                <div class="panel-group" id="accordion3">
-                    <div class="panel">
-                        <div class="panel-heading">
-                            <a class="accordion-toggle collapsed" data-toggle="collapse" href="#collapseOneTwo">
-                                Collapsible Group Item #1
-                            </a>
-                        </div>
-                        <div id="collapseOneTwo" class="panel-collapse collapse">
-                            <div class="panel-body">
-                                Light Blue - is a next generation admin template based on the latest Metro design. There are few reasons we want to tell you, why we have created it:
-                                We didn't like the darkness of most of admin templates, so we created this light one. We didn't like the high contrast of most of admin templates, so we created this unobtrusive one.
-                                We searched for a solution of how to make widgets look like real widgets, so we decided that deep background - is what makes widgets look real.
-                            </div>
-                        </div>
-                    </div>
-                    <div class="panel">
-                        <div class="panel-heading">
-                            <a class="accordion-toggle" data-toggle="collapse" href="#collapseTwoTwo">
-                                Collapsible Group Item #2
-                            </a>
-                        </div>
-                        <div id="collapseTwoTwo" class="panel-collapse in collapse">
-                            <div class="panel-body">
-                                Why don't use Lore Ipsum? I think if some one says don't use lore ipsum it's very controversial point. I think the opposite actually. Everyone knows what is lore ipsum - it is
-                                easy to understand if text is lore ipsum. You'll automatically skip - because you know - it's just non-informative stub. But what if there some text like this one? You start to read it!
-                                But the goal of this text is different. The goal is the example. So a bit of Lore Ipsum is always very good practice. Keep it in mind!
-                            </div>
-                        </div>
-                    </div>
-                    <div class="panel">
-                        <div class="panel-heading">
-                            <a class="accordion-toggle collapsed" data-toggle="collapse" href="#collapseThreeTwo">
-                                Collapsible Group Item #3
-                            </a>
-                        </div>
-                        <div id="collapseThreeTwo" class="panel-collapse collapse">
-                            <div class="panel-body">
-                                Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin
-                            </div>
-                        </div>
-                    </div>
+                <div class="panel-group" id="versionAccordion">
                 </div>
             </div>
         </section>
@@ -97,15 +57,13 @@
         <header>
             <h4>
                 <span class="font13" style="font-weight: bold;">
-                    <i class="fa fa-sort-amount-asc"></i> 제품(서비스) 조회
+                    <i class="fa fa-sort-amount-asc"></i> 제품(서비스) Version 등록
                 </span>
             </h4>
             <div class="actions">
             </div>
         </header>
         <div class="body">
-            <div class="wrapper">
-            </div>
         </div>
     </section>
 </div>
@@ -117,7 +75,71 @@
     //<![CDATA[
 
     // 초기 개발 및 확인 용도
+    (function( $ ){
+
+        let menu;
+
+        function draw(main){
+
+            main.html("");
+
+            let data = `
+                            <li class='list-group-item json-menu-header'>
+                                product name
+                            </li>
+                        `;
+
+            for(let i = 0; i < menu.length; i++){
+
+                data += `
+                            <div class="panel">
+                                <div class="panel-heading">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" href="#jsonItem${i}">
+                                        ${menu[i].c_title}
+                                    </a>
+                                </div>
+                                <div id="jsonItem${i}" class="panel-collapse collapse">
+                                    <div class="panel-body">
+                                        ${menu[i].c_type}
+                                    </div>
+                                </div>
+                            </div>
+                        `;
+
+            }
+
+            main.html(data);
+
+        }
+
+        $.fn.jsonMenu = function(action, items, options){
+            $(this).addClass("json-menu")
+            if(action == "add"){
+                menu.body.push(items);
+                draw($(this));
+            } else if(action == "set"){
+                menu = items;
+                draw($(this));
+            }
+            return this;
+        }
+     })( jQuery );
+
+    // 초기 개발 및 확인 용도
     $(function () {
+
+        $.ajax( "/auth-user/api/arms/pdVersionService/getChildNode.do?c_id=1")
+        .done(function(json) {
+            console.log(json);
+            $("#versionAccordion").jsonMenu("set", json,{speed:5000});
+        })
+        .fail(function(jqXHR) {
+            console.log( "error" );
+        })
+        .always(function(jqXHR) {
+            console.log( "finished" );
+        });
+
 
     });
 
